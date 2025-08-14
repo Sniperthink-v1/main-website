@@ -1,0 +1,255 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "./css/ContactModal.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Sifonn-Pro";
+  src: url("https://anima-uploads.s3.amazonaws.com/5d6a148897ac03b9cb775293/SIFONN_PRO.otf")
+    format("opentype");
+}
+
+/* shadcn/ui CSS Variables */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+
+.main-website-final {
+  width: 100%;
+  min-height: 100vh; /* Dynamic height */
+  background-color: #000000;
+  overflow-x: hidden; /* Allow vertical scroll */
+  overflow-y: auto;
+  position: relative;
+}
+
+.main-website-final .overlap {
+  width: 100%;
+  min-height: 100%;
+  position: relative; /* No fixed absolute positioning */
+  left: 0;
+}
+
+.main-website-final .BG-texture {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/public/img/bg-texture.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  z-index: 999;
+}
+
+
+
+.main-website-final .BG-gradient-elements {
+  position: relative;
+  top: 375px;
+  left: 0;
+}
+
+.main-website-final .body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: flex-start;
+  position: absolute; /* Changed from absolute */
+  top: 0;
+  left: 0;
+}
+
+.main-website-final .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.main-website-final .auto-layout-vertical-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* CSS Variables */
+:root {
+  --footnote-medium-font-family: "Inter", Helvetica;
+  --footnote-medium-font-weight: 500;
+  --footnote-medium-font-size: 14px;
+  --footnote-medium-letter-spacing: 0px;
+  --footnote-medium-line-height: 20px;
+  --footnote-medium-font-style: normal;
+  --collection-1-spacing-0: 0px;
+  --collection-1-spacing-1: 4px;
+  --collection-1-spacing-2: 8px;
+  --collection-1-spacing-3: 12px;
+  --collection-1-spacing-4: 16px;
+  --collection-1-spacing-5: 20px;
+  --collection-1-spacing-6: 24px;
+  --collection-1-colours-neutrals-white-white-10: rgba(255, 255, 255, 0.1);
+  --collection-1-colours-neutrals-white-white-20: rgba(255, 255, 255, 0.2);
+  --collection-1-colours-neutrals-white-white-30: rgba(255, 255, 255, 0.3);
+  --collection-1-colours-neutrals-white-white-40: rgba(255, 255, 255, 0.4);
+  --collection-1-colours-neutrals-white-white-50: rgba(255, 255, 255, 0.5);
+  --collection-1-colours-neutrals-white-white-60: rgba(255, 255, 255, 0.6);
+  --collection-1-colours-neutrals-white-white-70: rgba(255, 255, 255, 0.7);
+  --collection-1-colours-neutrals-white-white-80: rgba(255, 255, 255, 0.8);
+  --collection-1-colours-neutrals-white-white-90: rgba(255, 255, 255, 0.9);
+  --collection-1-colours-neutrals-white-white-100: rgba(255, 255, 255, 1);
+  --collection-1-colours-neutrals-grey-grey-50: rgba(249, 250, 251, 1);
+  --collection-1-colours-neutrals-grey-grey-100: rgba(243, 244, 246, 1);
+  --collection-1-colours-neutrals-grey-grey-200: rgba(229, 231, 234, 1);
+  --collection-1-colours-neutrals-grey-grey-300: rgba(210, 213, 219, 1);
+  --collection-1-colours-neutrals-grey-grey-400: rgba(158, 162, 174, 1);
+  --collection-1-colours-neutrals-grey-grey-500: rgba(109, 113, 127, 1);
+  --collection-1-colours-neutrals-grey-grey-600: rgba(77, 84, 97, 1);
+  --collection-1-colours-neutrals-grey-grey-700: rgba(57, 64, 80, 1);
+  --collection-1-colours-neutrals-grey-grey-800: rgba(33, 41, 54, 1);
+  --collection-1-colours-neutrals-grey-grey-900: rgba(19, 25, 39, 1);
+  --collection-1-colours-neutrals-black-black-10: rgba(0, 0, 0, 0.1);
+  --collection-1-colours-neutrals-black-black-20: rgba(0, 0, 0, 0.2);
+  --collection-1-colours-neutrals-black-black-30: rgba(0, 0, 0, 0.3);
+  --collection-1-colours-neutrals-black-black-40: rgba(0, 0, 0, 0.4);
+  --collection-1-colours-neutrals-black-black-50: rgba(0, 0, 0, 0.5);
+  --collection-1-colours-neutrals-black-black-60: rgba(0, 0, 0, 0.6);
+  --collection-1-colours-neutrals-black-black-70: rgba(0, 0, 0, 0.7);
+  --collection-1-colours-neutrals-black-black-80: rgba(0, 0, 0, 0.8);
+  --collection-1-colours-neutrals-black-black-90: rgba(0, 0, 0, 0.9);
+  --collection-1-colours-neutrals-black-black-100: rgba(0, 0, 0, 1);
+  --collection-1-colours-teal-primary-50: rgba(239, 248, 248, 1);
+  --collection-1-colours-teal-primary-100: rgba(203, 228, 228, 1);
+  --collection-1-colours-teal-primary-200: rgba(167, 206, 206, 1);
+  --collection-1-colours-teal-primary-300: rgba(135, 186, 186, 1);
+  --collection-1-colours-teal-primary-400: rgba(101, 163, 163, 1);
+  --collection-1-colours-teal-primary-500: rgba(71, 140, 140, 1);
+  --collection-1-colours-teal-primary-600: rgba(47, 117, 117, 1);
+  --collection-1-colours-teal-primary-700: rgba(26, 98, 98, 1);
+  --collection-1-colours-teal-primary-800: rgba(22, 81, 81, 1);
+  --collection-1-colours-teal-primary-900: rgba(19, 63, 63, 1);
+  --collection-1-colours-light-orange-light-orange-50: rgba(255, 247, 223, 1);
+  --collection-1-colours-light-orange-light-orange-100: rgba(252, 230, 178, 1);
+  --collection-1-colours-light-orange-light-orange-200: rgba(250, 216, 145, 1);
+  --collection-1-colours-light-orange-light-orange-300: rgba(246, 204, 124, 1);
+  --collection-1-colours-light-orange-light-orange-400: rgba(237, 186, 90, 1);
+  --collection-1-colours-light-orange-light-orange-500: rgba(225, 169, 64, 1);
+  --collection-1-colours-light-orange-light-orange-600: rgba(210, 159, 52, 1);
+  --collection-1-colours-light-orange-light-orange-700: rgba(186, 140, 39, 1);
+  --collection-1-colours-light-orange-light-orange-800: rgba(154, 115, 31, 1);
+  --collection-1-colours-light-orange-light-orange-900: rgba(122, 91, 31, 1);
+  --collection-1-colours-tertiary-purple-purple-50: rgba(242, 232, 245, 1);
+  --collection-1-colours-tertiary-purple-purple-100: rgba(211, 192, 220, 1);
+  --collection-1-colours-tertiary-purple-purple-200: rgba(180, 155, 191, 1);
+  --collection-1-colours-tertiary-purple-purple-300: rgba(153, 117, 161, 1);
+  --collection-1-colours-tertiary-purple-purple-400: rgba(122, 84, 129, 1);
+  --collection-1-colours-tertiary-purple-purple-500: rgba(97, 58, 102, 1);
+  --collection-1-colours-tertiary-purple-purple-600: rgba(74, 44, 79, 1);
+  --collection-1-colours-tertiary-purple-purple-700: rgba(52, 21, 57, 1);
+  --collection-1-colours-tertiary-purple-purple-800: rgba(38, 14, 41, 1);
+  --collection-1-colours-tertiary-purple-purple-900: rgba(29, 11, 31, 1);
+  --collection-1-colours-highlight-dark-orange-orange-50: rgba(255, 242, 232, 1);
+  --collection-1-colours-highlight-dark-orange-orange-100: rgba(255, 218, 194, 1);
+  --collection-1-colours-highlight-dark-orange-orange-200: rgba(255, 191, 153, 1);
+  --collection-1-colours-highlight-dark-orange-orange-300: rgba(255, 163, 102, 1);
+  --collection-1-colours-highlight-dark-orange-orange-400: rgba(255, 134, 51, 1);
+  --collection-1-colours-highlight-dark-orange-orange-500: rgba(255, 103, 0, 1);
+  --collection-1-colours-highlight-dark-orange-orange-600: rgba(218, 89, 0, 1);
+  --collection-1-colours-highlight-dark-orange-orange-700: rgba(178, 72, 0, 1);
+  --collection-1-colours-highlight-dark-orange-orange-800: rgba(124, 54, 0, 1);
+  --collection-1-colours-highlight-dark-orange-orange-900: rgba(74, 35, 0, 1);
+  --collection-1-colours-accent-light-green-light-green-50: rgba(247, 252, 248, 1);
+  --collection-1-colours-accent-light-green-light-green-100: rgba(233, 245, 235, 1);
+  --collection-1-colours-accent-light-green-light-green-200: rgba(211, 234, 214, 1);
+  --collection-1-colours-accent-light-green-light-green-300: rgba(187, 222, 193, 1);
+  --collection-1-colours-accent-light-green-light-green-400: rgba(167, 209, 173, 1);
+  --collection-1-colours-accent-light-green-light-green-500: rgba(145, 196, 153, 1);
+  --collection-1-colours-accent-light-green-light-green-600: rgba(123, 175, 127, 1);
+  --collection-1-colours-accent-light-green-light-green-700: rgba(108, 145, 111, 1);
+  --collection-1-colours-accent-light-green-light-green-800: rgba(76, 109, 79, 1);
+  --collection-1-colours-accent-light-green-light-green-900: rgba(46, 73, 49, 1);
+  --spacing-button-gap: var(--primitive-size-2);
+  --primitive-size-2: 8px;
+  --primitive-size-3: 12px;
+}

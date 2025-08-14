@@ -1,0 +1,84 @@
+import Image from "next/image";
+
+export default function BusinessSteps() {
+  return (
+    <div className="flex flex-col lg:flex-row items-start gap-10 sm:gap-16 lg:gap-24 px-5 sm:px-10 lg:px-28 w-full">
+      {/* Left Section */}
+      <div className="relative w-full lg:w-[560px] flex flex-col items-start gap-2 py-10">
+        {/* Background Abstract Image */}
+        <div className="absolute w-[350px] sm:w-[420px] md:w-[500px] lg:w-[700px] aspect-square top-[100px] sm:top-[-20px] lg:top-8 left-[-100px] sm:left-[-150px] md:left-[-220px] lg:left-[-420px]">
+          <div className="absolute h-full sm:left-[40%] lg:left-[50%] ">
+            <Image
+              src="/img/abstract-image.svg"
+              alt="Abstract decoration"
+              width={700}
+              height={700}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Content Card */}
+        <div className="flex flex-col items-start gap-5 p-6 sm:p-10 md:p-12 rounded-[40px] sm:rounded-[60px] backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] w-full lg:min-h-[650px] sm:min-h-[700px]">
+          <Image
+            src="/img/our-work.svg"
+            alt="Our work"
+            width={500}
+            height={500}
+            className="w-full h-auto pt-20 sm:pt-36 lg:pt-40"
+          />
+          <p className="text-white/80 text-sm sm:text-base leading-6 font-normal line-clamp-4">
+            SniperThink helps you scale smarter—not harder. In just three steps,
+            we take your business from scattered systems to streamlined
+            growth—so you can analyse, automate, and accelerate your outcomes.
+          </p>
+        </div>
+      </div>
+
+      {/* Steps Section */}
+      <div className="flex flex-col gap-8 sm:gap-10 py-10 lg:py-[220px] flex-1">
+        {/* Step 01 */}
+        <div className="flex items-start gap-6 sm:gap-10">
+          <div className="bg-gradient-to-tr from-[#ff6700] to-[#e1a940] bg-clip-text text-transparent opacity-60 font-semibold text-3xl sm:text-4xl">
+            01
+          </div>
+          <div className="flex flex-col gap-3 sm:gap-4 flex-1">
+            <div className="text-white text-base sm:text-lg font-semibold">Analyze</div>
+            <p className="text-white/80 text-sm sm:text-base leading-6 font-normal line-clamp-3">
+              Connect your tools and uncover insights. From KPIs to lead flows,
+              SniperThink shows you where you are—and where you're stuck.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 02 */}
+        <div className="flex items-start gap-6 sm:gap-10">
+          <div className="bg-gradient-to-tr from-[#ff6700] to-[#e1a940] bg-clip-text text-transparent opacity-60 font-semibold text-3xl sm:text-4xl">
+            02
+          </div>
+          <div className="flex flex-col gap-3 sm:gap-4 flex-1">
+            <div className="text-white text-base sm:text-lg font-semibold">Automate</div>
+            <p className="text-white/80 text-sm sm:text-base leading-6 font-normal line-clamp-3">
+              Let the system do the work. Automate alerts, reports, responses,
+              and lead qualification without sacrificing control.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 03 */}
+        <div className="flex items-start gap-6 sm:gap-10">
+          <div className="bg-gradient-to-tr from-[#ff6700] to-[#e1a940] bg-clip-text text-transparent opacity-60 font-semibold text-3xl sm:text-4xl">
+            03
+          </div>
+          <div className="flex flex-col gap-3 sm:gap-4 flex-1">
+            <div className="text-white text-base sm:text-lg font-semibold">Accelerate</div>
+            <p className="text-white/80 text-sm sm:text-base leading-6 font-normal line-clamp-3">
+              Act faster, scale smoother. With smart signals and agent-driven
+              outreach, your team focuses only where it counts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
