@@ -6,20 +6,20 @@ export default function BusinessSteps() {
       {/* Left Section */}
       <div className="relative w-full lg:w-[560px] flex flex-col items-start gap-2 py-10">
         {/* Background Abstract Image */}
-        <div className="absolute w-[350px] sm:w-[420px] md:w-[500px] lg:w-[700px] aspect-square top-[100px] sm:top-[-20px] lg:top-8 left-[-100px] sm:left-[-150px] md:left-[-220px] lg:left-[-420px]">
-          <div className="absolute h-full sm:left-[40%] lg:left-[50%] ">
+        <div className="absolute w-[800px] sm:w-[900px] md:w-[1000px] lg:w-[700px] aspect-square top-[-50px] sm:top-[-100px] md:top-[-20px] lg:top-8 left-[-100px] sm:left-[-150px] md:left-[-220px] lg:left-[-420px]">
+          <div className="absolute h-full sm:left-[40%] lg:left-[50%]">
             <Image
               src="/img/abstract-image.svg"
               alt="Abstract decoration"
               width={700}
               height={700}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain opacity-20 sm:opacity-30 md:opacity-40 lg:opacity-100"
             />
           </div>
         </div>
 
         {/* Content Card */}
-        <div className="flex flex-col items-start gap-5 p-6 sm:p-10 md:p-12 rounded-[40px] sm:rounded-[60px] backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] w-full lg:min-h-[650px] sm:min-h-[700px]">
+        <div className="flex flex-col items-start gap-5 p-6 sm:p-10 md:p-12 rounded-[40px] sm:rounded-[60px] backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] w-full lg:min-h-[650px] sm:min-h-[700px] relative z-10">
           <Image
             src="/img/our-work.svg"
             alt="Our work"

@@ -10,17 +10,17 @@ export default function WhyChooseSection() {
 
   return (
     <div
-  id="why-choose"
-  className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 px-6 pt-8 pb-10 lg:pt-8 lg:pb-20 relative w-full"
->
+      id="why-choose"
+      className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 p-4 sm:p-6 md:p-10 lg:p-12 relative w-full max-w-6xl mx-auto"
+    >
 
       {/* Decorative shape */}
       <div className="hidden lg:block absolute w-[373px] h-[434px] top-[467px] left-[1121px] rotate-[-133deg] blur-sm opacity-70">
         <div className="relative w-[792px] h-[793px] top-[-181px] left-[-215px]">
-          <img
-            className="absolute w-[550px] h-[546px] top-[127px] left-[124px] rotate-[133deg]"
-            src="/img/vector-vector.svg"
-            alt="Vector decoration"
+          <img 
+            className="absolute w-full h-full object-cover"
+            src="/img/vector-vector" 
+            alt="Background pattern"
           />
         </div>
       </div>

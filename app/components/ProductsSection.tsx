@@ -32,14 +32,39 @@ export default function ProductsSection() {
   const currentFeatures = activeProduct === 'product1' ? product1Features : product2Features
   const currentImage = activeProduct === 'product1' ? '/img/product-brief-image-2.svg' : '/img/products-brief-image.svg'
 
+  const products = [
+    {
+      id: 'product1',
+      title: 'Intelligence Growth Engine',
+      desc: 'A 6-layer intelligence system that turns scattered data into structured, strategic insights...',
+      gradient: 'from-[rgba(187,222,209,0.45)] to-[rgba(108,145,111,0.95)]',
+      badge: 'from-[#4c6d4f] to-[#6c916f]',
+      img: '/img/Pattern.svg'
+    },
+    {
+      id: 'product2',
+      title: 'AI Chat + Voice Agents',
+      desc: 'Our agents are your first-touch sales team—qualifying leads in real time...',
+      gradient: 'from-[rgba(225,169,64,0.2)] via-[rgba(225,169,64,0.5)] to-[rgba(225,169,64,0.8)]',
+      badge: 'from-[rgba(225,169,64,0.6)] to-[rgba(225,169,64,0.8)]',
+      img: '/img/Hexagons.svg'
+    }
+  ]
+
   return (
-    <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-10 p-6 sm:p-10 lg:p-20 relative w-full">
-      <img className="absolute top-[-50px] sm:top-[-78px] left-1/2 sm:left-[400px] transform -translate-x-1/2 sm:translate-x-0 w-60 sm:w-[445px] h-60 sm:h-[445px]" src="/img/Gradient-3.svg" alt="Gradient" />
+    <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-10 p-4 sm:p-8 lg:p-20 relative w-full max-w-6xl mx-auto">
+      <img 
+        className="absolute top-[-40px] sm:top-[-78px] left-1/2 sm:left-[400px] transform -translate-x-1/2 sm:translate-x-0 w-48 sm:w-[445px] h-48 sm:h-[445px]" 
+        src="/img/Gradient-3.svg" 
+        alt="Gradient" 
+      />
 
       {/* Heading Section */}
-      <div className="flex flex-col items-center justify-center gap-4 w-full">
-        <div id="our-products" className="font-poppins font-semibold text-white text-2xl sm:text-3xl md:text-[40px]">OUR PRODUCTS</div>
-        <p className="max-w-full md:max-w-[760px] text-white/80 text-sm sm:text-base leading-6">
+      <div className="flex flex-col items-center md:items-start justify-center gap-3 sm:gap-4 w-full">
+        <div id="our-products" className="font-poppins font-semibold text-white text-xl sm:text-3xl md:text-[40px] text-center md:text-left">
+          OUR PRODUCTS
+        </div>
+        <p className="max-w-full md:max-w-[760px] text-white/80 text-sm sm:text-base leading-6 text-center md:text-left">
           SniperThink offers two powerful growth products. Whether you&apos;re looking to unify your business data or
           automate and segment customer interactions, our tools are designed to replace chaos with clarity and
           help you move faster with intelligence.
@@ -47,78 +72,87 @@ export default function ProductsSection() {
       </div>
 
       {/* Product Cards */}
-      <div className="flex flex-col md:flex-row items-start justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-4 sm:px-6 md:px-10 lg:px-20 pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-6 sm:pb-8 md:pb-10 lg:pb-12 relative w-full">
-        {[
-          {
-            id: 'product1',
-            title: 'Intelligence Growth Engine',
-            desc: 'A 6-layer intelligence system that turns scattered data into structured, strategic insights...',
-            gradient: 'from-[rgba(187,222,209,0.45)] to-[rgba(108,145,111,0.95)]',
-            badge: 'from-[#4c6d4f] to-[#6c916f]',
-            img: '/img/Pattern.svg'
-          },
-          {
-            id: 'product2',
-            title: 'AI Chat + Voice Agents',
-            desc: 'Our agents are your first-touch sales team—qualifying leads in real time...',
-            gradient: 'from-[rgba(225,169,64,0.2)] via-[rgba(225,169,64,0.5)] to-[rgba(225,169,64,0.8)]',
-            badge: 'from-[rgba(225,169,64,0.6)] to-[rgba(225,169,64,0.8)]',
-            img: '/img/Hexagons.svg'
-          }
-        ].map(product => (
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full pt-4 sm:pt-6 md:pt-8">
+        {products.map(product => (
           <div
             key={product.id}
             id={product.id}
-            className={`flex flex-col gap-4 pt-24 px-5 pb-8 rounded-xl overflow-hidden bg-gradient-to-b ${product.gradient} relative transition-all duration-300 cursor-pointer
-    ${activeProduct === product.id ? '-translate-y-1 shadow-xl' : ''} hover:-translate-y-1 hover:shadow-xl
-    flex-1 min-w-[350px] sm:min-w-[450px] md:max-w-[500px]`}
+            className={`flex flex-col gap-4 pt-20 px-5 pb-8 rounded-xl overflow-hidden bg-gradient-to-b ${product.gradient} relative transition-all duration-300 cursor-pointer
+              ${activeProduct === product.id ? '-translate-y-1 shadow-xl' : ''} hover:-translate-y-1 hover:shadow-xl
+              w-full md:flex-1`}
             onClick={() => switchProduct(product.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                switchProduct(product.id)
+              }
+            }}
           >
             <div className={`absolute top-6 left-5 px-4 py-0.5 rounded-full border border-white/10 bg-gradient-to-b ${product.badge}`}>
               <span className="text-white text-[10px] font-poppins">Our Products</span>
             </div>
-            <img className="absolute top-6 right-5 w-24 sm:w-[169px] opacity-30" src={product.img} alt="" />
-            <div className="font-sora font-semibold text-white text-lg sm:text-xl">{product.title}</div>
-            <p className="text-white text-sm sm:text-base">{product.desc}</p>
+            <img 
+              className="absolute top-6 right-5 w-16 sm:w-[169px] opacity-30" 
+              src={product.img} 
+              alt={`${product.title} pattern`} 
+            />
+            <div className="font-sora font-semibold text-white text-lg sm:text-xl">
+              {product.title}
+            </div>
+            <p className="text-white text-sm sm:text-base">
+              {product.desc}
+            </p>
           </div>
-
-
         ))}
       </div>
 
-
       {/* Feature Section */}
-      <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-8 pt-4 pb-6 sm:pt-6 sm:pb-10 lg:pb-10 relative w-full justify-center items-center">
+      <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 pt-4 pb-6 sm:pt-6 sm:pb-10 lg:pb-10 w-full">
         {currentFeatures && (
-          <div className="flex flex-col-reverse md:flex-row gap-6 p-4 sm:p-6 md:p-[30px] bg-gradient-to-b from-[rgba(26,98,98,0.4)] to-[rgba(189,238,244,0.4)] rounded-3xl sm:rounded-[60px] shadow-lg w-full max-w-5xl">
+          <div className="flex flex-col-reverse md:flex-row gap-6 p-4 sm:p-6 md:p-8 bg-gradient-to-b from-[rgba(26,98,98,0.4)] to-[rgba(189,238,244,0.4)] rounded-2xl sm:rounded-[40px] shadow-lg w-full max-w-5xl">
 
             {/* Features List */}
             <div className="flex flex-col flex-1">
               {currentFeatures.map((feature, index) => (
-                <div key={index} className={`mb-3 overflow-hidden w-full ${activeFeature === index ? 'active' : ''}`}>
+                <div key={index} className="mb-2 overflow-hidden w-full">
                   <div
-                    className="flex justify-between items-center py-3 px-4 cursor-pointer"
+                    className="flex justify-between items-center py-2 px-3 sm:px-4 cursor-pointer"
                     onClick={() => toggleFeature(index)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        toggleFeature(index)
+                      }
+                    }}
                   >
-                    <h3 className="font-sora font-medium text-white text-sm sm:text-lg">{feature.title}</h3>
-                    <span className={`inline-block transition-transform ${activeFeature === index ? 'rotate-90' : ''}`}>
-                      <img src="/img/Chevron-Right.svg" alt="Chevron" />
+                    <h3 className="font-sora font-medium text-white text-sm sm:text-lg">
+                      {feature.title}
+                    </h3>
+                    <span className={`inline-block transition-transform duration-300 ${activeFeature === index ? 'rotate-90' : ''}`}>
+                      <img src="/img/Chevron-Right.svg" alt="Expand" />
                     </span>
                   </div>
                   <div
-                    className={`max-h-0 overflow-hidden transition-all duration-300 opacity-0 ${activeFeature === index
-                        ? 'max-h-[200px] py-3 px-4 bg-[#e1a940]/8 opacity-100 border-t border-[#e1a940]/20'
+                    className={`max-h-0 overflow-hidden transition-all duration-300 opacity-0 ${
+                      activeFeature === index
+                        ? 'max-h-[200px] py-2 px-3 sm:px-4 bg-[#e1a940]/8 opacity-100 border-t border-[#e1a940]/20'
                         : ''
-                      }`}
+                    }`}
                   >
-                    <p className="text-white/80 text-xs sm:text-sm">{feature.content}</p>
+                    <p className="text-white/80 text-xs sm:text-sm">
+                      {feature.content}
+                    </p>
                   </div>
                 </div>
               ))}
-              <div className="mt-5">
+              <div className="mt-4">
                 <a
                   href="#"
-                  className="inline-block py-2 px-4 sm:py-3 sm:px-6 bg-[#e1a940] text-black font-poppins font-semibold text-xs sm:text-sm rounded-md hover:bg-[#c89636] transition-all"
+                  className="inline-block py-2 px-4 sm:py-3 sm:px-6 bg-[#e1a940] text-black font-poppins font-semibold text-xs sm:text-sm rounded-md hover:bg-[#c89636] transition-all whitespace-nowrap"
                 >
                   START SCALING
                 </a>
@@ -128,7 +162,7 @@ export default function ProductsSection() {
             {/* Product Image */}
             <div className="flex-1 flex items-center justify-center">
               <img
-                className="w-full h-auto max-w-full sm:max-w-sm md:max-w-md object-contain"
+                className="w-full h-auto max-w-[800px] sm:max-w-md md:max-w-lg max-h-[280px] sm:max-h-[320px] object-contain"
                 src={currentImage}
                 alt="Product Overview"
               />
@@ -136,7 +170,7 @@ export default function ProductsSection() {
           </div>
         )}
       </div>
-
+      
     </div>
   )
 }

@@ -29,7 +29,7 @@ export default function FAQSection() {
   }
 
   return (
-    <div className="relative w-full max-w-5xl pt-20 mx-auto">
+    <div id="faq-section" className="relative w-full max-w-5xl pt-20 mx-auto">
 
       {/* Background Hexagons */}
       <img

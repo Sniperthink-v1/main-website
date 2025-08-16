@@ -16,7 +16,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div id="section-hero" className="relative w-full min-h-[500px] md:min-h-[600px] lg:h-[1024px] px-4 md:px-8 lg:px-20 overflow-hidden">
+    <div id="section-hero" className="relative w-full min-h-[500px] md:min-h-[600px] lg:h-[1024px] px-4 md:px-8 lg:px-20 overflow-hidden pt-4">
       <img 
         className="hidden xl:block absolute w-[200px] h-[200px] lg:w-[250px] lg:h-[250px] xl:w-[337px] xl:h-[361px] left-[50%] xl:left-[1100px] top-20 xl:top-auto" 
         src="/img/ellipse-1.svg" 
@@ -52,8 +52,8 @@ export default function HeroSection() {
       />
       
       {/* Main content */}
-      <div className="flex flex-col items-center justify-center pt-20 md:pt-28 lg:pt-20 pb-8 md:pb-12 lg:pb-16 gap-8 md:gap-12 lg:gap-[60px] w-full relative z-10">
-        <div className="flex flex-col items-center gap-3 md:gap-4 relative w-full max-w-4xl">
+      <div className="flex flex-col items-center justify-center pt-20 md:pt-28 lg:pt-36 pb-8 md:pb-12 lg:pb-16 gap-8 md:gap-12 lg:gap-[60px] w-full relative z-10">
+        <div className="flex flex-col items-center gap-3 md:gap-4 relative w-full max-w-full">
           {/* Header with icon and title */}
           <div className="inline-flex items-center gap-2 md:gap-[10px] py-2 md:py-4 px-0 relative">
             <img 
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
           
           {/* Main heading */}
-          <h1 className="relative w-full max-w-[1200px] font-poppins font-semibold text-white text-2xl md:text-4xl lg:text-5xl xl:text-[50px] text-center md:leading-normal px-7 lg:leading-normal mx-auto">
+          <h1 className="relative w-full max-w-[1200px] font-poppins font-semibold text-white text-2xl md:text-4xl lg:text-5xl xl:text-[62px] text-center md:leading-normal lg:leading-normal mx-auto">
   Your business is growing, but are your systems ready to scale it?
 </h1>
 
@@ -101,8 +101,8 @@ export default function HeroSection() {
         </button>
         
         {/* Stats section */}
-        <div className="inline-flex flex-col items-start gap-4 md:gap-[10px] px-4 md:px-8 lg:px-[56px] py-4 md:py-8 lg:py-8 relative w-full max-w-4xl sm:min-h-[100px]">
-          <div className="grid grid-cols-2 md:flex md:items-center gap-4 md:gap-[49px] relative w-full">
+        <div className="inline-flex flex-col items-center gap-4 md:gap-[10px] px-4 md:px-8 lg:px-[56px] py-4 md:py-8 lg:py-8 relative w-full max-w-4xl sm:min-h-[100px]">
+          <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-[49px] relative w-full">
             <div className="flex flex-col w-full md:w-[158px] items-center relative">
               <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">200%</div>
               <div className="relative w-fit font-poppins font-normal text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">Revenue Growth</div>
