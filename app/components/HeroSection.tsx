@@ -1,5 +1,8 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react';
+import { useCountup } from '../../hooks/useCountup';
+
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -14,6 +17,45 @@ export default function HeroSection() {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
+
+  // Countup hooks for stats - using a single intersection observer for the container
+  const [isStatsVisible, setIsStatsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  // Use regular countup hooks with manual trigger
+  const revenueGrowth = useCountup({ end: 200, duration: 2500, delay: 200, autoStart: false });
+  const speedToMarket = useCountup({ end: 3, duration: 2000, delay: 400, autoStart: false });
+  const newLeads = useCountup({ end: 84, duration: 2500, delay: 600, autoStart: false });
+  const activeUsers = useCountup({ end: 20000, duration: 3000, delay: 800, autoStart: false });
+
+  // Intersection observer for the stats container
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isStatsVisible) {
+          setIsStatsVisible(true);
+          // Start all countup animations with a small delay to ensure they're ready
+          setTimeout(() => {
+            revenueGrowth.start();
+            speedToMarket.start();
+            newLeads.start();
+            activeUsers.start();
+          }, 100);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [isStatsVisible, revenueGrowth, speedToMarket, newLeads, activeUsers]);
 
   return (
     <div id="section-hero" className="relative w-full min-h-[500px] md:min-h-[600px] lg:h-[1024px] px-4 md:px-8 lg:px-20 overflow-hidden pt-4">
@@ -101,22 +143,33 @@ export default function HeroSection() {
         </button>
         
         {/* Stats section */}
-        <div className="inline-flex flex-col items-center gap-4 md:gap-[10px] px-4 md:px-8 lg:px-[56px] py-4 md:py-8 lg:py-8 relative w-full max-w-4xl sm:min-h-[100px]">
+        <div 
+          ref={statsRef}
+          className="inline-flex flex-col items-center gap-4 md:gap-[10px] px-4 md:px-8 lg:px-[56px] py-4 md:py-8 lg:py-8 relative w-full max-w-4xl sm:min-h-[100px]"
+        >
           <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-[49px] relative w-full">
             <div className="flex flex-col w-full md:w-[158px] items-center relative">
-              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">200%</div>
+              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
+                {revenueGrowth.count}%
+              </div>
               <div className="relative w-fit font-poppins font-normal text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">Revenue Growth</div>
             </div>
             <div className="flex flex-col w-full md:w-[159px] items-center relative">
-              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">3X</div>
+              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
+                {speedToMarket.count}X
+              </div>
               <div className="relative w-fit font-poppins font-normal text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">Speed to Market</div>
             </div>
             <div className="flex flex-col w-full md:w-[114px] items-center relative">
-              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">84%</div>
+              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
+                {newLeads.count}%
+              </div>
               <div className="relative w-fit font-poppins font-normal text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">New Leads</div>
             </div>
             <div className="flex flex-col w-full md:w-[127px] items-center relative">
-              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">20K+</div>
+              <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
+                {(activeUsers.count / 1000).toFixed(0)}K+
+              </div>
               <div className="relative w-fit font-poppins font-normal text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">Active Users</div>
             </div>
           </div>

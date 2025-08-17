@@ -62,6 +62,9 @@ export default function FAQSection() {
                     ? 'bg-gradient-to-r from-[rgba(237,186,90,0.6)] to-[rgba(255,134,51,0.6)]'
                     : 'bg-[#1c1a1a]'
                   }`}
+                style={{
+                  borderBottom: index < faqs.length - 1 ? '0.6px solid rgba(26, 98, 90, 1)' : 'none'
+                }}
                 onClick={() => toggleFAQ(index)}
               >
                 <p className="font-semibold text-white text-sm sm:text-base pr-8 sm:pr-10">
@@ -111,6 +114,9 @@ export default function FAQSection() {
                       ? 'bg-gradient-to-r from-[rgba(237,186,90,0.6)] to-[rgba(255,134,51,0.6)]'
                       : 'bg-[#1c1a1a] hover:bg-[#252323]'
                     }`}
+                  style={{
+                    borderBottom: index < faqs.length - 1 ? '0.6px solid rgba(26, 98, 90, 1)' : 'none'
+                  }}
                   onClick={() => toggleFAQ(index)}
                 >
                   <p className="font-semibold text-white text-base pr-10">

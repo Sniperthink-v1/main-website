@@ -58,6 +58,8 @@ export default function ProductsSection() {
         src="/img/Gradient-3.svg" 
         alt="Gradient" 
       />
+      
+
 
       {/* Heading Section */}
       <div className="flex flex-col items-center md:items-start justify-center gap-3 sm:gap-4 w-full">
@@ -111,14 +113,26 @@ export default function ProductsSection() {
       {/* Feature Section */}
       <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 pt-4 pb-6 sm:pt-6 sm:pb-10 lg:pb-10 w-full">
         {currentFeatures && (
-          <div className="flex flex-col-reverse md:flex-row gap-6 p-4 sm:p-6 md:p-8 bg-gradient-to-b from-[rgba(26,98,98,0.4)] to-[rgba(189,238,244,0.4)] rounded-2xl sm:rounded-[40px] shadow-lg w-full max-w-5xl">
+          <div className="flex flex-col-reverse md:flex-row gap-6 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[40px] shadow-lg w-full max-w-5xl relative backdrop-blur-[30px] min-h-[400px]"
+            style={{
+              background: 'linear-gradient(0deg, rgba(26, 98, 98, 0.16), rgba(26, 98, 98, 0.16)), linear-gradient(180deg, rgba(26, 98, 98, 0.2) 0%, rgba(189, 239, 244, 0.2) 100%)'
+            }}>
+            {/* Circles Inverted Background */}
+            <img 
+              className="absolute bottom-0 left-0 w-32 sm:w-40 md:w-48 lg:w-56 h-auto opacity-80 z-0" 
+              src="/img/circles-inverted.svg" 
+              alt="Circles decoration" 
+            />
 
             {/* Features List */}
-            <div className="flex flex-col flex-1">
+            <div className="flex flex-col flex-1 h-[400px] overflow-y-auto">
               {currentFeatures.map((feature, index) => (
-                <div key={index} className="mb-2 overflow-hidden w-full">
+                <div key={index} className="mb-4 overflow-hidden w-full">
                   <div
                     className="flex justify-between items-center py-2 px-3 sm:px-4 cursor-pointer"
+                    style={{
+                      borderBottom: index < currentFeatures.length - 1 ? '0.6px solid rgba(26, 98, 90, 1)' : 'none'
+                    }}
                     onClick={() => toggleFeature(index)}
                     role="button"
                     tabIndex={0}
@@ -136,25 +150,25 @@ export default function ProductsSection() {
                       <img src="/img/Chevron-Right.svg" alt="Expand" />
                     </span>
                   </div>
-                  <div
-                    className={`max-h-0 overflow-hidden transition-all duration-300 opacity-0 ${
-                      activeFeature === index
-                        ? 'max-h-[200px] py-2 px-3 sm:px-4 bg-[#e1a940]/8 opacity-100 border-t border-[#e1a940]/20'
-                        : ''
-                    }`}
-                  >
+                                      <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        activeFeature === index
+                          ? 'max-h-[200px] py-2 px-3 sm:px-4 bg-[#e1a940]/8 opacity-100 border-t border-[#e1a940]/20'
+                          : 'max-h-0 py-0 px-3 sm:px-4 opacity-0'
+                      }`}
+                    >
                     <p className="text-white/80 text-xs sm:text-sm">
                       {feature.content}
                     </p>
                   </div>
                 </div>
               ))}
-              <div className="mt-4">
+              <div className="mt-4 flex justify-center md:justify-start pt-9">
                 <a
                   href="#"
-                  className="inline-block py-2 px-4 sm:py-3 sm:px-6 bg-[#e1a940] text-black font-poppins font-semibold text-xs sm:text-sm rounded-md hover:bg-[#c89636] transition-all whitespace-nowrap"
+                  className="inline-block transition-all hover:opacity-90"
                 >
-                  START SCALING
+                  <img src="/img/start-scaling.svg" alt="START SCALING" className="h-[80px]" />
                 </a>
               </div>
             </div>

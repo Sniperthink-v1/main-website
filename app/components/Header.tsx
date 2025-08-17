@@ -63,13 +63,13 @@ export default function Header({ onContactClick }: HeaderProps) {
   return (
     <>
       {/* Floating Header */}
-      <header className="fixed top-0 left-0 w-full z-[9999] border-b border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80 px-4 py-4">
+      <header className="fixed top-0 left-0 w-full z-[9999] border-b border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80 px-4 py-4 pt-safe pb-safe">
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
           {/* Logo */}
           <img
             src="img/logo.svg"
             alt="SniperThink Logo"
-            className="cursor-pointer"
+            className="cursor-pointer flex-shrink-0"
             onClick={() => scrollToSection('section-hero')}
           />
 
@@ -107,25 +107,37 @@ export default function Header({ onContactClick }: HeaderProps) {
             </button>
           </div>
 
-          {/* Hamburger Icon */}
-          <button
-            className="lg:hidden flex items-center justify-center p-2 rounded focus:outline-none"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <X className="w-7 h-7 text-gray-300" />
-            ) : (
-              <Menu className="w-7 h-7 text-gray-300" />
-            )}
-          </button>
+          {/* Hamburger Icon - Mobile Only */}
+          <div className="lg:hidden flex-shrink-0 w-12 h-12 flex items-center justify-center -ml-[40px]">
+            <button
+              className="flex items-center justify-center w-full h-full rounded focus:outline-none bg-transparent border-none cursor-pointer"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label="Toggle menu"
+              style={{
+                WebkitAppearance: 'none',
+                WebkitTapHighlightColor: 'transparent',
+                touchAction: 'manipulation',
+                WebkitUserSelect: 'none',
+                userSelect: 'none'
+              }}
+            >
+              {menuOpen ? (
+                <X className="w-7 h-7 text-gray-300 stroke-2" />
+              ) : (
+                <Menu className="w-7 h-7 text-gray-300 stroke-2" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu with Transition */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out  ${
-            menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            menuOpen ? "max-h-[500px] opacity-100 visible" : "max-h-0 opacity-0 invisible"
           }`}
+          style={{
+            WebkitOverflowScrolling: 'touch'
+          }}
         >
           <div className="bg-[#0F0F11]/95 backdrop-blur-lg border-b border-gray-700/50 shadow-lg">
             <nav className="flex flex-col items-center space-y-4 py-6 border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80">

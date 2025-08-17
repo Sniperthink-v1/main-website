@@ -1,50 +1,128 @@
+/* Optimized CSS imports - only load what's needed */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import "./css/ContactModal.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
 * {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: "Sifonn-Pro";
+  src: url("https://anima-uploads.s3.amazonaws.com/5d6a148897ac03b9cb775293/SIFONN_PRO.otf")
+    format("opentype");
+  font-display: swap; /* Optimize font loading */
 }
 
 html {
   height: 100%;
   background-color: #000000;
+  /* Optimize scrolling */
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #0F0F11; /* Match the site's dark background color */
+  background-color: #0F0F11;
   color: #ffffff;
+  /* Optimize text rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
 }
 
+/* Optimize focus styles */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
 
+/* Optimize links */
 a {
   text-decoration: none;
+  /* Optimize link rendering */
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Optimize buttons */
 button {
   background: none;
   border: none;
   cursor: pointer;
   color: inherit;
+  /* Optimize button rendering */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
-@font-face {
-  font-family: "Sifonn-Pro";
-  src: url("https://anima-uploads.s3.amazonaws.com/5d6a148897ac03b9cb775293/SIFONN_PRO.otf")
-    format("opentype");
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  /* Optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-/* shadcn/ui CSS Variables */
+/* Custom testimonial dots */
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.testimonial-dot.active {
+  width: 24px;
+  height: 8px;
+  background-color: white;
+}
+
+.testimonial-dot.inactive {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.testimonial-dot.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile-specific testimonial dots */
+@media (max-width: 768px) {
+  .testimonial-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .testimonial-dot.active {
+    width: 24px !important;
+    height: 8px !important;
+    background-color: white !important;
+  }
+
+  .testimonial-dot.inactive {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  .testimonial-dot.inactive:hover {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+  }
+}
+
+/* shadcn/ui CSS Variables - optimized */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -92,7 +170,33 @@ button {
   }
 }
 
-/* CSS Variables - Only keeping the ones that are actually used */
+/* Custom CSS Variables - optimized */
 :root {
   --collection-1-colours-accent-light-green-light-green-300: rgba(187, 222, 193, 1);
+}
+
+/* Performance optimizations for animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .animate-float {
+    animation: none;
+  }
+  
+  /* Optimize touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

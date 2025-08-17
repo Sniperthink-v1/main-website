@@ -183,7 +183,12 @@ export default function TestimonialsSection() {
 
           <div className="flex justify-center items-center gap-2">
             {testimonials.map((_, index) => (
-              <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentSlide ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Go to testimonial ${index + 1}`} />
+              <button 
+                key={index} 
+                onClick={() => goToSlide(index)} 
+                className={`testimonial-dot ${index === currentSlide ? 'active' : 'inactive'}`}
+                aria-label={`Go to testimonial ${index + 1}`} 
+              />
             ))}
           </div>
 
@@ -238,9 +243,15 @@ export default function TestimonialsSection() {
             </div>
           </button>
 
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-2 flex-nowrap">
             {testimonials.map((_, index) => (
-              <button key={index} onClick={() => goToSlide(index)} className={`h-2 rounded-full transition-all duration-200 ${index === currentSlide ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60 w-2'}`} aria-label={`Go to testimonial ${index + 1}`} />
+              <button 
+                key={index} 
+                onClick={() => goToSlide(index)} 
+                className={`testimonial-dot ${index === currentSlide ? 'active' : 'inactive'}`}
+                aria-label={`Go to testimonial ${index + 1}`} 
+                style={{ minWidth: '8px', minHeight: '8px' }}
+              />
             ))}
           </div>
 

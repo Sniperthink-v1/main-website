@@ -6,14 +6,14 @@ export default function BusinessSteps() {
       {/* Left Section */}
       <div className="relative w-full lg:w-[560px] flex flex-col items-start gap-2 py-10">
         {/* Background Abstract Image */}
-        <div className="absolute w-[800px] sm:w-[900px] md:w-[1000px] lg:w-[700px] aspect-square top-[-50px] sm:top-[-100px] md:top-[-20px] lg:top-8 left-[-100px] sm:left-[-150px] md:left-[-220px] lg:left-[-420px]">
-          <div className="absolute h-full sm:left-[40%] lg:left-[50%]">
+        <div className="absolute w-[500px] h-[400px] sm:w-[600px] sm:h-[500px] md:w-[650px] md:h-[550px] lg:w-[700px] lg:h-[700px] lg:aspect-square top-8 sm:top-8 md:top-8 lg:top-8 left-[-280px] sm:left-[-350px] md:left-[-380px] lg:left-[-420px]">
+          <div className="absolute h-full left-[50%]">
             <Image
               src="/img/abstract-image.svg"
               alt="Abstract decoration"
               width={700}
               height={700}
-              className="w-full h-full object-contain opacity-20 sm:opacity-30 md:opacity-40 lg:opacity-100"
+              className="w-full h-full object-contain opacity-100"
             />
           </div>
         </div>

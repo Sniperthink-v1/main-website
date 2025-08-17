@@ -15,14 +15,12 @@ export default function WhyChooseSection() {
     >
 
       {/* Decorative shape */}
-      <div className="hidden lg:block absolute w-[373px] h-[434px] top-[467px] left-[1121px] rotate-[-133deg] blur-sm opacity-70">
-        <div className="relative w-[792px] h-[793px] top-[-181px] left-[-215px]">
-          <img 
-            className="absolute w-full h-full object-cover"
-            src="/img/vector-vector" 
-            alt="Background pattern"
-          />
-        </div>
+      <div className="hidden lg:block absolute w-[550px] h-[546px] top-[127px] right-1 pt-20 rotate-[1deg] blur-sm opacity-80">
+        <img
+          className="object-contain w-[550px] h-[546px]"
+          src="/img/vector-vector.svg"
+          alt="Background pattern"
+        />
       </div>
 
       {/* Main content */}

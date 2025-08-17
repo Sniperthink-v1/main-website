@@ -16,10 +16,17 @@ export default function AboutSniperThink() {
           <img
             src="/img/69-1@3x.png"
             alt="Spherical design background"
-            className="w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] object-contain opacity-30 backdrop-blur-[100px]"
+            className="w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] object-contain opacity-30 select-none"
             style={{ 
               filter: 'brightness(1.5) contrast(1.2) saturate(1.3)',
-              mixBlendMode: 'screen'
+              mixBlendMode: 'screen',
+              border: '0',
+              outline: '0',
+              boxShadow: 'none',
+              WebkitAppearance: 'none',
+              WebkitBorderRadius: '0',
+              borderRadius: '0',
+              display: 'block'
             }}
           />
         </div>

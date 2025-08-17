@@ -1,95 +1,120 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
+import TermsOfUseModal from "./TermsOfUseModal";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 export const Footer: React.FC = () => {
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+
+  const openTermsModal = () => setIsTermsModalOpen(true);
+  const closeTermsModal = () => setIsTermsModalOpen(false);
+  
+  const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+  const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+
   return (
+    <>
       <footer className="w-full text-white px-6">
-      <div className="max-w-7xl mx-auto  pt-20">
-        {/* Top: Logo and Navigation */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12">
-          {/* Logo & Description */}
-          <div className="flex-1 flex flex-col gap-6">
-            <div className="flex flex-col gap-4">
-              <img
-                src="img/logo.svg"
-                alt="SniperThink Logo"
-              />
-              <p className="text-sm text-gray-400 max-w-md">
-                SniperThink delivers clarity, automation, and AI-driven execution for fast-moving teams.
-                Your edge starts here.
-              </p>
+        <div className="max-w-7xl mx-auto  pt-20">
+          {/* Top: Logo and Navigation */}
+          <div className="flex flex-col lg:flex-row justify-between gap-12">
+            {/* Logo & Description */}
+            <div className="flex-1 flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <img
+                  src="img/logo.svg"
+                  alt="SniperThink Logo"
+                />
+                <p className="text-sm text-gray-400 max-w-md">
+                  SniperThink delivers clarity, automation, and AI-driven execution for fast-moving teams.
+                  Your edge starts here.
+                </p>
+              </div>
+
+              {/* Legal Links */}
+              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 pt-4">
+                <button 
+                  onClick={openTermsModal}
+                  className="hover:underline cursor-pointer"
+                >
+                  Terms & Conditions
+                </button>
+                <span>|</span>
+                <button 
+                  onClick={openPrivacyModal}
+                  className="hover:underline cursor-pointer"
+                >
+                  Privacy Policy
+                </button>
+              </div>
             </div>
 
-            {/* Legal Links */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 pt-4">
-              <a href="/terms.html" className="hover:underline">
-                Terms & Conditions
-              </a>
-              <span>|</span>
-              <a href="/privacy.html" className="hover:underline">
-                Privacy Policy
-              </a>
+            {/* Navigation Links */}
+            <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 gap-8 border-t border-gray-700 pt-8 lg:border-t-0 lg:border-l lg:pl-16">
+              <div className="flex flex-col gap-4 text-sm">
+                <a href="/" className="hover:text-green-400 transition-colors">
+                  Home
+                </a>
+                <a href="/" className="hover:text-green-400 transition-colors">
+                  About Us
+                </a>
+              </div>
+              <div className="flex flex-col gap-4 text-sm">
+                <a href="#our-products" className="hover:text-green-400 transition-colors">
+                  Products
+                </a>
+                <a href="#right-faqs" className="hover:text-green-400 transition-colors">
+                  FAQs
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 gap-8 border-t border-gray-700 pt-8 lg:border-t-0 lg:border-l lg:pl-16">
-            <div className="flex flex-col gap-4 text-sm">
-              <a href="/" className="hover:text-green-400 transition-colors">
-                Home
-              </a>
-              <a href="/" className="hover:text-green-400 transition-colors">
-                About Us
-              </a>
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-700 pt-6 pb-9 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+            <div className="text-center md:text-left">
+              <p>© 2025 SniperThink, All Rights Reserved</p>
             </div>
-            <div className="flex flex-col gap-4 text-sm">
-              <a href="#our-products" className="hover:text-green-400 transition-colors">
-                Products
-              </a>
-              <a href="#right-faqs" className="hover:text-green-400 transition-colors">
-                FAQs
-              </a>
+
+            <div className="flex items-center gap-4">
+              <span className="text-white text-sm">Connect with us:</span>
+              <div className="flex gap-3">
+                <a
+                  href="https://www.facebook.com/sniperthink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <img src="/img/facebook.svg" alt="Facebook" className="w-5 h-5 hover:opacity-80" />
+                </a>
+                <a
+                  href="https://www.instagram.com/sniperthink/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <img src="/img/insta.svg" alt="Instagram" className="w-5 h-5 hover:opacity-80" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/sniperthink/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <img src="/img/linkedin.svg" alt="LinkedIn" className="w-5 h-5 hover:opacity-80" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      </footer>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-6 pb-9 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
-          <div className="text-center md:text-left">
-            <p>© 2025 SniperThink, All Rights Reserved</p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <span className="text-white text-sm">Connect with us:</span>
-            <div className="flex gap-3">
-              <a
-                href="https://www.facebook.com/sniperthink"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <img src="/img/facebook.svg" alt="Facebook" className="w-5 h-5 hover:opacity-80" />
-              </a>
-              <a
-                href="https://www.instagram.com/sniperthink/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <img src="/img/insta.svg" alt="Instagram" className="w-5 h-5 hover:opacity-80" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/sniperthink/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <img src="/img/linkedin.svg" alt="LinkedIn" className="w-5 h-5 hover:opacity-80" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+      {/* Modals */}
+      <TermsOfUseModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
+      <PrivacyPolicyModal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal} />
+    </>
   );
 };
 
