@@ -8,7 +8,15 @@ html,
 body {
   margin: 0px;
   height: 100%;
+  background-color: #0a0a0a;
 }
+
+.smooth-layer {
+  will-change: transform, filter;
+  transform: translateZ(0);
+}
+
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
