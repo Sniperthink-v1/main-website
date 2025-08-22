@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 interface HeaderProps {
   onContactClick: () => void;
@@ -9,6 +10,65 @@ interface HeaderProps {
 
 export default function Header({ onContactClick }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('section-hero');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Function to determine which section is currently in view
+  const getCurrentSection = () => {
+    const sections = navItems.map(item => item.id);
+    const headerHeight = 80; // Approximate header height
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const element = document.getElementById(sections[i]);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementBottom = rect.bottom;
+        
+        // Check if the section is in the viewport with some tolerance
+        if (elementTop <= headerHeight + 50 && elementBottom > headerHeight) {
+          return sections[i];
+        }
+      }
+    }
+    return 'section-hero';
+  };
+
+  // Update active section on scroll
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const scrolled = scrollY > 2;
+      console.log('Scroll Y:', scrollY, 'Is Scrolled:', scrolled, 'Active Section:', activeSection);
+      setIsScrolled(scrolled);
+      
+      // Debounce section detection for performance
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const currentSection = getCurrentSection();
+        setActiveSection(currentSection);
+      }, 10);
+    };
+
+    // Initial check
+    const initialScrollY = window.scrollY;
+    const initialScrolled = initialScrollY > 2;
+    console.log('Initial Scroll Y:', initialScrollY, 'Initial Is Scrolled:', initialScrolled);
+    setIsScrolled(initialScrolled);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Debug effect to log state changes
+  useEffect(() => {
+    console.log('State changed - isScrolled:', isScrolled, 'activeSection:', activeSection);
+  }, [isScrolled, activeSection]);
   
   const navItems = [
     { name: "Home", id: "section-hero" },
@@ -51,6 +111,7 @@ export default function Header({ onContactClick }: HeaderProps) {
   };
 
   const handleNavClick = (sectionId: string) => {
+    setActiveSection(sectionId); // Immediately update active section for better UX
     scrollToSection(sectionId);
     setMenuOpen(false); // Close mobile menu
   };
@@ -63,18 +124,31 @@ export default function Header({ onContactClick }: HeaderProps) {
   return (
     <>
       {/* Floating Header */}
-      <header className="fixed top-0 left-0 w-full z-[9999] border-b border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80 px-4 py-4 pt-safe pb-safe">
-        <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+      <header className="fixed top-0 left-0 w-full z-[9999] transition-all duration-300" style={{
+        width: '100%',
+        height: '64px',
+        opacity: 1,
+        paddingTop: '8px',
+        paddingRight: 'clamp(16px, 4vw, 80px)',
+        paddingBottom: '8px',
+        paddingLeft: 'clamp(16px, 4vw, 80px)',
+        background: isScrolled ? 'rgba(19, 19, 19, 0.95)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        boxShadow: isScrolled ? '0px 6.65px 5.32px 0px #00000007, 0px 22.34px 17.87px 0px #0000000B, 0px 100px 80px 0px #00000012' : 'none'
+      }}>
+        <div className="max-w-full mx-auto flex items-stretch justify-between relative">
           {/* Logo */}
-          <img
-            src="img/logo.svg"
+          <Image
+            src="/img/logo.svg"
             alt="SniperThink Logo"
-            className="cursor-pointer flex-shrink-0"
+            width={371}
+            height={44}
+            className="cursor-pointer flex-shrink-0 lg:w-auto h-auto"
             onClick={() => scrollToSection('section-hero')}
           />
 
           {/* Desktop Nav - Centered */}
-          <nav className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden lg:flex pt-[7px] items-center space-x-8 absolute left-1/2 transform -translate-x-1/2 pl-2000">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -83,7 +157,11 @@ export default function Header({ onContactClick }: HeaderProps) {
                   e.preventDefault();
                   handleNavClick(item.id);
                 }}
-                className="text-gray-300 hover:text-[#91C499] transition-all duration-300 hover:scale-105 font-medium cursor-pointer whitespace-nowrap"
+                className={`nav-item transition-all height duration-300 hover:scale-105 font-medium cursor-pointer whitespace-nowrap pb-2 ${
+                  activeSection === item.id 
+                    ? 'text-white active' 
+                    : 'text-gray-300 hover:text-white'
+                }`}
               >
                 {item.name}
               </a>
@@ -108,7 +186,7 @@ export default function Header({ onContactClick }: HeaderProps) {
           </div>
 
           {/* Hamburger Icon - Mobile Only */}
-          <div className="lg:hidden flex-shrink-0 w-12 h-12 flex items-center justify-center -ml-[40px]">
+          <div className="lg:hidden flex-shrink-0 w-12 h-12 flex items-center justify-center pr-[120px]">
             <button
               className="flex items-center justify-center w-full h-full rounded focus:outline-none bg-transparent border-none cursor-pointer"
               onClick={() => setMenuOpen((open) => !open)}
@@ -133,14 +211,14 @@ export default function Header({ onContactClick }: HeaderProps) {
         {/* Mobile Menu with Transition */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            menuOpen ? "max-h-[500px] opacity-100 visible" : "max-h-0 opacity-0 invisible"
+            menuOpen ? "max-h-[600px] opacity-100 visible" : "max-h-0 opacity-0 invisible"
           }`}
           style={{
             WebkitOverflowScrolling: 'touch'
           }}
         >
           <div className="bg-[#0F0F11]/95 backdrop-blur-lg border-b border-gray-700/50 shadow-lg">
-            <nav className="flex flex-col items-center space-y-4 py-6 border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80">
+            <nav className="flex flex-col items-center space-y-6 py-8 px-4 border-gray-700/50 backdrop-blur-lg bg-[#0F0F11]/80">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -149,7 +227,7 @@ export default function Header({ onContactClick }: HeaderProps) {
                     e.preventDefault();
                     handleNavClick(item.id);
                   }}
-                  className="text-gray-300 hover:text-[#91C499] transition-all duration-300 font-medium text-lg cursor-pointer"
+                  className="text-gray-300 hover:text-[#91C499] transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2"
                 >
                   {item.name}
                 </a>
@@ -157,7 +235,7 @@ export default function Header({ onContactClick }: HeaderProps) {
               <button
                 type="button"
                 onClick={handleContactClick}
-                className="bg-gradient-to-r from-[#E1A940] to-[#FF6700] hover:from-[#FF6700] hover:to-[#E1A940] text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-4 py-2 rounded-60px cursor-pointer"
+                className="bg-gradient-to-r from-[#E1A940] to-[#FF6700] hover:from-[#FF6700] hover:to-[#E1A940] text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-6 py-3 rounded-60px cursor-pointer text-lg font-medium w-full max-w-xs"
               >
                 Contact Us
               </button>

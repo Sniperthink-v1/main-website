@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState(-1)
@@ -29,41 +30,65 @@ export default function FAQSection() {
   }
 
   return (
-    <div id="faq-section" className="relative w-full max-w-5xl pt-20 mx-auto">
+    <div
+      id="faq-section"
+      className="relative w-full max-w-[100%] pt-20 pb-20 mb-10 lg:mb-20 mx-auto"
+      style={{
+        display: 'flex',
+        padding: '0 80px',
+        alignItems: 'flex-start',
+        gap: '80px',
+        alignSelf: 'stretch'
+      }}
+    >
 
       {/* Background Hexagons */}
-      <img
-        className="absolute w-[400px] h-[450px] sm:w-[500px] sm:h-[550px] lg:w-[626px] lg:h-[661px] top sm:pt-150 -left-8 sm:-left-10 z-0"
+      <Image
         src="/img/Hexagons2.svg"
         alt="Hexagons decoration"
+        width={550}
+        height={550.895}
+        style={{
+          position: 'absolute',
+          left: '-80.5px',
+          top: '20.012px',
+          width: '550px',
+          height: '550px',
+          zIndex: 0
+        }}
       />
 
-      <div className="relative z-10 pt-10">
+      <div className="relative z-10 w-full">
         {/* Mobile & Tablet */}
         <div className="block lg:hidden">
           {/* Image & Description */}
-          <div className="flex flex-col gap-5 p-8 sm:p-12 mx-4 sm:mx-6 mb-8 rounded-[30px] sm:rounded-[60px] overflow-hidden backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)]">
-            <img
-              className="w-full max-w-md mx-auto"
+          <div className="flex flex-col gap-5 p-8 sm:p-12 w-full mx-0 sm:mx-6 mb-8 rounded-[30px] sm:rounded-[60px] overflow-hidden backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)]">
+            <Image
+              className="w-full max-w-md sm:max-w-lg lg:max-w-xl mx-auto"
               src="/img/frequently-asked-questions.svg"
               alt="FAQ"
+              width={448}
+              height={300}
             />
             <p className="text-white/80 text-sm sm:text-base leading-6 text-center">
               Here's what businesses like yours often ask before switching to SniperThink.
             </p>
           </div>
 
-          {/* FAQ Items */}
-          <div className="flex flex-col gap-4 sm:gap-[18px] px-4 sm:px-6">
+
+          {/* FAQ Items - Full Width */}
+          <div className="flex flex-col gap-4 sm:gap-[18px] w-full">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`relative w-full min-h-[60px] rounded-[9.64px] shadow-[0px_0.8px_9.64px_rgba(255,215,0,0.1)] p-4 sm:p-5 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden ${openFAQ === index
-                    ? 'bg-gradient-to-r from-[rgba(237,186,90,0.6)] to-[rgba(255,134,51,0.6)]'
-                    : 'bg-[#1c1a1a]'
-                  }`}
+                className="relative w-full min-h-[60px] p-4 sm:p-5 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden"
                 style={{
-                  borderBottom: index < faqs.length - 1 ? '0.6px solid rgba(26, 98, 90, 1)' : 'none'
+                  borderRadius: '9.643px',
+                  border: openFAQ === index ? '0.804px solid #EDBA5A' : '',
+                  opacity: openFAQ === index ? 1 : 1,
+                  background: openFAQ === index ? '#1C1A1A' : 'linear-gradient(127deg, rgba(255, 255, 255, 0.02) 6.63%, rgba(255, 255, 255, 0.06) 91.75%)',
+                  backdropFilter: openFAQ === index ? 'none' : 'blur(16.072235107421875px)',
+                  boxShadow: openFAQ === index ? '0 0.804px 9.643px 0 rgba(255, 215, 0, 0.10)' : 'none'
                 }}
                 onClick={() => toggleFAQ(index)}
               >
@@ -79,9 +104,8 @@ export default function FAQSection() {
                   </p>
                 </div>
 
-                <div className={`absolute right-4 sm:right-5 top-4 sm:top-5 w-5 h-5 transition-transform duration-300 ease-in-out ${openFAQ === index ? 'rotate-45' : ''
-                  }`}>
-                  <img className="w-full h-full" src="/img/plus.svg" alt="Toggle" />
+                <div className={`absolute right-4 sm:right-5 top-4 sm:top-5 w-5 h-5 transition-transform duration-300 ease-in-out ${openFAQ === index ? 'rotate-45' : ''}`}>
+                  <Image className="w-full h-full" src="/img/plus.svg" alt="Toggle" width={20} height={20} />
                 </div>
               </div>
             ))}
@@ -89,14 +113,16 @@ export default function FAQSection() {
         </div>
 
         {/* Desktop */}
-        <div className="hidden lg:flex lg:gap-8 xl:gap-12 pt-20">
+        <div className="hidden lg:flex items-stretch lg:gap-[80px] xl:gap-[80px] pt-20 w-full">
           {/* Left Side */}
-          <div className="flex-1 max-w-lg">
+          <div className="max-w-lg basis-auto">
             <div className="flex flex-col gap-5 xl:p-[120px_40px] rounded-[60px] overflow-hidden backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] min-h-[600px]">
-              <img
+              <Image
                 className="w-full"
                 src="/img/frequently-asked-questions.svg"
                 alt="FAQ"
+                width={448}
+                height={300}
               />
               <p className="text-white/80 text-base leading-6">
                 Here's what businesses like yours often ask before switching to SniperThink.
@@ -104,18 +130,21 @@ export default function FAQSection() {
             </div>
           </div>
 
-          {/* Right Side */}
-          <div className="flex-1 max-w-2xl">
-            <div className="flex flex-col gap-[18px] py-12 xl:py-[140px]">
+          {/* Right Side - Full Width Stretch */}
+          
+          <div className="flex-1 basis-0 w-full min-w-0">
+            <div className="flex flex-col gap-[18px] py-10 xl:py-[140px] w-full">
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className={`relative w-full min-h-[60px] rounded-[9.64px] shadow-[0px_0.8px_9.64px_rgba(255,215,0,0.1)] p-5 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden hover:shadow-[0px_0.8px_9.64px_rgba(255,215,0,0.2)] ${openFAQ === index
-                      ? 'bg-gradient-to-r from-[rgba(237,186,90,0.6)] to-[rgba(255,134,51,0.6)]'
-                      : 'bg-[#1c1a1a] hover:bg-[#252323]'
-                    }`}
+                  className="relative w-full min-h-[60px] p-5 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden"
                   style={{
-                    borderBottom: index < faqs.length - 1 ? '0.6px solid rgba(26, 98, 90, 1)' : 'none'
+                    borderRadius: '9.643px',
+                    border: openFAQ === index ? '0.804px solid #EDBA5A' : '',
+                    opacity: openFAQ === index ? 1 : 1,
+                    background: openFAQ === index ? '#1C1A1A' : 'linear-gradient(127deg, rgba(255, 255, 255, 0.02) 6.63%, rgba(255, 255, 255, 0.06) 91.75%)',
+                    backdropFilter: openFAQ === index ? 'none' : 'blur(16.072235107421875px)',
+                    boxShadow: openFAQ === index ? '0 0.804px 9.643px 0 rgba(255, 215, 0, 0.10)' : 'none'
                   }}
                   onClick={() => toggleFAQ(index)}
                 >
@@ -131,9 +160,8 @@ export default function FAQSection() {
                     </p>
                   </div>
 
-                  <div className={`absolute right-5 top-5 w-5 h-5 transition-transform duration-300 ease-in-out ${openFAQ === index ? 'rotate-45' : ''
-                    }`}>
-                    <img className="w-full h-full" src="/img/plus.svg" alt="Toggle" />
+                  <div className={`absolute right-5 top-5 w-5 h-5 transition-transform duration-300 ease-in-out ${openFAQ === index ? 'rotate-45' : ''}`}>
+                    <Image className="w-full h-full" src="/img/plus.svg" alt="Toggle" width={20} height={20} />
                   </div>
                 </div>
               ))}

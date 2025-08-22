@@ -44,13 +44,13 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="flex flex-col items-start gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-10 lg:p-20 pt-20 sm:pt-20 md:pt-24 lg:pt-32 w-full max-w-6xl mx-auto">
+    <section id="contact" className="flex flex-col items-start gap-4 sm:gap-6 md:gap-8 pt-20 sm:pt-20 md:pt-24 lg:pt-32 w-full max-w-6xl mx-auto" style={{ paddingLeft: 'clamp(16px, 4vw, 80px)', paddingRight: 'clamp(16px, 4vw, 80px)', paddingTop: 'clamp(80px, 10vw, 160px)', paddingBottom: 'clamp(80px, 10vw, 160px)' }}>
       {/* Section Header */}
       <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full mb-6 md:mb-8 lg:mb-12">
         <div className="font-bold text-white text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] leading-normal mb-2 text-center md:text-left">
           CONTACT US
         </div>
-        <p className="text-white/80 lg:pt-5 text-sm sm:text-base leading-6 max-w-none sm:px-[10px] text-center md:text-left">
+        <p className="text-white/80 lg:pt-5 text-sm sm:text-base leading-6 max-w-none text-center md:text-left">
           Ready to transform your business? Get in touch with us today.
         </p>
       </div>
@@ -133,7 +133,7 @@ export default function ContactUs() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full relative overflow-hidden rounded-xl py-3 px-6 transition-all duration-300 group"
+                  className="w-full relative overflow-hidden rounded-xl py-3 transition-all duration-300 group"
                 >
                   {/* Button background with header gradient */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#E1A940] to-[#FF6700] hover:from-[#FF6700] hover:to-[#E1A940] backdrop-blur-[10px] border border-white/20 rounded-xl group-hover:shadow-xl transition-all duration-300"></div>
