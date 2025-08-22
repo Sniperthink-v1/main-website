@@ -28,8 +28,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="bg-black">
+    <html lang="en" className="bg-[#0F0F11] scroll-smooth" style={{ backgroundColor: '#0F0F11' }}>
       <head>
+        <style>{`
+          :root { background-color: #0F0F11 !important; }
+          html { background-color: #0F0F11 !important; }
+          body { background-color: #0F0F11 !important; }
+        `}</style>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Preconnect to external domains */}
