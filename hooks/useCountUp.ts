@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 interface UseCountupOptions {
   start?: number;
   end: number;
   duration?: number;
   delay?: number;
-  easing?: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut';
+  easing?: "linear" | "easeIn" | "easeOut" | "easeInOut";
   onComplete?: () => void;
   autoStart?: boolean;
 }
@@ -24,23 +24,24 @@ export const useCountup = ({
   end,
   duration = 2000,
   delay = 0,
-  easing = 'easeOut',
+  easing = "easeOut",
   onComplete,
-  autoStart = false
+  autoStart = false,
 }: UseCountupOptions): UseCountupReturn => {
   const [count, setCount] = useState(start);
   const [isCounting, setIsCounting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
- const animationRef = useRef<number | null>(null);
-const startTimeRef = useRef<number | null>(null);
-const pauseTimeRef = useRef<number | null>(null);
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
+  const pauseTimeRef = useRef<number | null>(null);
 
   // Easing functions
   const easingFunctions = {
     linear: (t: number) => t,
     easeIn: (t: number) => t * t,
     easeOut: (t: number) => 1 - Math.pow(1 - t, 2),
-    easeInOut: (t: number) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+    easeInOut: (t: number) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
   };
 
   const animate = (timestamp: number) => {
@@ -70,12 +71,12 @@ const pauseTimeRef = useRef<number | null>(null);
 
   const startAnimation = () => {
     if (isCounting) return;
-    
+
     setIsCounting(true);
     setIsPaused(false);
-    startTimeRef.current = undefined;
-    pauseTimeRef.current = undefined;
-    
+    startTimeRef.current = null;
+    pauseTimeRef.current = null;
+
     setTimeout(() => {
       animationRef.current = requestAnimationFrame(animate);
     }, delay);
@@ -88,8 +89,8 @@ const pauseTimeRef = useRef<number | null>(null);
     setCount(start);
     setIsCounting(false);
     setIsPaused(false);
-    startTimeRef.current = undefined;
-    pauseTimeRef.current = undefined;
+    startTimeRef.current = null;
+    pauseTimeRef.current = null;
   };
 
   const pause = () => {
@@ -145,7 +146,10 @@ const pauseTimeRef = useRef<number | null>(null);
 };
 
 // Specialized hook for percentage values
-export const usePercentageCountup = (end: number, options?: Omit<UseCountupOptions, 'end'>) => {
+export const usePercentageCountup = (
+  end: number,
+  options?: Omit<UseCountupOptions, "end">
+) => {
   return useCountup({
     start: 0,
     end,
@@ -155,7 +159,10 @@ export const usePercentageCountup = (end: number, options?: Omit<UseCountupOptio
 };
 
 // Specialized hook for large numbers with K/M suffixes
-export const useLargeNumberCountup = (end: number, options?: Omit<UseCountupOptions, 'end'>) => {
+export const useLargeNumberCountup = (
+  end: number,
+  options?: Omit<UseCountupOptions, "end">
+) => {
   const { count, ...rest } = useCountup({
     start: 0,
     end,
@@ -186,7 +193,7 @@ export const useCountupOnVisible = (
 ) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
-  
+
   const countup = useCountup({
     ...options,
     autoStart: false,
@@ -218,4 +225,4 @@ export const useCountupOnVisible = (
     elementRef,
     ...countup,
   };
-}; 
+};
