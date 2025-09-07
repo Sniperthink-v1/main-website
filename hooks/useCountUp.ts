@@ -31,9 +31,9 @@ export const useCountup = ({
   const [count, setCount] = useState(start);
   const [isCounting, setIsCounting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const animationRef = useRef<number>();
-  const startTimeRef = useRef<number>();
-  const pauseTimeRef = useRef<number>();
+ const animationRef = useRef<number | null>(null);
+const startTimeRef = useRef<number | null>(null);
+const pauseTimeRef = useRef<number | null>(null);
 
   // Easing functions
   const easingFunctions = {
