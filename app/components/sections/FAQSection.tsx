@@ -166,7 +166,7 @@ export default function FAQSection() {
         <div className="hidden lg:flex items-start gap-6 lg:gap-[60px] xl:gap-[80px] pt-10 lg:pt-20 w-full ">
           {/* Left Side */}
           <div className="max-w-lg basis-auto">
-            <div className="flex flex-col gap-3 lg:gap-5 p-6 sm:p-8 lg:p-12 xl:p-[80px_40px] rounded-[30px] lg:rounded-[60px] overflow-hidden backdrop-blur-[15px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] xl:min-h-[546px]">
+            <div className="flex flex-col gap-3 lg:gap-5 p-6 sm:p-8 lg:p-12 xl:p-[80px_40px] rounded-[30px] lg:rounded-[60px] overflow-hidden backdrop-blur-[100px] bg-gradient-to-b from-[rgba(26,98,98,0.2)] to-[rgba(189,238,244,0.2)] min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] xl:min-h-[546px]">
               <h2 className="self-stretch text-[24px] sm:text-[32px] lg:text-[40px] font-poppins font-semibold uppercase leading-tight">
                 <span className="block text-white">Frequently Asked</span>
                 <span className="block bg-gradient-to-r from-[#FF6700] to-[#EDBA5A] bg-clip-text text-transparent">
@@ -259,7 +259,7 @@ export default function FAQSection() {
                 </div>
               ))}
             </div>
-            <div className="absolute bottom-5 right-5 w-[160px] h-[160px] sm:top-10 sm:bottom-auto sm:right-0 sm:w-[220px] sm:h-[220px] md:right-[-100px] md:w-[300px] md:h-[300px] bg-gradient-to-t from-[#1A6262] to-[#1A6262] blur-[80px] sm:blur-[120px] md:blur-[150px] opacity-100 pointer-events-none sm:z-10"></div>
+            <div className="absolute bottom-5 right-5 w-[160px] h-[160px] sm:top-10 sm:bottom-auto sm:right-0 sm:w-[220px] sm:h-[220px] md:right-[-100px] md:w-[300px] md:h-[300px] bg-gradient-to-t from-[#1A6262] to-[#1A6262] blur-[80px] sm:blur-[120px] md:blur-[150px] opacity-100 pointer-events-none sm:z-10 md:-z-10"></div>
 
           </div>
         </div>

@@ -15,6 +15,7 @@ export default function AboutSniperThink() {
       <div className="absolute flex items-center justify-center pointer-events-none" style={{
         width: 'clamp(300px, 50vw, 650px)',
         height: 'clamp(300px, 50vw, 650px)',
+        opacity: 1,
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)'
@@ -26,15 +27,16 @@ export default function AboutSniperThink() {
           style={{
             width: '100%',
             height: '100%',
-            opacity: 1,
+            opacity: 0.3,
             mixBlendMode: 'soft-light',
-            filter: 'brightness(1.3) contrast(1.1) saturate(1.2)'
+            filter: 'brightness(2.8) contrast(2.1) saturate(2.2) blur(13px)',
           }}
         />
       </div>
 
       <div className="relative p-0 min-h-[700px] sm:min-h-[500px] md:min-h-[580px] lg:min-h-[630px]" style={{
         width: '100%',
+        opacity: 1,
         gap: '40px',
         borderRadius: 'clamp(40px, 4vw, 80px)',
         background: 'linear-gradient(180deg, rgba(255, 134, 51, 0.2) 0%, rgba(246, 204, 124, 0.2) 100%)',
@@ -44,21 +46,18 @@ export default function AboutSniperThink() {
         <div className="absolute inset-[10px] sm:inset-[20px] w-auto h-auto" style={{
           opacity: 1,
           borderRadius: 'clamp(40px, 4vw, 80px)',
-          background: '#2f3328',
+          background: 'linear-gradient(180deg, rgba(26, 98, 98, 0.2) 0%, rgba(19, 63, 63, 0.2) 100%)',
           backdropFilter: 'blur(293px)'
         }}>
           {/* Child Container */}
-          <div className="absolute inset-[10px] sm:inset-[20px] w-auto h-auto " style={{
-            opacity: 0.6,
+          <div className="absolute inset-[10px] sm:inset-[20px] w-auto h-auto" style={{
             borderRadius: 'clamp(40px, 4vw, 80px)',
-            background: '#A7CECE33',
-            
+            background: 'linear-gradient(180deg, rgba(76, 109, 79, 0.2) 0%, rgba(0, 0, 0, 0.08) 100%)',
           }}>
             {/* Second Child Container */}
             <div className="absolute inset-[10px] sm:inset-[20px] w-auto h-auto" style={{
               borderRadius: 'clamp(40px, 4vw, 80px)',
-              
-              background: '#333e33',
+              background: 'linear-gradient(180deg, rgba(26, 98, 98, 0.2) 0%, rgba(167, 206, 206, 0.2) 100%)',
               backdropFilter: 'blur(70px)'
             }}>
               {/* Content Container */}
@@ -128,6 +127,7 @@ export default function AboutSniperThink() {
                     />
                   </a>
                 </div>
+                
 
               </div>
             </div>

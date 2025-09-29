@@ -58,8 +58,8 @@ const IMAGES: Record<'product1' | 'product2', string> = {
 }
 
 const START_SCALING_LINKS: Record<'product1' | 'product2', string> = {
-  product1: 'https://intelligencesystem.sniperthink.com',
-  product2: 'https://aiagent.sniperthink.com'
+  product1: 'https://sniperthink.com/intelligencesystem/',
+  product2: 'https://sniperthink.com/aiagent/'
 }
 
 // Desktop Product Card (without Framer Motion)

@@ -6,6 +6,18 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  // Typewriter animation for main heading
+  const fullText = "Your business is growing, but are your systems ready to scale it?";
+  const [typedText, setTypedText] = useState("");
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      setTypedText(fullText.slice(0, current + 1));
+      current++;
+      if (current === fullText.length) clearInterval(interval);
+    }, 35); // Adjust speed here
+    return () => clearInterval(interval);
+  }, []);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -127,9 +139,10 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* Main heading */}
+          {/* Main heading with typewriter animation */}
           <h1 className="relative w-full max-w-full font-poppins text-white text-center mx-auto px-4 text-2xl md:text-4xl lg:text-5xl xl:text-[62px] font-semibold leading-medium md:leading-loose lg:leading-[60px] xl:leading-[70px]">
-            Your business is growing, but are your systems ready to scale it?
+            <span>{typedText}</span>
+            <span className="inline-block animate-pulse" style={{width: '1ch'}}>|</span>
           </h1>
 
           <p className="relative w-full bg-[linear-gradient(90deg,#7BAF7F_24.04%,#FF8633_77.88%,#F6CC7C_100%)] bg-clip-text text-transparent font-poppins font-semibold text-lg md:text-xl lg:text-2xl xl:text-[24px] text-center lg:leading-[50px] md:leading-[28px]">
@@ -137,9 +150,7 @@ export default function HeroSection() {
           </p>
 
           <p className="relative w-full max-w-4xl lg:w-[920px] font-poppins font-semibold text-white text-sm md:text-base text-center lg:leading-[32px] md:leading-relaxed sm:leading-[16px] px-4">
-            SniperThink turns your business data into growth systems.<br className="hidden sm:block" />
-            You&apos;re building a great business — SniperThink gives you clarity, speed, and control to scale confidently.<br className="hidden sm:block" />
-            Most businesses hustle without data. SniperThink brings intelligence, automation and direction — So you can focus on growth, not guesswork.
+            SniperThink brings intelligence, automation and direction <br className="hidden sm:block" /> So you can focus on growth, not guesswork.
           </p>
         </div>
 

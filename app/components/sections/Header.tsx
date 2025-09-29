@@ -6,6 +6,7 @@ import ContactUs from "./ContactUs";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [isContactModalOpen, setContactModalOpen] = useState(false);
   const [active, setActive] = useState("section-hero");
   const [scrolled, setScrolled] = useState(false);
@@ -109,6 +110,17 @@ export default function Header() {
               <div key={item.id} className="relative group">
                 <a
                   href={`#${item.id}`}
+                  onClick={e => {
+                    e.preventDefault();
+                    const el = document.getElementById(item.id);
+                    if (el) {
+                      const header = document.querySelector('header');
+                      const headerHeight = header ? header.offsetHeight : 64;
+                      const yOffset = -headerHeight;
+                      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
                   className={`transition-all duration-300 hover:scale-105 font-medium cursor-pointer whitespace-nowrap pb-2 border-b-[3px] ${active === item.id
                     ? "border-[#004A65] text-white"
                     : "border-transparent text-gray-300 hover:text-white"
@@ -120,41 +132,20 @@ export default function Header() {
                 {/* Dropdown for Our Products */}
                 {item.id === "our-products" && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-transparent backdrop-blur-lg border border-gray-700/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div className="py-3">
+                    <div className="py-3 bg-[#0F0F11]/80 ">
                       <a
-                        href="#our-products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          // First scroll to products section
-                          document.getElementById('our-products')?.scrollIntoView({ behavior: 'smooth' });
-                          // Then activate product1 after a short delay
-                          setTimeout(() => {
-                            const product1Element = document.getElementById('product1');
-                            if (product1Element) {
-                              product1Element.click();
-                            }
-                          }, 500);
-                        }}
+                        href="https://sniperthink.com/intelligencesystem/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
                       >
                         <div className="font-medium text-sm">Intelligence Growth Engine</div>
-
                       </a>
                       <a
-                        href="#our-products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          // First scroll to products section
-                          document.getElementById('our-products')?.scrollIntoView({ behavior: 'smooth' });
-                          // Then activate product2 after a short delay
-                          setTimeout(() => {
-                            const product2Element = document.getElementById('product2');
-                            if (product2Element) {
-                              product2Element.click();
-                            }
-                          }, 500);
-                        }}
-                        className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200"
+                        href="https://sniperthink.com/aiagent/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
                       >
                         <div className="font-medium text-sm">AI Chat + Voice Agents</div>
 
@@ -225,59 +216,69 @@ export default function Header() {
             <nav className="flex flex-col items-center space-y-6 py-8 bg-[#0F0F11]/80">
               {navItems.map((item) => (
                 <div key={item.id} className="w-full">
-                  <a
-                    href={`#${item.id}`}
-                    onClick={() => setMenuOpen(false)}
-                    className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${active === item.id
-                      ? "text-white"
-                      : "text-gray-300 hover:text-[#91C499]"
-                      }`}
-                  >
-                    {item.label}
-                  </a>
-
-                  {/* Mobile Dropdown for Our Products */}
-                  {item.id === "our-products" && (
-                    <div className="mt-2 space-y-2">
-                      <a
-                        href="#our-products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setMenuOpen(false);
-                          // First scroll to products section
-                          document.getElementById('our-products')?.scrollIntoView({ behavior: 'smooth' });
-                          // Then activate product1 after a short delay
-                          setTimeout(() => {
-                            const product1Element = document.getElementById('product1');
-                            if (product1Element) {
-                              product1Element.click();
-                            }
-                          }, 500);
-                        }}
-                        className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
+                  {item.id === "our-products" ? (
+                    <>
+                      <button
+                        type="button"
+                        className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${active === item.id
+                          ? "text-white"
+                          : "text-gray-300 hover:text-[#91C499]"}
+                          flex items-center justify-center`}
+                        onClick={() => setMobileProductsOpen((open) => !open)}
+                        aria-expanded={mobileProductsOpen}
+                        aria-controls="mobile-products-dropdown"
+                        style={{ background: "transparent", border: "none", outline: "none" }}
                       >
-                        Intelligence Growth Engine
-                      </a>
-                      <a
-                        href="#our-products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setMenuOpen(false);
-                          // First scroll to products section
-                          document.getElementById('our-products')?.scrollIntoView({ behavior: 'smooth' });
-                          // Then activate product2 after a short delay
-                          setTimeout(() => {
-                            const product2Element = document.getElementById('product2');
-                            if (product2Element) {
-                              product2Element.click();
-                            }
-                          }, 500);
-                        }}
-                        className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
-                      >
-                        AI Chat + Voice Agents
-                      </a>
-                    </div>
+                        {item.label}
+                        <span className={`ml-2 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`}>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 7L9 10L12 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </button>
+                      {mobileProductsOpen && (
+                        <div id="mobile-products-dropdown" className="mt-2 space-y-2">
+                          <a
+                            href="https://sniperthink.com/intelligencesystem/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
+                          >
+                            Intelligence Growth Engine
+                          </a>
+                          <a
+                            href="https://sniperthink.com/aiagent/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
+                          >
+                            AI Chat + Voice Agents
+                          </a>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <a
+                      href={`#${item.id}`}
+                      onClick={e => {
+                        e.preventDefault();
+                        setMenuOpen(false);
+                        const el = document.getElementById(item.id);
+                        if (el) {
+                          const header = document.querySelector('header');
+                          const headerHeight = header ? header.offsetHeight : 64;
+                          const yOffset = -headerHeight;
+                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                      }}
+                      className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${active === item.id
+                        ? "text-white"
+                        : "text-gray-300 hover:text-[#91C499]"
+                        }`}
+                    >
+                      {item.label}
+                    </a>
                   )}
                 </div>
               ))}
@@ -285,9 +286,27 @@ export default function Header() {
                 href="https://calendly.com/admin-sniperthink/walk-through-for-demos?month=2025-09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#E1A940] to-[#FF6700] hover:from-[#FF6700] hover:to-[#E1A940] text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-6 py-3 rounded-[60px] cursor-pointer text-lg font-medium w-full max-w-xs inline-block text-center"
+                className="inline-flex items-center justify-center relative cursor-pointer transition-all duration-300 w-full max-w-xs"
+                style={{
+                  width: '135px',
+                  height: '44px',
+                  gap: '12px',
+                  paddingTop: '12px',
+                  paddingRight: '30px',
+                  paddingBottom: '12px',
+                  paddingLeft: '30px',
+                  borderRadius: '24px',
+                  border: '1px solid #E1A940C4',
+                  borderImageSource: 'linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)',
+                  borderImageSlice: '1',
+                  background: 'linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)',
+                  boxShadow: 'inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)',
+                  backdropFilter: 'blur(20px)'
+                }}
               >
-                Contact Us
+                <span className="font-medium text-white text-sm leading-5 whitespace-nowrap">
+                  Contact Us
+                </span>
               </a>
             </nav>
           </div>

@@ -13,15 +13,18 @@ export default function WhyChooseSection() {
   return (
     <div
       id="why-choose"
-      className="
-    relative flex flex-col lg:flex-row 
-    items-start justify-between
-    bg-transparent
-    px-5 lg:px-20
-    py-10 lg:py-20
-    w-full
-  "
+      className="relative flex flex-col lg:flex-row items-start justify-between bg-transparent px-5 lg:px-20 py-10 lg:py-20 w-full"
     >
+      {/* Mobile image before content */}
+      <div className="block lg:hidden w-full mb-8 flex justify-center items-center">
+        <Image
+          className="w-[90%] sm:w-[85%] h-auto max-w-full"
+          src="/img/right-image.png"
+          alt="Why choose illustration"
+          width={567}
+          height={473}
+        />
+      </div>
 
       {/* Decorative shape */}
       <div className="hidden lg:block absolute top-[250px] right-1 pt-20">
@@ -117,10 +120,10 @@ export default function WhyChooseSection() {
         </div>
       </div>
 
-      {/* Right image */}
-      <div className="flex-1 flex justify-center lg:justify-end items-center mt-8 lg:mt-0 z-10">
+      {/* Right image (desktop only) */}
+      <div className="hidden lg:flex flex-1 justify-end items-center mt-8 lg:mt-0 z-10">
         <Image
-          className="w-[90%] sm:w-[85%] lg:w-[600px] h-auto max-w-full"
+          className="lg:w-[600px] h-auto max-w-full"
           src="/img/right-image.png"
           alt="Why choose illustration"
           width={567}

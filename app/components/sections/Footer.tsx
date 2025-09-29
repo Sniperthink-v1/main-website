@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
                 href="/terms" 
                 className="text-gray-400 hover:text-[#1A6262] transition-colors duration-300 hover:underline decoration-[#1A6262]"
               >
-                Terms & Conditions
+                Terms of Use
               </a>
               <span className="text-gray-600">•</span>
               <a 
@@ -66,10 +66,10 @@ export const Footer: React.FC = () => {
                   </svg>
                 </div>
                 <a 
-                  href="mailto:hello@snipethink.com" 
+                  href="mailto:hello@sniperthink.com" 
                   className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-bold"
                 >
-                  hello@snipethink.com
+                  hello@sniperthink.com
                 </a>
               </div>
             </div>

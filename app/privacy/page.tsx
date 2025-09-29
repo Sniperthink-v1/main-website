@@ -135,7 +135,7 @@ export default function PrivacyPage() {
               Back to Home
             </Link>
             <Link href="/terms" className="text-white/80 hover:text-white">
-              Terms and Conditions
+              Terms of Use
             </Link>
           </div>
         </footer>
