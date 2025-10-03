@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 export default function AboutSniperThink() {
+  // Animation CSS for rotating SVG
+  // Add this style to the global CSS if you want to reuse it elsewhere
+  // Otherwise, use inline style or Tailwind's arbitrary value
   return (
     <section id="about-us" className="relative flex flex-col lg:flex-row items-center justify-center isolate overflow-hidden px-[10px] sm:px-[80px] lg:px-[80px] pt-10 pb-10 lg:pt-20 lg:pb-20" style={{
       width: '100%',
@@ -11,7 +14,7 @@ export default function AboutSniperThink() {
 
     }}>
 
-      {/* Rectangle Container */}
+      {/* Rectangle Container with rotating SVG animation */}
       <div className="absolute flex items-center justify-center pointer-events-none" style={{
         width: 'clamp(300px, 50vw, 650px)',
         height: 'clamp(300px, 50vw, 650px)',
@@ -21,15 +24,16 @@ export default function AboutSniperThink() {
         transform: 'translate(-50%, -50%)'
       }}>
         <img
-          src="/img/69-1@3x.svg"
+          src="/img/69@3x.png"
           alt="Abstract spherical design"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain animate-spin-slow"
           style={{
             width: '100%',
             height: '100%',
             opacity: 0.3,
             mixBlendMode: 'soft-light',
-            filter: 'brightness(2.8) contrast(2.1) saturate(2.2) blur(13px)',
+            filter: 'brightness(1.8) contrast(2.1) saturate(2.2) blur(13px)',
+            transition: 'transform 1.5s cubic-bezier(0.4,0,0.2,1)',
           }}
         />
       </div>

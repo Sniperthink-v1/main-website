@@ -6,18 +6,8 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HeroSection() {
-  // Typewriter animation for main heading
+  // Main heading text (no typewriter)
   const fullText = "Your business is growing, but are your systems ready to scale it?";
-  const [typedText, setTypedText] = useState("");
-  useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      setTypedText(fullText.slice(0, current + 1));
-      current++;
-      if (current === fullText.length) clearInterval(interval);
-    }, 35); // Adjust speed here
-    return () => clearInterval(interval);
-  }, []);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -141,8 +131,7 @@ export default function HeroSection() {
 
           {/* Main heading with typewriter animation */}
           <h1 className="relative w-full max-w-full font-poppins text-white text-center mx-auto px-4 text-2xl md:text-4xl lg:text-5xl xl:text-[62px] font-semibold leading-medium md:leading-loose lg:leading-[60px] xl:leading-[70px]">
-            <span>{typedText}</span>
-            <span className="inline-block animate-pulse" style={{width: '1ch'}}>|</span>
+            <span>{fullText}</span>
           </h1>
 
           <p className="relative w-full bg-[linear-gradient(90deg,#7BAF7F_24.04%,#FF8633_77.88%,#F6CC7C_100%)] bg-clip-text text-transparent font-poppins font-semibold text-lg md:text-xl lg:text-2xl xl:text-[24px] text-center lg:leading-[50px] md:leading-[28px]">
