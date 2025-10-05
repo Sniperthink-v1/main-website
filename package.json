@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:aiagents": "pnpm --prefix aiagents run build",
+    "build:all": "pnpm run build && pnpm run build:aiagents",
+    "vercel-build": "pnpm run build:all"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
