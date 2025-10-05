@@ -1,9 +1,12 @@
 {
-  "version": 2,
-  "routes": [
+  "builds": [
     {
-      "src": "^/aiagents(?:/.*)?$",
-      "dest": "/aiagents"
+      "src": "aiagents/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
     }
   ]
 }
