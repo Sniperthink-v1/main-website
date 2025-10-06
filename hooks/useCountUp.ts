@@ -218,4 +218,8 @@ export const useCountupOnVisible = (
     elementRef,
     ...countup,
   };
+<<<<<<< HEAD
 }; 
+=======
+}; 
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631

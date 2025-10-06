@@ -24,6 +24,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+<<<<<<< HEAD
 
       // Fallback active section detection
       const sections = navItems
@@ -43,14 +44,37 @@ export default function Header() {
           rect.top <= headerHeight + 100 &&
           rect.bottom > headerHeight + 100
         ) {
+=======
+      
+      // Fallback active section detection
+      const sections = navItems.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id)
+      })).filter(section => section.element);
+
+      let currentSection = sections[0]?.id || "section-hero";
+      
+      for (const section of sections) {
+        const rect = section.element!.getBoundingClientRect();
+        const headerHeight = 64; // Header height
+        
+        if (rect.top <= headerHeight + 100 && rect.bottom > headerHeight + 100) {
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
           currentSection = section.id;
           break;
         }
       }
+<<<<<<< HEAD
 
       setActive(currentSection);
     };
 
+=======
+      
+      setActive(currentSection);
+    };
+    
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
@@ -65,9 +89,15 @@ export default function Header() {
           }
         });
       },
+<<<<<<< HEAD
       {
         threshold: [0, 0.25, 0.5, 0.75, 1],
         rootMargin: "-80px 0px -50% 0px",
+=======
+      { 
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: '-80px 0px -50% 0px'
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
       }
     );
 
@@ -92,11 +122,18 @@ export default function Header() {
       />
 
       <header
+<<<<<<< HEAD
         className={`fixed top-0 left-0 z-[9999] w-full h-[64px] transition-all duration-300 px-[clamp(16px,4vw,80px)] ${
           scrolled
             ? "bg-[#0F0F11]/80 border-b border-gray-700/50 backdrop-blur-lg shadow-md"
             : "bg-[#0F0F11]/80 border-b border-gray-700/50 backdrop-blur-lg"
         }`}
+=======
+        className={`fixed top-0 left-0 z-[9999] w-full h-[64px] transition-all duration-300 px-[clamp(16px,4vw,80px)] ${scrolled
+          ? "bg-[#0F0F11]/80 border-b border-gray-700/50 backdrop-blur-lg shadow-md"
+          : "bg-[#0F0F11]/80 border-b border-gray-700/50 backdrop-blur-lg"
+          }`}
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
       >
         <div className="max-w-full mx-auto flex items-center justify-between relative h-full">
           {/* Left - Logo */}
@@ -116,6 +153,7 @@ export default function Header() {
               <div key={item.id} className="relative group">
                 <a
                   href={`#${item.id}`}
+<<<<<<< HEAD
                   onClick={(e) => {
                     e.preventDefault();
                     const el = document.getElementById(item.id);
@@ -135,6 +173,23 @@ export default function Header() {
                       ? "border-[#004A65] text-white"
                       : "border-transparent text-gray-300 hover:text-white"
                   }`}
+=======
+                  onClick={e => {
+                    e.preventDefault();
+                    const el = document.getElementById(item.id);
+                    if (el) {
+                      const header = document.querySelector('header');
+                      const headerHeight = header ? header.offsetHeight : 64;
+                      const yOffset = -headerHeight;
+                      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`transition-all duration-300 hover:scale-105 font-medium cursor-pointer whitespace-nowrap pb-2 border-b-[3px] ${active === item.id
+                    ? "border-[#004A65] text-white"
+                    : "border-transparent text-gray-300 hover:text-white"
+                    }`}
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                 >
                   {item.label}
                 </a>
@@ -149,19 +204,31 @@ export default function Header() {
                         rel="noopener noreferrer"
                         className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
                       >
+<<<<<<< HEAD
                         <div className="font-medium text-sm">
                           Intelligence Growth Engine
                         </div>
                       </a>
                       <a
                         href="https://sniperthink.com/aiagents/"
+=======
+                        <div className="font-medium text-sm">Intelligence Growth Engine</div>
+                      </a>
+                      <a
+                        href="https://sniperthink.com/aiagent/"
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
                       >
+<<<<<<< HEAD
                         <div className="font-medium text-sm">
                           AI Chat + Voice Agents
                         </div>
+=======
+                        <div className="font-medium text-sm">AI Chat + Voice Agents</div>
+
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                       </a>
                     </div>
                   </div>
@@ -178,6 +245,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center relative cursor-pointer transition-all duration-300"
               style={{
+<<<<<<< HEAD
                 width: "135px",
                 height: "44px",
                 gap: "12px",
@@ -195,6 +263,22 @@ export default function Header() {
                 boxShadow:
                   "inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)",
                 backdropFilter: "blur(20px)",
+=======
+                width: '135px',
+                height: '44px',
+                gap: '12px',
+                paddingTop: '12px',
+                paddingRight: '30px',
+                paddingBottom: '12px',
+                paddingLeft: '30px',
+                borderRadius: '24px',
+                border: '1px solid #E1A940C4',
+                borderImageSource: 'linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)',
+                borderImageSlice: '1',
+                background: 'linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)',
+                boxShadow: 'inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)',
+                backdropFilter: 'blur(20px)'
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
               }}
             >
               <span className="font-medium text-white text-sm leading-5 whitespace-nowrap">
@@ -221,12 +305,22 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div
+<<<<<<< HEAD
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out absolute inset-x-0 top-full rounded-b-lg ${
             menuOpen
               ? "max-h-[600px] opacity-100 visible"
               : "max-h-0 opacity-0 invisible"
           }`}
         >
+=======
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out absolute inset-x-0 top-full rounded-b-lg ${menuOpen
+            ? "max-h-[600px] opacity-100 visible"
+            : "max-h-0 opacity-0 invisible"
+            }`}
+        >
+
+
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
           <div className="bg-[#0F0F11]/95 backdrop-blur-lg border-b border-gray-700/50 shadow-lg">
             <nav className="flex flex-col items-center space-y-6 py-8 bg-[#0F0F11]/80">
               {navItems.map((item) => (
@@ -235,15 +329,22 @@ export default function Header() {
                     <>
                       <button
                         type="button"
+<<<<<<< HEAD
                         className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${
                           active === item.id
                             ? "text-white"
                             : "text-gray-300 hover:text-[#91C499]"
                         }
+=======
+                        className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${active === item.id
+                          ? "text-white"
+                          : "text-gray-300 hover:text-[#91C499]"}
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                           flex items-center justify-center`}
                         onClick={() => setMobileProductsOpen((open) => !open)}
                         aria-expanded={mobileProductsOpen}
                         aria-controls="mobile-products-dropdown"
+<<<<<<< HEAD
                         style={{
                           background: "transparent",
                           border: "none",
@@ -270,14 +371,26 @@ export default function Header() {
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             />
+=======
+                        style={{ background: "transparent", border: "none", outline: "none" }}
+                      >
+                        {item.label}
+                        <span className={`ml-2 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`}>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 7L9 10L12 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                           </svg>
                         </span>
                       </button>
                       {mobileProductsOpen && (
+<<<<<<< HEAD
                         <div
                           id="mobile-products-dropdown"
                           className="mt-2 space-y-2"
                         >
+=======
+                        <div id="mobile-products-dropdown" className="mt-2 space-y-2">
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                           <a
                             href="https://sniperthink.com/intelligencesystem/"
                             target="_blank"
@@ -300,11 +413,16 @@ export default function Header() {
                   ) : (
                     <a
                       href={`#${item.id}`}
+<<<<<<< HEAD
                       onClick={(e) => {
+=======
+                      onClick={e => {
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                         e.preventDefault();
                         setMenuOpen(false);
                         const el = document.getElementById(item.id);
                         if (el) {
+<<<<<<< HEAD
                           const header = document.querySelector("header");
                           const headerHeight = header
                             ? header.offsetHeight
@@ -322,6 +440,19 @@ export default function Header() {
                           ? "text-white"
                           : "text-gray-300 hover:text-[#91C499]"
                       }`}
+=======
+                          const header = document.querySelector('header');
+                          const headerHeight = header ? header.offsetHeight : 64;
+                          const yOffset = -headerHeight;
+                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                      }}
+                      className={`transition-all duration-300 font-medium text-xl cursor-pointer w-full text-center py-2 block ${active === item.id
+                        ? "text-white"
+                        : "text-gray-300 hover:text-[#91C499]"
+                        }`}
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                     >
                       {item.label}
                     </a>
@@ -334,6 +465,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center relative cursor-pointer transition-all duration-300 w-full max-w-xs"
                 style={{
+<<<<<<< HEAD
                   width: "135px",
                   height: "44px",
                   gap: "12px",
@@ -351,6 +483,22 @@ export default function Header() {
                   boxShadow:
                     "inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)",
                   backdropFilter: "blur(20px)",
+=======
+                  width: '135px',
+                  height: '44px',
+                  gap: '12px',
+                  paddingTop: '12px',
+                  paddingRight: '30px',
+                  paddingBottom: '12px',
+                  paddingLeft: '30px',
+                  borderRadius: '24px',
+                  border: '1px solid #E1A940C4',
+                  borderImageSource: 'linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)',
+                  borderImageSlice: '1',
+                  background: 'linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)',
+                  boxShadow: 'inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)',
+                  backdropFilter: 'blur(20px)'
+>>>>>>> e9e8ed7364915a0e4cd8071feab095e074073631
                 }}
               >
                 <span className="font-medium text-white text-sm leading-5 whitespace-nowrap">
