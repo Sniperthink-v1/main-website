@@ -5,7 +5,7 @@
       "use": "@vercel/next"
     },
     {
-      "src": "package.json",
+      "src": "main-website/package.json",
       "use": "@vercel/next"
     }
   ]
