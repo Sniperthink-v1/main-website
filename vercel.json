@@ -1,12 +1,13 @@
 {
   "builds": [
     {
-      "src": "aiagents/package.json",
-      "use": "@vercel/next"
-    },
-    {
-      "src": "main-website/package.json",
+      "src": "package.json",
       "use": "@vercel/next"
     }
+  ],
+  "routes": [
+    { "src": "/aiagents/(.*)", "dest": "/aiagents/$1" },
+    { "src": "/6LayerLP/(.*)", "dest": "/6LayerLP/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

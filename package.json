@@ -1,0 +1,17 @@
+{
+  "name": "sniperthink-monorepo",
+  "private": true,
+  "workspaces": [
+    "main-website1",
+    "aiagents",
+    "6LayerLP",
+    "product-*"
+  ],
+  "scripts": {
+    "build": "node ./scripts/merge-products.js && cd main-website1 && pnpm run build",
+    "dev": "cd main-website1 && pnpm run dev",
+    "dev:aiagents": "cd aiagents && pnpm run dev",
+    "dev:6LayerLP": "cd 6LayerLP && pnpm run dev",
+    "merge": "node ./scripts/merge-products.js"
+  }
+}

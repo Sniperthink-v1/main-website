@@ -1,0 +1,5 @@
+packages:
+  - 'main-website1'
+  - '6LayerLP'
+  - 'aiagents'
+  - 'product-*'
