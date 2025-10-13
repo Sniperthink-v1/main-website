@@ -8,14 +8,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
-    const targetId = href.replace('#', '');
+    const targetId = href.replace("#", "");
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -25,32 +28,35 @@ export default function Header() {
   };
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Intelligence System", href: "#layers" },
-    { name: "Why Us", href: "#why-us" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
-   
+    { name: "Home", href: "#section-hero" },
+    { name: "About Us", href: "#about-us" },
+    { name: "Why Us", href: "#why-choose" },
+    { name: "Testimonials", href: "#testimonials-section" },
+    { name: "FAQ", href: "#faq-section" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[1000] border-b border-gray-700/50 backdrop-blur-lg" style={{
-      width: '100%',
-      height: '64px',
-      opacity: 1,
-      paddingTop: '8px',
-      paddingRight: 'clamp(16px, 4vw, 80px)',
-      paddingBottom: '8px',
-      paddingLeft: 'clamp(16px, 4vw, 80px)',
-      background: 'rgba(10, 10, 10, 0.6)',
-      backdropFilter: 'blur(56px)',
-      boxShadow: '0px 6.65px 5.32px 0px #00000007, 0px 22.34px 17.87px 0px #0000000B, 0px 100px 80px 0px #00000012'
-    }}>
+    <header
+      className="fixed top-0 left-0 right-0 z-[1000] border-b border-gray-700/50 backdrop-blur-lg"
+      style={{
+        width: "100%",
+        height: "64px",
+        opacity: 1,
+        paddingTop: "8px",
+        paddingRight: "clamp(16px, 4vw, 80px)",
+        paddingBottom: "8px",
+        paddingLeft: "clamp(16px, 4vw, 80px)",
+        background: "rgba(10, 10, 10, 0.6)",
+        backdropFilter: "blur(56px)",
+        boxShadow:
+          "0px 6.65px 5.32px 0px #00000007, 0px 22.34px 17.87px 0px #0000000B, 0px 100px 80px 0px #00000012",
+      }}
+    >
       <div className="max-w-full mx-auto flex items-stretch justify-between relative">
         {/* Logo */}
         <div className="flex items-center group cursor-pointer pl-0 sm:pl-2 md:pl-4 lg:pl-6 xl:pl-8">
           <img
-            src="/images/logo-white.png"
+            src="/img/logo.svg"
             alt="SniperThink Logo"
             className="h-7 w-auto"
           />
@@ -80,20 +86,23 @@ export default function Header() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center relative cursor-pointer transition-all duration-300"
             style={{
-              width: '135px',
-              height: '44px',
-              gap: '12px',
-              paddingTop: '12px',
-              paddingRight: '30px',
-              paddingBottom: '12px',
-              paddingLeft: '30px',
-              borderRadius: '24px',
-              border: '1px solid #E1A940C4',
-              borderImageSource: 'linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)',
-              borderImageSlice: '1',
-              background: 'linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)',
-              boxShadow: 'inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)',
-              backdropFilter: 'blur(20px)'
+              width: "135px",
+              height: "44px",
+              gap: "12px",
+              paddingTop: "12px",
+              paddingRight: "30px",
+              paddingBottom: "12px",
+              paddingLeft: "30px",
+              borderRadius: "24px",
+              border: "1px solid #E1A940C4",
+              borderImageSource:
+                "linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)",
+              borderImageSlice: "1",
+              background:
+                "linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)",
+              boxShadow:
+                "inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)",
+              backdropFilter: "blur(20px)",
             }}
           >
             <span className="font-medium text-white text-sm leading-5 whitespace-nowrap">
@@ -108,14 +117,19 @@ export default function Header() {
           onClick={() => setMenuOpen((open) => !open)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X className="w-7 h-7 text-gray-300" /> : <Menu className="w-7 h-7 text-gray-300" />}
+          {menuOpen ? (
+            <X className="w-7 h-7 text-gray-300" />
+          ) : (
+            <Menu className="w-7 h-7 text-gray-300" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu with Transition */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
         <div className="bg-[#0F0F11]/95 backdrop-blur-lg border-b border-gray-700/50 shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
@@ -138,20 +152,23 @@ export default function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center relative cursor-pointer transition-all duration-300"
               style={{
-                width: '135px',
-                height: '44px',
-                gap: '12px',
-                paddingTop: '12px',
-                paddingRight: '30px',
-                paddingBottom: '12px',
-                paddingLeft: '30px',
-                borderRadius: '24px',
-                border: '1px solid #E1A940C4',
-                borderImageSource: 'linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)',
-                borderImageSlice: '1',
-                background: 'linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)',
-                boxShadow: 'inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)',
-                backdropFilter: 'blur(20px)'
+                width: "135px",
+                height: "44px",
+                gap: "12px",
+                paddingTop: "12px",
+                paddingRight: "30px",
+                paddingBottom: "12px",
+                paddingLeft: "30px",
+                borderRadius: "24px",
+                border: "1px solid #E1A940C4",
+                borderImageSource:
+                  "linear-gradient(180deg, #E1A940 0%, #E1A940 77%, #FFFFFF 20%, linear-gradient 30%, #FF6700 0%, #FF8633 70%)",
+                borderImageSlice: "1",
+                background:
+                  "linear-gradient(180deg, rgba(255, 103, 0, 0) 0%, rgba(255, 103, 0, 1) 100%)",
+                boxShadow:
+                  "inset 0 10px 30px 0 rgba(255, 103, 0, 0.7), 0 10px 27.6px 0 rgba(0, 0, 0, 0.22)",
+                backdropFilter: "blur(20px)",
               }}
               onClick={() => setMenuOpen(false)}
             >
@@ -162,11 +179,11 @@ export default function Header() {
           </nav>
         </div>
       </div>
-      
+
       {/* Contact Us Modal */}
-      <ContactUs 
-        isOpen={contactModalOpen} 
-        onClose={() => setContactModalOpen(false)} 
+      <ContactUs
+        isOpen={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
       />
     </header>
   );
