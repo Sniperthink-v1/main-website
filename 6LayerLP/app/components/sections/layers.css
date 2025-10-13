@@ -1,0 +1,53 @@
+/* Mobile responsiveness styles for Layers section */
+.scrollable-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.scrollable-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+}
+
+.min-width-mobile {
+  min-width: 300px;
+  width: 100%;
+}
+
+/* Add padding to the input layer illustration */
+.input-layer-padding {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.input-layer-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .min-width-mobile {
+    min-width: 100%;
+  }
+  .input-layer-img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .input-layer-img {
+    max-width: 220px;
+  }
+}
