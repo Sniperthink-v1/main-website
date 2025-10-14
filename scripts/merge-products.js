@@ -11,12 +11,11 @@ const productsToMerge = [
     sourceFolder: path.join(repoRoot, "6LayerLP"),
     targetPath: "6LayerLP", // will be served at /6LayerLP
   },
-  // Uncomment when aiagents folder is added:
-  // {
-  //   name: "aiagents",
-  //   sourceFolder: path.join(repoRoot, "aiagents"),
-  //   targetPath: "aiagents", // will be served at /aiagents
-  // },
+  {
+    name: "aiagents",
+    sourceFolder: path.join(repoRoot, "aiagents"),
+    targetPath: "aiagents", // will be served at /aiagents
+  },
   // Add more products here as needed:
   // {
   //   name: 'product-name',

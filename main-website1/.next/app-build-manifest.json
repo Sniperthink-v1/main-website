@@ -33,6 +33,23 @@
       "static/chunks/main-app.js",
       "static/chunks/app/6LayerLP/not-found.js"
     ],
+    "/aiagents/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/aiagents/page.css",
+      "static/chunks/app/aiagents/page.js"
+    ],
+    "/aiagents/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/aiagents/layout.css",
+      "static/chunks/app/aiagents/layout.js"
+    ],
+    "/aiagents/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/aiagents/not-found.js"
+    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
