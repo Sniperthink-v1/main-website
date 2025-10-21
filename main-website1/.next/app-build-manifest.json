@@ -16,40 +16,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/6LayerLP/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/6LayerLP/page.css",
-      "static/chunks/app/6LayerLP/page.js"
-    ],
-    "/6LayerLP/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/6LayerLP/layout.css",
-      "static/chunks/app/6LayerLP/layout.js"
-    ],
-    "/6LayerLP/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/6LayerLP/not-found.js"
-    ],
-    "/aiagents/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/aiagents/page.css",
-      "static/chunks/app/aiagents/page.js"
-    ],
-    "/aiagents/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/aiagents/layout.css",
-      "static/chunks/app/aiagents/layout.js"
-    ],
-    "/aiagents/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/aiagents/not-found.js"
-    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

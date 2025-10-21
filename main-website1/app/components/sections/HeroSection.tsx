@@ -21,11 +21,33 @@ export default function HeroSection() {
     }
   };
 
-  // Use the countup hooks correctly with simple parameters
-  const revenueGrowth = useCountup(200, 2500);
-  const speedToMarket = useCountup(3, 2000);
-  const newLeads = useCountup(84, 2500);
-  const activeUsers = useCountup(20000, 3000);
+  const [isStatsVisible, setIsStatsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  const revenueGrowth = useCountup({ end: 200, duration: 2500, delay: 200, autoStart: false });
+  const speedToMarket = useCountup({ end: 3, duration: 2000, delay: 400, autoStart: false });
+  const newLeads = useCountup({ end: 84, duration: 2500, delay: 600, autoStart: false });
+  const activeUsers = useCountup({ end: 20000, duration: 3000, delay: 800, autoStart: false });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isStatsVisible) {
+          setIsStatsVisible(true);
+          setTimeout(() => {
+            revenueGrowth.start();
+            speedToMarket.start();
+            newLeads.start();
+            activeUsers.start();
+          }, 100);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) observer.observe(statsRef.current);
+    return () => { if (statsRef.current) observer.unobserve(statsRef.current); }
+  }, [isStatsVisible, revenueGrowth, speedToMarket, newLeads, activeUsers]);
 
   return (
     <div
@@ -157,7 +179,8 @@ export default function HeroSection() {
         </a>
 
         {/* Stats section */}
-        <div
+        <div 
+          ref={statsRef}
           className="inline-flex flex-col items-center gap-8 md:gap-[10px] w-full max-w-4xl sm:min-h-[100px]"
           style={{
             flexDirection: "column",
@@ -166,10 +189,7 @@ export default function HeroSection() {
           }}
         >
           <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-[49px] w-full px-4">
-            <div
-              ref={revenueGrowth.ref}
-              className="flex flex-col w-full md:w-[158px] items-center"
-            >
+            <div className="flex flex-col w-full md:w-[158px] items-center">
               <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
                 {revenueGrowth.count}%
               </div>
@@ -177,10 +197,7 @@ export default function HeroSection() {
                 Revenue Growth
               </div>
             </div>
-            <div
-              ref={speedToMarket.ref}
-              className="flex flex-col w-full md:w-[159px] items-center"
-            >
+            <div className="flex flex-col w-full md:w-[159px] items-center">
               <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
                 {speedToMarket.count}X
               </div>
@@ -188,10 +205,7 @@ export default function HeroSection() {
                 Speed to Market
               </div>
             </div>
-            <div
-              ref={newLeads.ref}
-              className="flex flex-col w-full md:w-[114px] items-center"
-            >
+            <div className="flex flex-col w-full md:w-[114px] items-center">
               <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
                 {newLeads.count}%
               </div>
@@ -199,12 +213,9 @@ export default function HeroSection() {
                 New Leads
               </div>
             </div>
-            <div
-              ref={activeUsers.ref}
-              className="flex flex-col w-full md:w-[127px] items-center"
-            >
+            <div className="flex flex-col w-full md:w-[120px] items-center">
               <div className="relative w-fit -mt-px bg-gradient-to-r from-[rgba(255,103,0,1)] to-[rgba(237,186,90,1)] bg-clip-text text-transparent font-poppins font-semibold text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[51px] whitespace-nowrap">
-                {(activeUsers.count / 1000).toFixed(0)}K+
+                {activeUsers.count.toLocaleString()}+
               </div>
               <div className="relative w-fit font-poppins font-semibold text-white text-xs md:text-sm leading-tight md:leading-[22px] whitespace-nowrap text-center">
                 Active Users
