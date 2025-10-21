@@ -24,10 +24,30 @@ export default function HeroSection() {
   const [isStatsVisible, setIsStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  const revenueGrowth = useCountup({ end: 200, duration: 2500, delay: 200, autoStart: false });
-  const speedToMarket = useCountup({ end: 3, duration: 2000, delay: 400, autoStart: false });
-  const newLeads = useCountup({ end: 84, duration: 2500, delay: 600, autoStart: false });
-  const activeUsers = useCountup({ end: 20000, duration: 3000, delay: 800, autoStart: false });
+  const revenueGrowth = useCountup({
+    end: 200,
+    duration: 2500,
+    delay: 200,
+    autoStart: false,
+  });
+  const speedToMarket = useCountup({
+    end: 3,
+    duration: 2000,
+    delay: 400,
+    autoStart: false,
+  });
+  const newLeads = useCountup({
+    end: 84,
+    duration: 2500,
+    delay: 600,
+    autoStart: false,
+  });
+  const activeUsers = useCountup({
+    end: 20000,
+    duration: 3000,
+    delay: 800,
+    autoStart: false,
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,7 +66,9 @@ export default function HeroSection() {
     );
 
     if (statsRef.current) observer.observe(statsRef.current);
-    return () => { if (statsRef.current) observer.unobserve(statsRef.current); }
+    return () => {
+      if (statsRef.current) observer.unobserve(statsRef.current);
+    };
   }, [isStatsVisible, revenueGrowth, speedToMarket, newLeads, activeUsers]);
 
   return (
@@ -179,7 +201,7 @@ export default function HeroSection() {
         </a>
 
         {/* Stats section */}
-        <div 
+        <div
           ref={statsRef}
           className="inline-flex flex-col items-center gap-8 md:gap-[10px] w-full max-w-4xl sm:min-h-[100px]"
           style={{

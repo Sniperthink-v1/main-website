@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 interface UseCountupOptions {
   start?: number;
   end: number;
   duration?: number;
   delay?: number;
-  easing?: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut';
+  easing?: "linear" | "easeIn" | "easeOut" | "easeInOut";
   onComplete?: () => void;
   autoStart?: boolean;
 }
@@ -24,9 +24,9 @@ export const useCountup = ({
   end,
   duration = 2000,
   delay = 0,
-  easing = 'easeOut',
+  easing = "easeOut",
   onComplete,
-  autoStart = false
+  autoStart = false,
 }: UseCountupOptions): UseCountupReturn => {
   const [count, setCount] = useState(start);
   const [isCounting, setIsCounting] = useState(false);
@@ -40,7 +40,8 @@ export const useCountup = ({
     linear: (t: number) => t,
     easeIn: (t: number) => t * t,
     easeOut: (t: number) => 1 - Math.pow(1 - t, 2),
-    easeInOut: (t: number) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+    easeInOut: (t: number) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
   };
 
   const animate = (timestamp: number) => {
@@ -70,12 +71,12 @@ export const useCountup = ({
 
   const startAnimation = () => {
     if (isCounting) return;
-    
+
     setIsCounting(true);
     setIsPaused(false);
     startTimeRef.current = undefined;
     pauseTimeRef.current = undefined;
-    
+
     setTimeout(() => {
       animationRef.current = requestAnimationFrame(animate);
     }, delay);
@@ -116,7 +117,7 @@ export const useCountup = ({
     if (autoStart) {
       startAnimation();
     }
-    
+
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
@@ -130,6 +131,6 @@ export const useCountup = ({
     start: startAnimation,
     reset,
     pause,
-    resume
+    resume,
   };
 };
