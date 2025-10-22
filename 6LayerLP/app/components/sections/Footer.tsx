@@ -6,7 +6,6 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-20 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          
           {/* Left Section - Logo, Tagline, Legal Links, Contact */}
           <div className="lg:col-span-5 space-y-8">
             {/* Logo and Tagline */}
@@ -19,21 +18,22 @@ export const Footer: React.FC = () => {
                 />
               </a>
               <p className="text-gray-300 text-base leading-relaxed max-w-md font-light">
-                SniperThink delivers clarity, automation, and AI-driven execution for fast-moving teams. Your edge starts here.
+                SniperThink delivers clarity, automation, and AI-driven
+                execution for fast-moving teams. Your edge starts here.
               </p>
             </div>
 
             {/* Legal Links */}
             <div className="flex items-center gap-6 text-sm">
-              <a 
-                href="/terms" 
+              <a
+                href="/terms"
                 className="text-gray-400 hover:text-[#1A6262] transition-colors duration-300 hover:underline decoration-[#1A6262]"
               >
                 Terms of Use
               </a>
               <span className="text-gray-600">•</span>
-              <a 
-                href="/privacy" 
+              <a
+                href="/privacy"
                 className="text-gray-400 hover:text-[#1A6262] transition-colors duration-300 hover:underline decoration-[#1A6262]"
               >
                 Privacy Policy
@@ -45,12 +45,16 @@ export const Footer: React.FC = () => {
               {/* Phone */}
               <div className="flex items-center gap-2 group">
                 <div className="w-5 h-5 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#1A6262] group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  <svg
+                    className="w-4 h-4 text-[#1A6262] group-hover:text-white transition-colors duration-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
                 </div>
-                <a 
-                  href="tel:+919873587694" 
+                <a
+                  href="tel:+919873587694"
                   className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-bold"
                 >
                   +91 9873587694
@@ -60,13 +64,17 @@ export const Footer: React.FC = () => {
               {/* Email */}
               <div className="flex items-center gap-2 group">
                 <div className="w-5 h-5 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#1A6262] group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  <svg
+                    className="w-4 h-4 text-[#1A6262] group-hover:text-white transition-colors duration-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
                 </div>
-                <a 
-                  href="mailto:hello@sniperthink.com" 
+                <a
+                  href="mailto:hello@sniperthink.com"
                   className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-bold"
                 >
                   hello@sniperthink.com
@@ -82,56 +90,114 @@ export const Footer: React.FC = () => {
             {/* Desktop Layout - 2 Column Grid */}
             <div className="hidden md:grid grid-cols-2 gap-x-12 gap-y-6">
               <div className="space-y-6">
-                <a 
-                  href="#home" 
+                <a
+                  href="#home"
                   className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-2 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300 ">Home</span>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300 ">
+                    Home
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
 
-                <a 
-                  href="#layers" 
+                <a
+                  href="#layers"
                   className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-2 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">Intelligence System</span>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">
+                    Intelligence System
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
-
-                
               </div>
-              
+
               <div className="space-y-6">
-                <a 
-                  href="#why-us" 
+                <a
+                  href="#why-us"
                   className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-2 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">Why Us</span>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">
+                    Why Us
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
-                <a 
-                  href="#testimonials" 
+                <a
+                  href="#testimonials"
                   className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-2 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">Testimonials</span>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">
+                    Testimonials
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
-                
-                <a 
-                  href="#faq" 
+
+                <a
+                  href="#faq"
                   className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-2 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">FAQs</span>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">
+                    FAQs
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
               </div>
@@ -139,63 +205,135 @@ export const Footer: React.FC = () => {
 
             {/* Mobile Layout - Single Column Stack */}
             <div className="md:hidden space-y-4">
-              <a 
-                href="#home" 
+              <a
+                href="#home"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Home</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Home
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
-              
-              <a 
-                href="#products" 
+
+              <a
+                href="#products"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Pain Points</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Pain Points
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
-              
-              <a 
-                href="#layers" 
+
+              <a
+                href="#layers"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Layers</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Layers
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
-              
-              <a 
-                href="#why-us" 
+
+              <a
+                href="#why-us"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Why Us</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Why Us
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
-              
-              <a 
-                href="#testimonials" 
+
+              <a
+                href="#testimonials"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Testimonials</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  Testimonials
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
-              
-              <a 
-                href="#faq" 
+
+              <a
+                href="#faq"
                 className="group flex items-center justify-between text-gray-300 hover:text-white transition-all duration-300 text-sm font-normal py-3 px-4 rounded-lg hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-[#1A6262] focus:ring-opacity-50 border-b border-gray-700/50"
               >
-                <span className="group-hover:translate-x-1 transition-transform duration-300">FAQs</span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  FAQs
+                </span>
+                <svg
+                  className="w-4 h-4 text-gray-500 group-hover:text-[#1A6262] group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -207,7 +345,6 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Section - Copyright and Social Media */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-4">
-          
           {/* Copyright - Left Aligned */}
           <div className="text-center md:text-left order-2 md:order-1">
             <p className="text-gray-500 text-xs md:text-sm font-light tracking-wide">
@@ -217,8 +354,10 @@ export const Footer: React.FC = () => {
 
           {/* Social Media - Right Aligned */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 order-1 md:order-2">
-            <span className="text-gray-400 text-sm font-light whitespace-nowrap">Connect with us:</span>
-            
+            <span className="text-gray-400 text-sm font-light whitespace-nowrap">
+              Connect with us:
+            </span>
+
             <div className="flex items-center gap-5">
               <a
                 href="https://www.facebook.com/sniperthink"
@@ -227,13 +366,13 @@ export const Footer: React.FC = () => {
                 aria-label="Follow us on Facebook"
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
-                <img 
-                  src="/6LayerLP/images/facebook.svg" 
-                  alt="Facebook" 
+                <img
+                  src="/6LayerLP/images/facebook.svg"
+                  alt="Facebook"
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />
               </a>
-              
+
               <a
                 href="https://www.instagram.com/sniperthink/"
                 target="_blank"
@@ -241,13 +380,13 @@ export const Footer: React.FC = () => {
                 aria-label="Follow us on Instagram"
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
-                <img 
-                  src="/6LayerLP/images/insta.svg" 
-                  alt="Instagram" 
+                <img
+                  src="/6LayerLP/images/insta.svg"
+                  alt="Instagram"
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />
               </a>
-              
+
               <a
                 href="https://www.linkedin.com/company/sniperthink/"
                 target="_blank"
@@ -255,9 +394,9 @@ export const Footer: React.FC = () => {
                 aria-label="Follow us on LinkedIn"
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
-                <img 
-                  src="/6LayerLP/images/linkedin.svg" 
-                  alt="LinkedIn" 
+                <img
+                  src="/6LayerLP/images/linkedin.svg"
+                  alt="LinkedIn"
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />
               </a>
