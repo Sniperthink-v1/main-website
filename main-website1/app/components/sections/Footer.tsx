@@ -50,10 +50,10 @@ export const Footer: React.FC = () => {
                   </svg>
                 </div>
                 <a 
-                  href="tel:+919873587694" 
+                  href="tel:+919871752812" 
                   className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-bold"
                 >
-                  +91 9873587694
+                  +91 9871752812
                 </a>
               </div>
 
