@@ -1,6 +1,6 @@
 "use client";
 
-import useCountUp from "../../../hooks/useCountUp";
+import useCountUp from "../../../../hooks/aiagents/useCountUp";
 import React from "react";
 
 export const AnimatedMetrics: React.FC = () => {
