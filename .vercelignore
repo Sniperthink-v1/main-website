@@ -1,0 +1,11 @@
+# Ignore .next directories
+.next
+**/.next
+
+# Ignore node_modules
+node_modules
+**/node_modules
+
+# Ignore build artifacts
+.vercel
+**/.vercel
