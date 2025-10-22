@@ -17,7 +17,7 @@ const Layers = () => {
         <div className="bg-black p-2 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-700">
           <div className="flex justify-center items-center">
             <img 
-              src="/images/INPUT Layer.png" 
+              src="/6LayerLP/images/INPUT Layer.png" 
               alt="Input Layer Visualization" 
               className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] h-auto"
             />

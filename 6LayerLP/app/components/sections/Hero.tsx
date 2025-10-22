@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="relative">
                 <div className="relative w-full h-[400px] sm:h-[500px]">
                   <Image 
-                    src="/images/product-brief.png"
+                    src="/6LayerLP/images/product-brief.png"
                     alt="SniperThink Product Brief"
                     fill
                     className="object-contain rounded-lg"

@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-6">
               <a href="#section-hero" className="inline-block cursor-pointer">
                 <img
-                  src="/images/logo.png"
+                  src="/6LayerLP/images/logo.png"
                   alt="SniperThink Logo"
                   className="h-8 w-auto"
                 />
@@ -228,7 +228,7 @@ export const Footer: React.FC = () => {
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
                 <img 
-                  src="/images/facebook.svg" 
+                  src="/6LayerLP/images/facebook.svg" 
                   alt="Facebook" 
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />
@@ -242,7 +242,7 @@ export const Footer: React.FC = () => {
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
                 <img 
-                  src="/images/insta.svg" 
+                  src="/6LayerLP/images/insta.svg" 
                   alt="Instagram" 
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />
@@ -256,7 +256,7 @@ export const Footer: React.FC = () => {
                 className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none"
               >
                 <img 
-                  src="/images/linkedin.svg" 
+                  src="/6LayerLP/images/linkedin.svg" 
                   alt="LinkedIn" 
                   className="w-5 h-5 text-gray-400 group-hover:text-[#1A6262] transition-colors duration-300"
                 />

@@ -50,7 +50,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center group cursor-pointer pl-0 sm:pl-2 md:pl-4 lg:pl-6 xl:pl-8">
           <img
-            src="/images/logo-white.png"
+            src="/6LayerLP/images/logo-white.png"
             alt="SniperThink Logo"
             className="h-7 w-auto"
           />
