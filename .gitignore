@@ -1,1 +1,7 @@
 node_modules
+.next
+**/.next
+.vercel
+**/.vercel
+dist
+**/dist
