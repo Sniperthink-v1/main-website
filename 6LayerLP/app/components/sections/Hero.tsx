@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   // Trigger animations after component mounts
   useEffect(() => {
     setIsLoaded(true);
@@ -16,43 +16,43 @@ const Hero = () => {
   // Animation variants
   const imageVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   const headingVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        delay: 0.5 // Start after image animation
-      } 
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.5, // Start after image animation
+      },
+    },
   };
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        delay: 1.0 // Start after heading animation
-      } 
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 1.0, // Start after heading animation
+      },
+    },
   };
 
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        delay: 1.5 // Start after text animation
-      } 
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 1.5, // Start after text animation
+      },
+    },
   };
 
   return (
@@ -61,7 +61,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1">
             <div className="max-w-2xl mx-auto lg:mx-0">
-              <motion.h1 
+              <motion.h1
                 className="heading-xl"
                 initial="hidden"
                 animate={isLoaded ? "visible" : "hidden"}
@@ -70,7 +70,7 @@ const Hero = () => {
                 <span className="gradient-text">One System. Six Layers. </span>
                 Infinite Business Clarity.
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-lead"
                 initial="hidden"
                 animate={isLoaded ? "visible" : "hidden"}
@@ -80,7 +80,7 @@ const Hero = () => {
                 data into predictive insights, smarter decisions, and faster
                 growth.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row items-center gap-4 mt-6"
                 initial="hidden"
                 animate={isLoaded ? "visible" : "hidden"}
@@ -95,7 +95,7 @@ const Hero = () => {
               </motion.div>
             </div>
           </div>
-          <motion.div 
+          <motion.div
             className="order-2 lg:order-2"
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
