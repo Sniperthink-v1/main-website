@@ -74,10 +74,10 @@ export const Footer: React.FC = () => {
                   </svg>
                 </div>
                 <a
-                  href="mailto:hello@sniperthink.com"
+                  href="mailto:info@sniperthink.com"
                   className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-bold"
                 >
-                  hello@sniperthink.com
+                  info@sniperthink.com
                 </a>
               </div>
             </div>

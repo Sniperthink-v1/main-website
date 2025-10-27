@@ -3,12 +3,13 @@ import { Button } from "@6LayerLP/app/components/ui/button";
 
 export default function NotFoundPage() {
   return (
-    
     <section className="min-h-screen bg-[#0F0F11] text-white flex items-center justify-center px-4 py-16 sm:py-24">
       <div className="max-w-xl w-full text-center relative">
         {/* Decorative Badge */}
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#1A6262]/20 to-[#91C499]/20 rounded-full px-4 py-1.5 mb-6 text-sm sm:text-base border border-[#1A6262]/30">
-          <span className="text-[#91C499] font-medium">Oops! Page Not Found</span>
+          <span className="text-[#91C499] font-medium">
+            Oops! Page Not Found
+          </span>
         </div>
 
         {/* Big 404 */}
@@ -23,7 +24,8 @@ export default function NotFoundPage() {
 
         {/* Description */}
         <p className="text-gray-400 text-sm sm:text-base mb-8 px-2">
-          The link may be broken, or the page may have been removed. Let’s get you back on track.
+          The link may be broken, or the page may have been removed. Let’s get
+          you back on track.
         </p>
 
         {/* Buttons */}
@@ -33,7 +35,7 @@ export default function NotFoundPage() {
               Go Home
             </Button>
           </a>
-          <a href="mailto:hello@sniperthink.com" className="w-full sm:w-auto">
+          <a href="mailto:info@sniperthink.com" className="w-full sm:w-auto">
             <Button
               variant="outline"
               className="w-full border-[#1A6262] text-[#1A6262] hover:bg-[#1A6262] hover:text-white px-6 py-3 text-base sm:text-lg bg-transparent"
