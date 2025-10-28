@@ -1,0 +1,746 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom responsive utilities */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+  
+  .text-responsive-xl {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+  
+  .text-responsive-2xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+  
+  .text-responsive-3xl {
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
+  }
+  
+  .spacing-responsive {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+  
+  .spacing-responsive-lg {
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+  
+  /* Sticky scroll utilities */
+  .sticky-container {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .sticky-panel {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    z-index: 10 !important;
+  }
+  
+  .scroll-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Process Section Stack Layout Implementation */
+  .process-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: transparent; /* Ensure container doesn't interfere with section background */
+  }
+  
+  /* Desktop stack behavior - left panel parent creates stack, right panel scrolls */
+  @media (min-width: 1024px) {
+    .process-container {
+      position: relative;
+      display: block; /* Use block layout for stacking */
+      min-height: 100vh;
+      background: transparent !important; /* Force transparent to match process section */
+    }
+
+    /* Left panel - FIXED positioning with JavaScript control */
+    .sticky-left-panel {
+      position: fixed;
+      top: 50%;
+      left: 2rem;
+      width: calc(55% - 4rem);
+      height: auto;
+      max-height: 70vh;
+      max-width: 580px;
+
+      /* Center vertically */
+      transform: translateY(-50%) translateZ(0);
+
+      z-index: 10;
+
+      /* Performance optimizations */
+      will-change: transform, opacity, visibility;
+      contain: layout style paint;
+
+      /* Stack container properties */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      /* COMPLETE transparency - no background */
+      background: transparent !important;
+      backdrop-filter: none !important;
+
+      /* Slide from LEFT - panel arrives from left side */
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      /* Start position: completely off-screen to the left */
+      transform: translateY(-50%) translateX(-120%) translateZ(0);
+    }
+
+    /* Active state - slides IN from left */
+    .sticky-left-panel.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      /* End position: at final left position (2rem from left) */
+      transform: translateY(-50%) translateX(0) translateZ(0);
+    }
+    
+    /* Right panel - independent scroll area */
+    .scrolling-right-panel {
+      position: relative;
+      margin-left: 55%; /* Adjusted to match left panel width increase */
+      width: 45%; /* Adjusted to accommodate larger left panel */
+      min-height: 300vh; /* Enough height for scroll */
+      padding-left: 2rem;
+      
+      /* Independent scroll behavior */
+      z-index: 1;
+      
+      /* Ensure proper scroll flow */
+      display: block;
+    }
+  }
+  
+  /* Left panel stack wrapper - ensures stacking only during process */
+  .left-panel-stack-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    
+    /* Stack behavior - centers content in viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Ensure proper stacking context */
+    z-index: 1;
+    transform: translateZ(0);
+    
+    /* Compact dashboard styling */
+    padding: 1rem;
+  }
+  
+  /* Compact dashboard content */
+  .left-panel-stack-wrapper .bg-\[#1C1C1E\]\/90 {
+    max-height: 60vh !important; /* Increased from 50vh to 60vh */
+    overflow: hidden !important;
+  }
+  
+  /* Reduce internal spacing */
+  .sticky-left-panel .min-h-\[280px\] {
+    min-height: 260px !important; /* Increased from 200px */
+  }
+  
+  .sticky-left-panel .sm\:min-h-\[320px\] {
+    min-height: 280px !important; /* Increased from 220px */
+  }
+  
+  .sticky-left-panel .lg\:min-h-\[380px\] {
+    min-height: 320px !important; /* Increased from 240px */
+  }
+  
+  /* Process section integration - COMPLETELY TRANSPARENT container */
+  .process-section .sticky-left-panel {
+    /* NO background, NO borders, NO effects on container */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Active state - still no container styling */
+  .sticky-left-panel.active {
+    /* NO box shadow on container */
+    box-shadow: none !important;
+  }
+  
+  /* Smooth transition states for boundary-based visibility */
+  .sticky-left-panel {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Restrict background gradient container to process section boundaries */
+  .sticky-left-panel .absolute.inset-0 {
+    /* Only show when panel is active and within process boundaries */
+    opacity: 0 !important;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .sticky-left-panel.active .absolute.inset-0 {
+    /* Show gradient only when panel is within process section boundaries */
+    opacity: 0.1 !important;
+  }
+  
+  /* Additional boundary enforcement for gradient backgrounds */
+  .process-section .sticky-left-panel.active .absolute.inset-0 {
+    /* Enhanced gradient visibility only within process section */
+    opacity: 0.15 !important;
+  }
+  
+  /* Improved content animation with staggered entry */
+  .sticky-left-panel .left-panel-stack-wrapper {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(20px) scale(0.95) translateZ(0);
+    opacity: 0;
+  }
+  
+  .sticky-left-panel.active .left-panel-stack-wrapper {
+    transform: translateY(0) scale(1) translateZ(0);
+    opacity: 1;
+    transition-delay: 0.2s; /* Staggered animation */
+  }
+  
+  /* Ensure dashboard doesn't get clipped by header */
+  .process-section {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Enhanced dashboard background integration */
+  .sticky-left-panel .bg-\[#1C1C1E\]\/90 {
+    /* Better blending with process section */
+    background: linear-gradient(135deg,
+                rgba(28, 28, 30, 0.8) 0%,
+                rgba(20, 20, 22, 0.85) 50%,
+                rgba(16, 16, 18, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(1.1);
+
+    /* Enhanced shadow and glow */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                0 1px 0 rgba(255, 255, 255, 0.1) inset;
+
+    /* Ensure proper rounded corners */
+    overflow: hidden !important;
+    position: relative;
+    border-radius: 1rem !important;
+  }
+
+  /* Ensure border radius at larger screens */
+  @media (min-width: 1024px) {
+    .sticky-left-panel .bg-\[#1C1C1E\]\/90 {
+      border-radius: 1.5rem !important;
+    }
+  }
+  
+  /* Gradient overlay for better process section integration */
+  .sticky-left-panel .bg-\[#1C1C1E\]\/90::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+                rgba(145, 196, 153, 0.05) 0%,
+                rgba(225, 169, 64, 0.03) 50%,
+                transparent 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: inherit;
+  }
+  
+  .sticky-left-panel.active .bg-\[#1C1C1E\]\/90::before {
+    opacity: 1;
+  }
+  
+  /* Gradient background boundary restrictions */
+  .sticky-left-panel .bg-\[#1C1C1E\]\/90 .absolute.inset-0 {
+    /* Restrict gradient to dashboard container only */
+    clip-path: inset(0);
+    contain: paint;
+  }
+  
+  /* Mobile - no sticky behavior */
+  @media (max-width: 1023px) {
+    .process-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .sticky-left-panel,
+    .scrolling-right-panel {
+      position: static;
+      height: auto;
+      max-height: none;
+      width: 100%;
+    }
+  }
+}
+
+  /* Process section - contains sticky panel automatically */
+  .process-section {
+    position: relative;
+    isolation: isolate;
+
+    /* Allow overflow for sticky positioning */
+    overflow: visible;
+
+    /* Enhanced boundary detection */
+    scroll-margin-top: 2rem;
+    scroll-margin-bottom: 2rem;
+
+    /* Improved background integration */
+    background: transparent !important;
+
+    /* Add detection zones */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Process section entry/exit zones for smooth transitions */
+  .process-section::before {
+    content: '';
+    position: absolute;
+    top: -20vh;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .process-section::after {
+    content: '';
+    position: absolute;
+    bottom: -20vh;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+/* Custom breakpoints for extra small screens */
+@media (max-width: 480px) {
+  .xs\:hidden {
+    display: none;
+  }
+  
+  .xs\:inline {
+    display: inline;
+  }
+  
+  .xs\:block {
+    display: block;
+  }
+  
+  .xs\:flex {
+    display: flex;
+  }
+  
+  .xs\:text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .xs\:text-base {
+    font-size: 1rem;
+  }
+  
+  .xs\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .xs\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+}
+
+/* Fix scroll behavior on mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 64px; /* Account for fixed header height */
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  overflow-y: visible; /* Allow vertical animations */
+}
+
+/* Improved button touch targets */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #91C499;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #91C499;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E1A940;
+}
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 0.5rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.8s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(26, 98, 98, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(26, 98, 98, 0.6);
+    }
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes checkmarkAppear {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes typeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes drawCheck {
+    from {
+      stroke-dashoffset: 20;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes bubbleBounce {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-8px) scale(1.02);
+    }
+  }
+
+  @keyframes bubbleGlow {
+    0%,
+    100% {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .chat-bubble {
+    position: relative;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+    animation: bubbleGlow 3s ease-in-out infinite;
+  }
+
+  .chat-bubble:hover {
+    transform: translateY(-8px) scale(1.02);
+    animation: none;
+  }
+
+  /* Chat bubble tails for different positions */
+  .chat-bubble-left::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 32px;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 0 0 16px 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: -1;
+  }
+
+  .chat-bubble-right::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 32px;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 0 0 0 16px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    z-index: -1;
+  }
+
+  /* Glow effects for different industry colors */
+  .chat-bubble-edtech:hover {
+    box-shadow: 0 8px 32px rgba(26, 98, 98, 0.25), 0 0 0 1px rgba(26, 98, 98, 0.2);
+  }
+
+  .chat-bubble-finance:hover {
+    box-shadow: 0 8px 32px rgba(225, 169, 64, 0.25), 0 0 0 1px rgba(225, 169, 64, 0.2);
+  }
+
+  .chat-bubble-realestate:hover {
+    box-shadow: 0 8px 32px rgba(145, 196, 153, 0.25), 0 0 0 1px rgba(145, 196, 153, 0.2);
+  }
+
+  .chat-bubble-healthcare:hover {
+    box-shadow: 0 8px 32px rgba(255, 103, 0, 0.25), 0 0 0 1px rgba(255, 103, 0, 0.2);
+  }
+
+  .chat-bubble-d2c:hover {
+    box-shadow: 0 8px 32px rgba(26, 98, 98, 0.25), 0 0 0 1px rgba(26, 98, 98, 0.2);
+  }
+
+  .chat-bubble-enterprise:hover {
+    box-shadow: 0 8px 32px rgba(145, 196, 153, 0.25), 0 0 0 1px rgba(145, 196, 153, 0.2);
+  }
+
+  /* Sticky Scroll Layout Utilities */
+  .sticky-scroll-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .sticky-panel {
+    position: sticky;
+    top: 6rem; /* 96px */
+    height: fit-content;
+    max-height: calc(100vh - 12rem);
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .scrolling-content {
+    position: relative;
+    flex: 1;
+    min-height: 1600px; /* Sufficient height for scroll interaction */
+    z-index: 5;
+    padding-top: 6rem; /* Offset to align with sticky panel */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Fix for sticky positioning on mobile */
+  @media (max-width: 1023px) {
+    .sticky-panel {
+      position: relative;
+      top: auto;
+      max-height: none;
+      margin-bottom: 2rem;
+    }
+    
+    .scrolling-content {
+      min-height: auto;
+    }
+  }
+
+  /* Enhanced scroll padding for better sticky behavior */
+  .scroll-section {
+    scroll-margin-top: 8rem;
+    padding: 4rem 0;
+    min-height: 100vh;
+  }
+
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+html {
+  scroll-behavior: smooth;
+}

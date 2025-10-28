@@ -1,85 +1,104 @@
-# SniperThink Product Websites Monorepo
+# Sniperthink Unified Website
 
-This monorepo contains multiple Next.js applications that are merged into a single deployment.
+This is a unified Next.js application combining three products into a single deployable website:
 
-## Structure
+- **Main Website**: Available at `/` (root)
+- **6 Layers Intelligence System**: Available at `/6LayersLP`
+- **AI Agents**: Available at `/aiagents`
 
-```
-SniperthinkProductWebsites/
-├── main-website1/          # Main website (served at sniperthink.com root)
-├── aiagents/               # AI Agents product (served at /aiagents)
-├── product-*/              # Additional products (served at /product-name)
-├── scripts/
-│   └── merge-products.js   # Build script that merges all products
-├── package.json            # Root workspace configuration
-└── vercel.json             # Vercel deployment config
-```
+## Getting Started
 
-## How It Works
+### Prerequisites
 
-1. **Development**: Each product folder is a standalone Next.js app that can be developed independently
-2. **Build**: The build script (`merge-products.js`) copies all product apps into `main-website1` before building
-3. **Deployment**: Vercel builds the merged `main-website1` app containing all products
+- Node.js 18+ installed
+- pnpm (recommended) or npm
 
-## Adding a New Product
-
-1. Create a new folder (e.g., `product-name/`)
-2. Initialize it as a Next.js app with its own `package.json`
-3. Add it to the `productsToMerge` array in `scripts/merge-products.js`:
-   ```javascript
-   {
-     name: 'product-name',
-     sourceFolder: path.join(repoRoot, 'product-name'),
-     targetPath: 'product-name' // URL path: /product-name
-   }
-   ```
-4. (Optional) Add a route in `vercel.json` if needed
-5. Run `pnpm install` in the root to add it to the workspace
-
-## Commands
+### Installation
 
 ```bash
-# Install all dependencies
+# Install dependencies
 pnpm install
+# or
+npm install
+```
 
-# Develop main website
+### Development
+
+```bash
+# Run development server
 pnpm dev
+# or
+npm run dev
+```
 
-# Develop aiagents product
-pnpm dev:aiagents
+Open [http://localhost:3000](http://localhost:3000) to view the main website.
 
-# Merge products (without building)
-pnpm run merge
+- Navigate to [http://localhost:3000/6LayersLP](http://localhost:3000/6LayersLP) for the Intelligence Growth Engine
+- Navigate to [http://localhost:3000/aiagents](http://localhost:3000/aiagents) for AI Chat + Voice Agents
 
-# Build for production (merges + builds)
+### Build
+
+```bash
+# Create production build
 pnpm build
+# or
+npm run build
+```
+
+### Production
+
+```bash
+# Start production server
+pnpm start
+# or
+npm start
 ```
 
 ## Deployment
 
-The repo is configured for Vercel deployment:
+This project is configured for deployment on Vercel:
 
-- Vercel runs the root `package.json` build script
-- This merges all products into `main-website1/app/{product-name}/`
-- The final build is a single Next.js app with all products accessible at their respective paths
+1. Push your code to GitHub
+2. Import the project in Vercel
+3. Vercel will automatically detect Next.js and deploy
 
-## Routes
+The project includes a `vercel.json` configuration for proper routing.
 
-- `/` → Main website (from `main-website1/`)
-- `/aiagents` → AI Agents product (from `aiagents/`)
-- Additional products at their configured target paths
+## Project Structure
 
-## Important Notes
+```
+├── app/
+│   ├── (main)/          # Main website at root path
+│   ├── 6LayersLP/       # Intelligence Growth Engine at /6LayersLP
+│   ├── aiagents/        # AI Agents at /aiagents
+│   ├── layout.tsx       # Root layout
+│   └── globals.css      # Global styles
+├── public/              # Static assets (images, fonts, etc.)
+├── components/          # Shared components (if any)
+├── lib/                 # Utility functions
+├── hooks/               # React hooks
+├── types/               # TypeScript types
+└── data/                # Static data files
+```
 
-### Version Compatibility
+## Navigation
 
-All product apps should use compatible Next.js and React versions. Currently:
+The "Start Scaling" buttons in the products section of the main website automatically navigate to:
+- `/6LayersLP` for Intelligence Growth Engine
+- `/aiagents` for AI Chat + Voice Agents
 
-- Check each `package.json` for version alignment
-- Recommended: Use the same major versions across all products
+## Technologies
 
-### Before Deploying
+- **Framework**: Next.js 15+
+- **UI**: React 19
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Components**: Radix UI
+- **Package Manager**: pnpm
 
-1. Test locally: `pnpm build && pnpm --filter main-website1 start`
-2. Verify all routes work: `http://localhost:3000/`, `http://localhost:3000/aiagents`, etc.
-3. Check for import/dependency conflicts
+## Notes
+
+- All three apps have been merged into a single Next.js application
+- Each app maintains its own layout and styles
+- Public assets from all three apps have been consolidated
+- The project uses Next.js App Router with route groups
