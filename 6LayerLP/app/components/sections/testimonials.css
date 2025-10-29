@@ -1,0 +1,50 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-marquee {
+  --duration: 40s;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-marquee-track {
+  animation: marquee var(--duration) linear infinite;
+  display: flex;
+  gap: 1.5rem;
+  width: fit-content;
+  padding: 0;
+}
+
+.testimonial-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease-in-out;
+  background: hsla(214, 23%, 96%, 0.05);
+  opacity: 0.7;
+  border-radius: 0.75rem;
+}
+
+.testimonial-card:hover {
+  background: linear-gradient(180deg, rgba(252,230,178,0.5) 0%, rgba(210,159,52,0.5) 100%);
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card p {
+  color: white !important;
+}
+
+.testimonial-card:hover p {
+  color: var(--collection-1-colours-accent-light-green-light-green-300) !important;
+}
