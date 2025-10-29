@@ -35,7 +35,7 @@ This is a unified Next.js 15 application containing three products:
 | Product | Route | Description |
 |---------|-------|-------------|
 | **Main Website** | `/` | Root landing page |
-| **6 Layers Intelligence** | `/6LayersLP` | Intelligence Growth Engine |
+| **6 Layers Intelligence** | `/6LayerLP` | Intelligence Growth Engine |
 | **AI Agents** | `/aiagents` | AI Chat + Voice Agents |
 
 **Tech Stack:**
@@ -258,14 +258,14 @@ Vercel automatically provisions SSL certificates for all domains. No additional 
 Check that all routes work correctly:
 
 - ✅ Root: `https://your-site.vercel.app/`
-- ✅ 6 Layers: `https://your-site.vercel.app/6LayersLP`
+- ✅ 6 Layers: `https://your-site.vercel.app/6LayerLP`
 - ✅ AI Agents: `https://your-site.vercel.app/aiagents`
 
 ### Test Navigation
 
 1. Visit the main page
 2. Click "Start Scaling" buttons in the Products section
-3. Verify navigation to `/6LayersLP` and `/aiagents`
+3. Verify navigation to `/6LayerLP` and `/aiagents`
 4. Check responsive design on mobile devices
 
 ### Performance Optimization
@@ -352,10 +352,10 @@ git push
 
 ### Routes Not Working
 
-**Problem:** `/6LayersLP` or `/aiagents` return 404
+**Problem:** `/6LayerLP` or `/aiagents` return 404
 
 **Solution:**
-- Verify the directory structure matches: `app/6LayersLP/` and `app/aiagents/`
+- Verify the directory structure matches: `app/6LayerLP/` and `app/aiagents/`
 - Ensure each has a `page.tsx` file
 - Check `vercel.json` rewrites configuration
 - Redeploy after fixing

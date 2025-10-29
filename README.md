@@ -33,7 +33,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the main website.
 
-- Navigate to [http://localhost:3000/6LayersLP](http://localhost:3000/6LayerLP) for the Intelligence Growth Engine
+- Navigate to [http://localhost:3000/6LayerLP](http://localhost:3000/6LayerLP) for the Intelligence Growth Engine
 - Navigate to [http://localhost:3000/aiagents](http://localhost:3000/aiagents) for AI Chat + Voice Agents
 
 ### Build
@@ -69,7 +69,7 @@ The project includes a `vercel.json` configuration for proper routing.
 ```
 ├── app/
 │   ├── (main)/          # Main website at root path
-│   ├── 6LayerLP/       # Intelligence Growth Engine at /6LayersLP
+│   ├── 6LayerLP/       # Intelligence Growth Engine at /6LayerLP
 │   ├── aiagents/        # AI Agents at /aiagents
 │   ├── layout.tsx       # Root layout
 │   └── globals.css      # Global styles

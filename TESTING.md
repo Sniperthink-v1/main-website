@@ -116,7 +116,7 @@ npm run dev
 Open your browser and navigate to:
 
 - **Main Website:** [http://localhost:3000](http://localhost:3000)
-- **6 Layers Intelligence:** [http://localhost:3000/6LayersLP](http://localhost:3000/6LayersLP)
+- **6 Layers Intelligence:** [http://localhost:3000/6LayerLP](http://localhost:3000/6LayerLP)
 - **AI Agents:** [http://localhost:3000/aiagents](http://localhost:3000/aiagents)
 
 ### Development Features
@@ -158,7 +158,7 @@ npm run build
 
 Route (app)                                Size     First Load JS
 ┌ ○ /                                      XXX kB         XXX kB
-├ ○ /6LayersLP                             XXX kB         XXX kB
+├ ○ /6LayerLP                             XXX kB         XXX kB
 └ ○ /aiagents                              XXX kB         XXX kB
 ```
 
@@ -245,9 +245,9 @@ pnpm dev
 console.log('Main page loaded:', window.location.pathname);
 ```
 
-### 6 Layers Intelligence (`/6LayersLP`)
+### 6 Layers Intelligence (`/6LayerLP`)
 
-Visit: [http://localhost:3000/6LayersLP](http://localhost:3000/6LayersLP)
+Visit: [http://localhost:3000/6LayerLP](http://localhost:3000/6LayerLP)
 
 **Test Checklist:**
 - [ ] Page loads independently
@@ -304,7 +304,7 @@ Test on different screen sizes:
 
 - [ ] Home → 6 Layers (via button)
 - [ ] Home → AI Agents (via button)
-- [ ] Direct URL access to `/6LayersLP`
+- [ ] Direct URL access to `/6LayerLP`
 - [ ] Direct URL access to `/aiagents`
 - [ ] Back button functionality
 - [ ] Footer links work
@@ -556,10 +556,10 @@ pnpm dlx playwright install
 // tests/navigation.spec.ts
 import { test, expect } from '@playwright/test';
 
-test('navigate to 6LayersLP', async ({ page }) => {
+test('navigate to 6LayerLP', async ({ page }) => {
   await page.goto('http://localhost:3000');
-  await page.click('text=Start Scaling'); // Button to 6LayersLP
-  await expect(page).toHaveURL(/.*6LayersLP/);
+  await page.click('text=Start Scaling'); // Button to 6LayerLP
+  await expect(page).toHaveURL(/.*6LayerLP/);
 });
 ```
 
@@ -734,7 +734,7 @@ Before deploying to Vercel, verify:
 
 ### ✅ All Routes Work
 - [ ] `/` loads correctly
-- [ ] `/6LayersLP` loads correctly
+- [ ] `/6LayerLP` loads correctly
 - [ ] `/aiagents` loads correctly
 - [ ] Navigation between routes works
 
@@ -772,7 +772,7 @@ After deployment to Vercel:
 ```powershell
 # Test production URLs
 curl https://your-site.vercel.app
-curl https://your-site.vercel.app/6LayersLP
+curl https://your-site.vercel.app/6LayerLP
 curl https://your-site.vercel.app/aiagents
 ```
 

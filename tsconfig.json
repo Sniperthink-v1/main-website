@@ -21,10 +21,10 @@
     "paths": {
       "@/*": ["./*"],
       "@main/*": ["./app/(main)/*"],
-      "@6layers/*": ["./app/6LayersLP/*"],
+      "@6layer/*": ["./app/6LayerLP/*"],
       "@aiagents/*": ["./app/aiagents/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "main-website", "6LayersLP", "aiagents"]
+  "exclude": ["node_modules", "main-website", "6LayerLP", "aiagents"]
 }

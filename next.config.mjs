@@ -33,7 +33,7 @@ const nextConfig = {
         '**/*.log',
         '**/coverage/**',
         '**/main-website/**',
-        '**/6LayersLP/**',
+        '**/6LayerLP/**',
         '**/aiagents/**',
       ],
       poll: 1000,
