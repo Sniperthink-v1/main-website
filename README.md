@@ -3,7 +3,7 @@
 This is a unified Next.js application combining three products into a single deployable website:
 
 - **Main Website**: Available at `/` (root)
-- **6 Layers Intelligence System**: Available at `/6LayersLP`
+- **6 Layers Intelligence System**: Available at `/6LayerLP`
 - **AI Agents**: Available at `/aiagents`
 
 ## Getting Started
@@ -33,7 +33,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the main website.
 
-- Navigate to [http://localhost:3000/6LayersLP](http://localhost:3000/6LayersLP) for the Intelligence Growth Engine
+- Navigate to [http://localhost:3000/6LayersLP](http://localhost:3000/6LayerLP) for the Intelligence Growth Engine
 - Navigate to [http://localhost:3000/aiagents](http://localhost:3000/aiagents) for AI Chat + Voice Agents
 
 ### Build
@@ -69,7 +69,7 @@ The project includes a `vercel.json` configuration for proper routing.
 ```
 ├── app/
 │   ├── (main)/          # Main website at root path
-│   ├── 6LayersLP/       # Intelligence Growth Engine at /6LayersLP
+│   ├── 6LayerLP/       # Intelligence Growth Engine at /6LayersLP
 │   ├── aiagents/        # AI Agents at /aiagents
 │   ├── layout.tsx       # Root layout
 │   └── globals.css      # Global styles
@@ -84,7 +84,7 @@ The project includes a `vercel.json` configuration for proper routing.
 ## Navigation
 
 The "Start Scaling" buttons in the products section of the main website automatically navigate to:
-- `/6LayersLP` for Intelligence Growth Engine
+- `/6LayerLP` for Intelligence Growth Engine
 - `/aiagents` for AI Chat + Voice Agents
 
 ## Technologies
