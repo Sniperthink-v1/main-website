@@ -134,7 +134,7 @@ export default function Header() {
                   <div className="absolute top-full left-0 mt-2 w-64 bg-transparent backdrop-blur-lg border border-gray-700/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     <div className="py-3 bg-[#0F0F11]/80 ">
                       <a
-                        href="https://sniperthink.com/intelligencesystem/"
+                        href="https://sniperthink.com/6LayerLP/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
@@ -142,7 +142,7 @@ export default function Header() {
                         <div className="font-medium text-sm">Intelligence Growth Engine</div>
                       </a>
                       <a
-                        href="https://sniperthink.com/aiagent/"
+                        href="https://sniperthink.com/aiagents/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/30 transition-colors duration-200 border-b border-gray-700/30"
@@ -239,7 +239,7 @@ export default function Header() {
                       {mobileProductsOpen && (
                         <div id="mobile-products-dropdown" className="mt-2 space-y-2">
                           <a
-                            href="https://sniperthink.com/intelligencesystem/"
+                            href="https://sniperthink.com/6LayerLP/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
@@ -247,7 +247,7 @@ export default function Header() {
                             Intelligence Growth Engine
                           </a>
                           <a
-                            href="https://sniperthink.com/aiagent/"
+                            href="https://sniperthink.com/aiagents/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block text-center py-2 text-gray-400 hover:text-white transition-colors duration-200 text-base font-normal"
