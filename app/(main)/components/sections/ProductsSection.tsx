@@ -59,7 +59,7 @@ const IMAGES: Record<'product1' | 'product2', string> = {
 }
 
 const START_SCALING_LINKS: Record<'product1' | 'product2', string> = {
-  product1: '/6LayersLP',
+  product1: '/6LayerLP',
   product2: '/aiagents'
 }
 
