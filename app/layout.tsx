@@ -1,19 +1,24 @@
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import './globals.css'
+import type { Metadata } from "next";
+import Script from "next/script";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'SniperThink - AI-Driven Automation for Teams',
-  description: 'AI-Driven Automation for Teams',
+  title: "SniperThink - AI-Driven Automation for Teams",
+  description: "AI-Driven Automation for Teams",
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -34,5 +39,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
