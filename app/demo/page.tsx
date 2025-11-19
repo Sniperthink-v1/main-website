@@ -1,12 +1,13 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Get a Demo | SniperThink',
-  description: "Book a live walkthrough demo of SniperThink's AI automation and analytics suite.",
-}
+  title: "Get a Demo – SniperThink",
+  description:
+    "Schedule a live walkthrough of SniperThink's AI automation platform.",
+};
 
 const CALENDLY_URL =
-  'https://calendly.com/admin-sniperthink/walk-through-for-demos?hide_event_type_details=1&hide_gdpr_banner=1'
+  "https://calendly.com/admin-sniperthink/walk-through-for-demos?hide_event_type_details=1&hide_gdpr_banner=1";
 
 export default function DemoPage() {
   return (
@@ -20,21 +21,28 @@ export default function DemoPage() {
             Get a personalized SniperThink demo
           </h1>
           <p className="text-lg text-gray-600">
-            See how our AI agents and business intelligence dashboards automate work, surface insights,
-            and keep your operators focused on decisions that matter. Choose a time that works best for
-            you and we will tailor the walkthrough to your use cases.
+            See how our AI agents and business intelligence dashboards automate
+            work, surface insights, and keep your operators focused on decisions
+            that matter. Choose a time that works best for you and we will
+            tailor the walkthrough to your use cases.
           </p>
           <ul className="grid gap-4 text-gray-700 sm:grid-cols-2">
             <li className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
-              <h2 className="text-base font-semibold text-gray-900">What to expect</h2>
+              <h2 className="text-base font-semibold text-gray-900">
+                What to expect
+              </h2>
               <p className="text-sm text-gray-600">
-                30-minute live session covering automation pipelines, analytics, and onboarding plans.
+                30-minute live session covering automation pipelines, analytics,
+                and onboarding plans.
               </p>
             </li>
             <li className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
-              <h2 className="text-base font-semibold text-gray-900">Bring your team</h2>
+              <h2 className="text-base font-semibold text-gray-900">
+                Bring your team
+              </h2>
               <p className="text-sm text-gray-600">
-                Invite operators, sales leads, or founders—anyone who will collaborate inside SniperThink.
+                Invite operators, sales leads, or founders—anyone who will
+                collaborate inside SniperThink.
               </p>
             </li>
           </ul>
@@ -48,7 +56,7 @@ export default function DemoPage() {
             loading="lazy"
           />
           <p className="mt-4 text-center text-sm text-gray-500">
-            Prefer a direct link?{' '}
+            Prefer a direct link?{" "}
             <a
               href="https://calendly.com/admin-sniperthink/walk-through-for-demos"
               className="font-semibold text-blue-600 hover:text-blue-700"
@@ -62,5 +70,5 @@ export default function DemoPage() {
         </section>
       </div>
     </main>
-  )
+  );
 }

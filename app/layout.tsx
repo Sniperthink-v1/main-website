@@ -30,6 +30,18 @@ export default function RootLayout({
     logo: "https://www.sniperthink.com/img/logo.svg",
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SniperThink",
+    url: "https://www.sniperthink.com/",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.sniperthink.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html lang="en">
       <body>
@@ -52,6 +64,13 @@ export default function RootLayout({
           strategy="afterInteractive"
         >
           {JSON.stringify(organizationSchema)}
+        </Script>
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify(websiteSchema)}
         </Script>
         {children}
       </body>
