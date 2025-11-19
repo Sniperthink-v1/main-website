@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description: "AI-Driven Automation for Teams",
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.png",
+    apple: "/favicon-48.png",
   },
+  metadataBase: new URL("https://www.sniperthink.com"),
 };
 
 export default function RootLayout({
