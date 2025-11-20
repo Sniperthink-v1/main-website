@@ -4,17 +4,17 @@ import React from "react"
 
 export function PrivacyPolicy() {
   return (
-    <div className="text-sm text-gray-300 space-y-4">
+    <div className="text-sm text-gray-300 space-y-4 max-h-[70vh] overflow-y-auto pr-4">
       <h2 className="text-lg font-semibold mb-2">PRIVACY POLICY</h2>
       
       <p>
-        Effective Date: [Insert the date when the privacy policy would be published on the Platform/Website].
+        <strong>Effective Date:</strong> 20 January 2025
       </p>
       
       <p>
         The given privacy policy ("Privacy Policy") is to be read in conjunction with the Terms of Use 
         as displayed on Our Platform/Website and establishes a legally binding agreement between the User 
-        and [Insert name of the Company] ("The Company"/"Sniperthink").
+        and Grey Horizon Ventures Private Limited ("The Company"/"Sniperthink").
       </p>
       
       <p>
@@ -74,17 +74,17 @@ export function PrivacyPolicy() {
 
       <h3 className="text-md font-semibold mt-6 mb-2">How does the Company collect the Personal Information</h3>
 
-      <ol className="list-decimal pl-6 space-y-4">
-        <li>
-          <strong>Personal Information provided to the Company</strong>
+      <div className="space-y-4">
+        <div>
+          <strong>a) Personal Information provided to the Company</strong>
           <p className="mt-1">
             We may ask for Your Personal Information including but not limited to your full name, contact details and birth date 
             at the time of Your registration on the Platform/Website. You willingly consent to provide the Company your Personal 
             Information at the time of registration on the Platform/Website.
           </p>
-        </li>
-        <li>
-          <strong>Personal Information collected automatically</strong>
+        </div>
+        <div>
+          <strong>b) Personal Information collected automatically</strong>
           <p className="mt-1">
             Some data such as your browser type, internet protocol address used, your usage patterns may be automatically 
             collected by the Company using cookies. Cookies are tiny pieces of information which a website sends to Your computer. 
@@ -94,9 +94,9 @@ export function PrivacyPolicy() {
             Platform/Website. Pixels are tiny units which measure the digital images and graphics you see on a website. 
             You agree that Cookies and Pixels are used to improve your experience as an end-user and consent to the use of the same.
           </p>
-        </li>
-        <li>
-          <strong>Information we may receive from third parties:</strong>
+        </div>
+        <div>
+          <strong>c) Information we may receive from third parties</strong>
           <p className="mt-1">
             We may receive information about you from third parties. For example, if you access our websites or services through 
             a third-party connection or log-in, for example, through your social media accounts, that third party may pass certain 
@@ -106,16 +106,16 @@ export function PrivacyPolicy() {
             public in connection with that service. When you use our Platform/Website, third parties might give us some information 
             about you, especially if you are signed into a third-party account while using our Platform/Website.
           </p>
-        </li>
-      </ol>
+        </div>
+      </div>
 
       <h3 className="text-md font-semibold mt-6 mb-2">What Purposes is the Personal Information Collected Used For?</h3>
       
       <p>The purposes for which the Company uses the data collected are:</p>
       
       <ul className="list-disc pl-6 space-y-2">
-        <li>Verifying your identity: The contact details collected may be used to verify your identity. You agree that such verification is essential for the Company to run the Platform/Website smoothly and to comply with its legal and other obligations.</li>
-        <li>Personalizing your experience on the Platform/Website: The information collected from you would help the Company in personalizing your experience and providing you a better and more efficient service.</li>
+        <li><strong>Verifying your identity:</strong> The contact details collected may be used to verify your identity. You agree that such verification is essential for the Company to run the Platform/Website smoothly and to comply with its legal and other obligations.</li>
+        <li><strong>Personalizing your experience on the Platform/Website:</strong> The information collected from you would help the Company in personalizing your experience and providing you a better and more efficient service.</li>
         <li>Improving the design and style of the Platform/Website.</li>
         <li>Developing new products, features, services and functionality.</li>
         <li>Communication regarding marketing and promotion of products/services.</li>
@@ -138,20 +138,20 @@ export function PrivacyPolicy() {
       
       <p>The Company may share Your Personal Information, with:</p>
       
-      <ol className="list-decimal pl-6 space-y-2">
-        <li>
-          <strong>Third-party business partners:</strong> We may share your information with third-party business partners for 
+      <div className="space-y-2 pl-4">
+        <div>
+          <strong>a) Third-party business partners:</strong> We may share your information with third-party business partners for 
           the purpose of providing the Service to you. Those business partners will be given limited access to your information 
           as is reasonably necessary to deliver the Service.
-        </li>
-        <li>
-          <strong>Employees/Consultants:</strong> The Company may share your information with its employees and consultants.
-        </li>
-        <li>
-          <strong>Compliance with law:</strong> The Company can share your information when compelled by a government agency, 
+        </div>
+        <div>
+          <strong>b) Employees/Consultants:</strong> The Company may share your information with its employees and consultants.
+        </div>
+        <div>
+          <strong>c) Compliance with law:</strong> The Company can share your information when compelled by a government agency, 
           law, regulation, a court or other legal process.
-        </li>
-      </ol>
+        </div>
+      </div>
 
       <p>
         You willingly and based on informed consent, agree to the sharing of your Personal Information with the aforementioned. 
@@ -167,28 +167,29 @@ export function PrivacyPolicy() {
       
       <p>You shall have the following rights under this Privacy Policy:</p>
       
-      <ol className="list-decimal pl-6 space-y-2">
-        <li>
-          Right to Request access to Your Personal Information: You may, at any point of time, after You have consented to 
+      <div className="space-y-2 pl-4">
+        <div>
+          <strong>a) Right to Request access to Your Personal Information:</strong> You may, at any point of time, after You have consented to 
           the collection of Your Personal Information, access the same through the Platform/Website.
-        </li>
-        <li>
-          Right to Request correction of Your Personal Information: You may, during anytime, after You have consented to the 
-          collection of Your Personal Information, request us to correct or update the same, by sending an email to 
-          [insert email address]. You shall be solely responsible for the failure to get Your Personal Information corrected or updated.
-        </li>
-        <li>
-          You may request us to practicably delete Your Personal Information by sending us an e-mail on [Insert e-mail address].
-        </li>
-        <li>
-          You may request us to restrict the processing of Your Personal Information or raise objections related to the processing 
+        </div>
+        <div>
+          <strong>b) Right to Request correction of Your Personal Information:</strong> You may, during anytime, after You have consented to the 
+          collection of Your Personal Information, request us to correct or update the same, by sending an email to{' '}
+          <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:underline">hello@sniperthink.com</a>. You shall be solely responsible for the failure to get Your Personal Information corrected or updated.
+        </div>
+        <div>
+          <strong>c)</strong> You may request us to practicably delete Your Personal Information by sending us an e-mail on{' '}
+          <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:underline">hello@sniperthink.com</a>.
+        </div>
+        <div>
+          <strong>d)</strong> You may request us to restrict the processing of Your Personal Information or raise objections related to the processing 
           of Your Personal Information. In the event the restrictions requested impede us in providing the Services, we may have to 
           restrict Your access to the Platform/Website and/or not provide you seamless Services.
-        </li>
-        <li>
-          You may request that we transfer the Personal Information that We have collected to some other organization or directly to You.
-        </li>
-      </ol>
+        </div>
+        <div>
+          <strong>e)</strong> You may request that we transfer the Personal Information that We have collected to some other organization or directly to You.
+        </div>
+      </div>
 
       <p>
         We shall practicably respond to Your requests within a minimum of 30 working days. In the event you choose to invoke any 
@@ -200,19 +201,19 @@ export function PrivacyPolicy() {
       
       <p>We protect Your information by employing the following measures:</p>
       
-      <ol className="list-decimal pl-6 space-y-2">
-        <li>
-          We have put in place various physical and technical security measures to protect the Personal Information we collect from you.
-        </li>
-        <li>
-          We require those with whom we share Your Personal Information to enter into confidentiality arrangements with us so that they 
+      <div className="space-y-2 pl-4">
+        <div>
+          <strong>a)</strong> We have put in place various physical and technical security measures to protect the Personal Information we collect from you.
+        </div>
+        <div>
+          <strong>b)</strong> We require those with whom we share Your Personal Information to enter into confidentiality arrangements with us so that they 
           do not disclose Your personal information. We shall not be liable for any data loss, unauthorized disclosure or any direct or 
           indirect damage arising out of in connection with the disclosure of data by third-parties.
-        </li>
-        <li>
-          By complying with all applicable laws and regulations.
-        </li>
-      </ol>
+        </div>
+        <div>
+          <strong>c)</strong> By complying with all applicable laws and regulations.
+        </div>
+      </div>
       
       <p>
         You acknowledge and agree, that the Company cannot possibly guarantee absolute protection against loss of information. As 
@@ -247,16 +248,16 @@ export function PrivacyPolicy() {
         Privacy Policy, if such non-performance arises due to events including but not limited to:
       </p>
       
-      <ol className="list-decimal pl-6 space-y-2">
-        <li>Floods, fire earthquakes or any natural disaster or acts of god.</li>
-        <li>Riots, war or any such act of violence.</li>
-        <li>Epidemics/Pandemics</li>
-        <li>Unprecedented technical errors including but not limited to network errors, unforeseen down time of the internet and power outages affecting internet services.</li>
-        <li>Hacking</li>
-        <li>Global internet shutdowns.</li>
-        <li>Any change in applicable laws.</li>
-        <li>Any other reason beyond the Company's control.</li>
-      </ol>
+      <div className="space-y-1 pl-4">
+        <div><strong>a)</strong> Floods, fire earthquakes or any natural disaster or acts of god.</div>
+        <div><strong>b)</strong> Riots, war or any such act of violence.</div>
+        <div><strong>c)</strong> Epidemics/Pandemics</div>
+        <div><strong>d)</strong> Unprecedented technical errors including but not limited to network errors, unforeseen down time of the internet and power outages affecting internet services.</div>
+        <div><strong>e)</strong> Hacking</div>
+        <div><strong>f)</strong> Global internet shutdowns.</div>
+        <div><strong>g)</strong> Any change in applicable laws.</div>
+        <div><strong>h)</strong> Any other reason beyond the Company's control.</div>
+      </div>
 
       <h3 className="text-md font-semibold mt-6 mb-2">Limitation of Liability</h3>
       
@@ -271,16 +272,100 @@ export function PrivacyPolicy() {
       
       <p>
         All matters, claims and any other such issues which may directly or indirectly arise from or in connection with this Privacy 
-        Policy shall be governed under the laws of [Insert jurisdiction where company is incorporated]. The courts at Patna 
-        [Insert place where company has incorporated or corporate office] shall have the sole and exclusive jurisdiction to hear all 
+        Policy shall be governed under the laws of India. The courts at Noida, Uttar Pradesh shall have the sole and exclusive jurisdiction to hear all 
         matters, claims or any such issues which may directly or indirectly arise from or in connection with this Privacy Policy.
       </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">Google User Data (Google OAuth & Calendar Access)</h3>
+      
+      <p>
+        SniperThink uses Google OAuth technology to allow users to securely connect their Google accounts to the platform. 
+        When a user chooses to connect their Google account, we request permission to access the following scope:
+      </p>
+      
+      <p className="bg-gray-800 p-2 rounded text-xs font-mono">
+        https://www.googleapis.com/auth/calendar.events.owned
+      </p>
+
+      <div className="mt-4 space-y-4">
+        <div>
+          <strong className="block mb-1">What Data We Access</strong>
+          <p className="text-xs">Through this permission, we may access:</p>
+          <ul className="list-disc pl-6 text-xs space-y-1">
+            <li>Your Google Calendar event details (such as title, date, time, and description)</li>
+            <li>Calendar identifiers for calendars you own</li>
+          </ul>
+        </div>
+
+        <div>
+          <strong className="block mb-1">How We Use This Data</strong>
+          <p className="text-xs">We use your Google Calendar data only to provide the features you explicitly request, including but not limited to:</p>
+          <ul className="list-disc pl-6 text-xs space-y-1">
+            <li>Displaying your calendar events inside the SniperThink platform</li>
+            <li>Creating new calendar events initiated by you</li>
+            <li>Modifying or deleting existing events when requested by you</li>
+          </ul>
+          <p className="text-xs mt-1">We do not use your Google Calendar data for advertising, profiling, or any unrelated purpose.</p>
+        </div>
+
+        <div>
+          <strong className="block mb-1">Data Sharing</strong>
+          <p className="text-xs">We do not sell, rent, or trade Google user data. We only share this data with:</p>
+          <ul className="list-disc pl-6 text-xs space-y-1">
+            <li>Authorized employees of SniperThink for operational support</li>
+            <li>Trusted service providers (such as cloud hosting and database services) strictly for platform functionality</li>
+            <li>Legal authorities when required by law</li>
+          </ul>
+          <p className="text-xs mt-1">All such parties are bound by confidentiality and data protection obligations.</p>
+        </div>
+
+        <div>
+          <strong className="block mb-1">Data Storage and Retention</strong>
+          <p className="text-xs">
+            Google Calendar data is stored securely using industry-standard encryption and is retained only for as long as 
+            necessary to provide the requested services.
+          </p>
+        </div>
+
+        <div>
+          <strong className="block mb-1">User Control and Data Deletion</strong>
+          <p className="text-xs">
+            You may revoke SniperThink's access to your Google account at any time through:{' '}
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              https://myaccount.google.com/permissions
+            </a>
+          </p>
+          <p className="text-xs mt-1">
+            Upon revocation, all stored access tokens and cached Google Calendar data are permanently deleted from our systems.
+          </p>
+        </div>
+
+        <div>
+          <strong className="block mb-1">Compliance with Google Policy</strong>
+          <p className="text-xs">
+            SniperThink's use of Google user data fully complies with the{' '}
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              Google API Services User Data Policy
+            </a> and the Limited Use Policy.
+          </p>
+        </div>
+      </div>
 
       <h3 className="text-md font-semibold mt-6 mb-2">Redressal of Grievances</h3>
       
       <p>
         If you have any questions or grievances regarding Our Platform/Website, the content thereof, our data handling policies, 
-        or about our Services, you can reach out to the Grievance officer of the Company customer support at [Insert e-mail address].
+        or about our Services, you can reach out to the Grievance officer of the Company customer support:
+      </p>
+
+      <div className="bg-gray-800 p-4 rounded mt-2 space-y-1">
+        <p><strong>Company Name:</strong> Grey Horizon Ventures Private Limited (trading as Sniperthink)</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:underline">hello@sniperthink.com</a></p>
+        <p><strong>Website:</strong> <a href="https://www.sniperthink.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">www.sniperthink.com</a></p>
+      </div>
+
+      <p className="text-center text-xs text-gray-500 mt-6">
+        <strong>Last Updated:</strong> 20 January 2025
       </p>
     </div>
   )
