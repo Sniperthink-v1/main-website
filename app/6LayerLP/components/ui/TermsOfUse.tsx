@@ -10,11 +10,11 @@ export function TermsOfUse() {
       <p>
         These Terms of Use (the "Terms") constitute a legally binding agreement
         between you ("you," "your," or "User") and Grey Horizon Ventures Private
-        Limited ("Company," "Sniperthink", "we," "us," or "our").
+        Limited, trading as "Sniperthink" ("Company," "we," "us," or "our").
       </p>
 
       <p>
-        By accessing or using our website/application (the "Site"/"App"), you
+        By accessing or using our website www.sniperthink.com (the "Site"), you
         agree to be bound by these Terms of Use and our Privacy Policy, which is
         published on this Site and is incorporated herein by reference. You
         further agree to comply with all applicable laws and regulations while
@@ -54,274 +54,467 @@ export function TermsOfUse() {
       </h3>
 
       <p>
-        These Terms, together with our Privacy Policy, constitute the entire and
-        sole agreement between you and the Company regarding your access to and
-        use of this Site. For any questions about your use of the Site, please
-        contact us at: info@sniperthink.com.
+        These Terms of Use ("Terms"), together with our Privacy Policy, constitute 
+        the entire agreement between you ("User" or "You") and Grey Horizon Ventures 
+        Private Limited, trading as "Sniperthink" ("we," "us," "our," or "the Company"), 
+        regarding your access to and use of the website www.sniperthink.com ("Site").
       </p>
 
       <p>
-        You are permitted to use the Site if you meet the following criteria:
-      </p>
-
-      <p>A. You are 18 years of age or older.</p>
-
-      <p>
-        B. You agree to comply with these Terms of Use and our Privacy Policy.
+        By accessing or using this Site, you acknowledge that you have read, understood, 
+        and agree to be bound by these Terms. If you do not agree, you must not use the Site.
       </p>
 
       <p>
-        The services offered to users may include, but are not limited to:
-        [Insert a brief description of the services offered].
+        For any questions about these Terms or your use of the Site, please contact us at:{" "}
+        <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:text-blue-300">
+          hello@sniperthink.com
+        </a>
       </p>
 
       <p className="font-semibold">
-        WE RESERVE THE RIGHT TO MODIFY OR DISCONTINUE THE SERVICES OFFERED ON
-        THE SITE AT ANY TIME AT OUR SOLE DISCRETION. ANY SUCH CHANGES WILL BE
-        UPDATED AND REFLECTED IN THESE TERMS. YOU AGREE TO REVIEW THESE TERMS
-        PERIODICALLY FOR UPDATES, AND WE SHALL NOT BE LIABLE TO YOU FOR ANY SUCH
-        MODIFICATIONS OR DISCONTINUANCE.
+        You may use the Site if you meet the following criteria:
       </p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>You are at least 18 years of age or the age of majority in your jurisdiction.</li>
+        <li>You agree to comply with these Terms, our Privacy Policy, and all applicable laws.</li>
+        <li>You are not prohibited from using the Site under applicable law or any agreement with us.</li>
+      </ul>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
         2. LICENSE TO USE THE SITE
       </h3>
 
       <p>
-        Subject to your compliance with these Terms, the Company grants you a
-        worldwide, non-exclusive, non-transferable, non-sublicensable,
-        revocable, limited license to access and use the information and
-        services provided on the Site for your internal use. We may terminate
-        this license at any time, for any reason, at our sole discretion.
+        Subject to your compliance with these Terms, the Company grants you a limited, 
+        worldwide, non-exclusive, non-transferable, non-sublicensable, revocable license 
+        to access and use the information, content, and services available on the Site 
+        solely for your lawful, personal, or internal business purposes.
       </p>
 
-      <p>
-        You agree that any breach of these Terms will constitute sufficient
-        grounds for the automatic termination of your license to use the Site
-        without prior notice. Upon termination, you must immediately destroy all
-        copies of any materials you have downloaded from the Site. Failure to do
-        so may be considered a copyright infringement, and we reserve the right
-        to pursue any available legal remedies.
-      </p>
+      <p>This license does not permit you to:</p>
+      
+      <ul className="list-disc pl-6 space-y-1">
+        <li>Use any automated system or software to extract data from the Site;</li>
+        <li>Resell, sublicense, or commercially exploit the Site or its contents;</li>
+        <li>Modify, adapt, or create derivative works from the Site;</li>
+        <li>Remove or obscure any proprietary notices on the Site.</li>
+      </ul>
 
-      <p>
-        You acknowledge that you are granted only a limited license to use the
-        Site and that you do not acquire any intellectual property rights in or
-        to the Site.
-      </p>
-
-      <h3 className="text-md font-semibold mt-6 mb-2">3. PROHIBITED USES</h3>
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        3. PROHIBITED USES
+      </h3>
 
       <p>By accessing and using this Site, you agree that you will not:</p>
 
       <ol className="list-decimal pl-6 space-y-2">
-        <li>Use the Site if you are under the age of 18.</li>
-        <li>
-          Use any content on the Site in a way that violates any applicable law,
-          rule, or regulation (whether national, international, or local),
-          whether intentionally or unintentionally.
-        </li>
-        <li>
-          Use the Site in any manner that could adversely affect, impair,
-          disable, infect, or overburden our servers, computer systems,
-          networks, or any other components used to provide the Site.
-        </li>
-        <li>Interfere with any third party's use and enjoyment of the Site.</li>
-        <li>Modify or alter any content available on the Site.</li>
-        <li>
-          Copy, reverse engineer, decompile, or commercially or otherwise reuse
-          (including selling, renting, leasing, or distributing) any content you
-          may have accessed or downloaded from the Site, except as expressly
-          permitted.
-        </li>
-        <li>
-          Use any trademarks, logos, or graphics displayed on the Site without
-          our express written consent for any purpose whatsoever.
-        </li>
-        <li>
-          Use the Site's network or any email addresses obtained from the Site
-          for any advertising, promotional, or marketing campaigns without our
-          prior written consent.
-        </li>
-        <li>
-          Upload any content that infringes upon any third party's intellectual
-          property rights or is obscene, pornographic, blasphemous, libelous,
-          pedophilic, or otherwise illegal or prohibited in any manner.
-        </li>
-      </ol>
-
-      <p>
-        If you are found to be in violation of any of these prohibitions, you
-        agree that the Company may initiate legal proceedings against you, which
-        you acknowledge as a fair and just action.
-      </p>
-
-      <h3 className="text-md font-semibold mt-6 mb-2">
-        4. DATA PROTECTION AND PRIVACY
-      </h3>
-
-      <p>
-        You acknowledge that you have read and fully understood the terms of our
-        Privacy Policy, which is published and displayed on the Site. By using
-        the Site, you consent to the following as detailed in the Privacy
-        Policy:
-      </p>
-
-      <ol className="list-decimal pl-6 space-y-2">
-        <li>The types of data being collected by the Company.</li>
-        <li>The purposes for which the data is being collected.</li>
-        <li>The entities that may process the data.</li>
+        <li><strong>Age Restriction:</strong> Use the Site if you are under 18 years of age or below the age of majority in your jurisdiction.</li>
+        <li><strong>Unlawful Activities:</strong> Use any content or service in a manner that violates any applicable local, national, or international law or regulation.</li>
+        <li><strong>System Integrity:</strong> Use the Site in any manner that could harm, overburden, or impair our servers, networks, or systems.</li>
+        <li><strong>Third-Party Interference:</strong> Interfere with any other user's access to or enjoyment of the Site.</li>
+        <li><strong>Content Tampering:</strong> Modify, reverse-engineer, decompile, or otherwise alter any content or software available on the Site.</li>
+        <li><strong>Unauthorized Access:</strong> Attempt to gain unauthorized access to any part of the Site, other user accounts, or systems connected to the Site.</li>
+        <li><strong>Malicious Use:</strong> Introduce viruses, malware, or any malicious code intended to disrupt the Site's functionality.</li>
+        <li><strong>Data Harvesting:</strong> Use scrapers, bots, or automated tools to harvest or collect data from the Site without our prior written consent.</li>
       </ol>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        5. INTELLECTUAL PROPERTY
+        4. INTELLECTUAL PROPERTY
       </h3>
 
       <p>
-        You agree that all services offered, software used, content posted or
-        made available on the Site, and any other associated functionalities are
-        the intellectual property of the Company. You agree to keep all
-        information pertaining to these confidential at all times. You further
-        agree not to modify, resell, reuse, license, distribute, or use our
-        intellectual property in any unauthorized manner. Any use of our
-        intellectual property requires our express written authorization and
-        consent. Violation of this clause will be considered a breach of this
-        agreement, and we reserve the right to pursue any legal remedy we deem
-        appropriate to enforce and protect our rights.
+        All content, features, design elements, trademarks, logos, software, graphics, text, 
+        images, and functionality available on the Site are the exclusive intellectual 
+        property of Grey Horizon Ventures Private Limited or its licensors. They are 
+        protected by copyright, trademark, trade secret, and other intellectual property laws.
       </p>
 
-      <h3 className="text-md font-semibold mt-6 mb-2">6. TRADEMARKS</h3>
+      <p>You agree not to:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>Copy, reproduce, distribute, publicly display, or create derivative works from any content on the Site without our express written permission;</li>
+        <li>Use any trademarks, service marks, or logos displayed on the Site without prior authorization;</li>
+        <li>Use the Site's intellectual property for any commercial purpose or public display outside the scope of the license granted in Section 2.</li>
+      </ul>
 
       <p>
-        You agree that all trademarks, logos, and service marks displayed on the
-        Site are the property of the Company. Any unauthorized use of these is
-        strictly prohibited and may constitute infringement or passing off.
-        Nothing on the Site should be interpreted as granting any license or
-        right, whether express or implied, written or unwritten, to any
-        individual to use any trademarks belonging to the Company.
-      </p>
-
-      <h3 className="text-md font-semibold mt-6 mb-2">7. COPYRIGHT NOTICE</h3>
-
-      <p>
-        All content published or displayed on the Site is the copyright of the
-        Company. You agree that any form of copying, distribution, or use of
-        such content for any purpose without our express written permission
-        constitutes copyright infringement.
-      </p>
-
-      <h3 className="text-md font-semibold mt-6 mb-2">8. THIRD-PARTY LINKS</h3>
-
-      <p>
-        The Site may contain links to third-party websites or services that are
-        not owned or controlled by the Company. We have no control over and
-        assume no responsibility for the content, privacy policies, or practices
-        of any third-party websites or services. You further acknowledge and
-        agree that the Company shall not be responsible or liable, directly or
-        indirectly, for any damage or loss caused or alleged to be caused by or
-        in connection with the use of or reliance on any such content, goods, or
-        services available on or through any such third-party websites or
-        services. We strongly advise you to read the terms and conditions and
-        privacy policies of any third-party websites or services that you visit.
+        Any unauthorized use of the Company's intellectual property may result in legal 
+        action and termination of your access to the Site.
       </p>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        9. COOKIES AND SIMILAR TECHNOLOGIES
+        5. DATA PROTECTION AND PRIVACY
       </h3>
 
       <p>
-        We may use cookies, web beacons, and other similar technologies to
-        collect information about your browsing activities and preferences on
-        our Site. This helps us to improve your experience, understand how the
-        Site is used, and personalize content. By using our Site, you consent to
-        our use of these technologies in accordance with our Privacy Policy. You
-        can manage your cookie preferences through your browser settings. Please
-        refer to our Privacy Policy for more detailed information on our use of
-        cookies and how you can control them.
+        You acknowledge that you have read and fully understood our Privacy Policy, which 
+        governs how we collect, use, store, and protect your personal information.
+      </p>
+
+      <p>
+        Your use of the Site is subject to the Privacy Policy, and by continuing to use 
+        the Site, you consent to the practices described therein. If you do not agree to 
+        the Privacy Policy, you must discontinue use of the Site immediately.
+      </p>
+
+      <p>
+        We are committed to safeguarding your privacy in compliance with applicable data 
+        protection laws, including but not limited to the Information Technology Act, 2000 
+        and related rules.
       </p>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        10. DISCLAIMER OF WARRANTIES
+        6. USER-GENERATED CONTENT
       </h3>
 
-      <p className="uppercase">
-        TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE SITE AND ITS
-        CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT ANY
-        WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
-        LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-        PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF
-        DEALING OR USAGE OF TRADE. WE DO NOT WARRANT THAT THE SITE WILL BE
-        UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL
-        COMPONENTS. WE MAKE NO WARRANTIES REGARDING THE ACCURACY, RELIABILITY,
-        COMPLETENESS, OR TIMELINESS OF THE CONTENT AVAILABLE ON THE SITE. ANY
-        RELIANCE YOU PLACE ON SUCH INFORMATION IS STRICTLY AT YOUR OWN RISK.
+      <p>
+        Certain features of the Site may allow you to submit, post, or transmit content 
+        such as comments, feedback, suggestions, or other materials ("User Content").
       </p>
 
-      <h3 className="text-md font-semibold mt-6 mb-2">11. INDEMNIFICATION</h3>
+      <p>
+        By submitting User Content, you grant the Company a perpetual, irrevocable, 
+        worldwide, royalty-free, non-exclusive license to use, reproduce, modify, adapt, 
+        publish, translate, distribute, and display such content in any media or format, 
+        whether now known or later developed.
+      </p>
+
+      <p>You represent and warrant that:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>You own or have the necessary rights to submit the User Content;</li>
+        <li>Your User Content does not infringe any third-party rights;</li>
+        <li>Your User Content is not unlawful, defamatory, obscene, or otherwise objectionable.</li>
+      </ul>
 
       <p>
-        You agree to indemnify, defend, and hold harmless the Company and its
-        affiliates, officers, directors, employees, agents, contractors,
-        professionals, and consultants (the "Indemnified Parties") from and
-        against any and all claims, damages, costs, liabilities, and expenses
-        (including, without limitation, reasonable attorneys' fees) arising out
-        of or in connection with: (a) your breach of any applicable law; (b)
-        your illegal or prohibited use of the Site; (c) your breach of any
-        intellectual property or confidentiality obligations; or (d) your
-        negligence or wilful misconduct.
+        We reserve the right (but are not obligated) to monitor, review, and remove any 
+        User Content that violates these Terms or is otherwise inappropriate.
       </p>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        12. LIMITATION OF LIABILITY
+        7. THIRD-PARTY LINKS AND SERVICES
       </h3>
 
-      <p className="uppercase">
-        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
-        COMPANY BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-        CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING, WITHOUT LIMITATION,
-        DAMAGES FOR LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE
-        LOSSES) ARISING OUT OF OR RELATING TO YOUR ACCESS TO OR USE OF (OR
-        INABILITY TO ACCESS OR USE) THE SITE OR ITS CONTENT, WHETHER BASED ON
-        WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER
-        LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH
-        DAMAGES. OUR TOTAL CUMULATIVE LIABILITY TO YOU FOR ALL CLAIMS ARISING
-        OUT OF OR RELATING TO THESE TERMS OR THE SITE SHALL NOT EXCEED THE PRICE
-        THAT YOU HAVE PAID FOR AVAILING THE SERVICE OR INR 1000 WHICHEVER IS
-        LOWER.
+      <p>
+        The Site may contain links to third-party websites, services, or resources that 
+        are not owned or controlled by the Company. We provide these links solely for 
+        your convenience and do not endorse or assume responsibility for any third-party 
+        content or practices.
       </p>
 
-      <h3 className="text-md font-semibold mt-6 mb-2">13. SEVERABILITY</h3>
+      <p>You acknowledge and agree that:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>We are not responsible for the availability, accuracy, or content of third-party sites;</li>
+        <li>Your use of third-party sites is at your own risk and subject to their terms and policies;</li>
+        <li>We are not liable for any loss or damage arising from your interaction with third-party services.</li>
+      </ul>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        8. DISCLAIMERS AND WARRANTIES
+      </h3>
+
+      <p className="font-semibold">
+        The Site and all content, services, and information are provided "AS IS" and 
+        "AS AVAILABLE" without warranties of any kind, either express or implied.
+      </p>
 
       <p>
-        If any provision of these Terms is held to be invalid or unenforceable
-        for any reason, such provision shall be deemed to be severed from these
-        Terms, and the remaining provisions shall continue in full force and
-        effect. The invalid or unenforceable provision shall be replaced by a
-        valid and enforceable provision that most closely reflects the original
-        intention.
+        To the maximum extent permitted by applicable law, the Company disclaims all 
+        warranties, including but not limited to:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li><strong>Merchantability:</strong> That the Site or its content is suitable for a particular purpose;</li>
+        <li><strong>Accuracy:</strong> That the information on the Site is accurate, complete, reliable, or current;</li>
+        <li><strong>Non-Infringement:</strong> That use of the Site will not infringe any third-party intellectual property rights;</li>
+        <li><strong>Uninterrupted Access:</strong> That the Site will be available at all times or free from errors, viruses, or other harmful components.</li>
+      </ul>
+
+      <p>
+        You acknowledge that your use of the Site is at your sole risk, and you assume 
+        full responsibility for any consequences arising from such use.
       </p>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        14. GOVERNING LAW AND JURISDICTION
+        9. LIMITATION OF LIABILITY
       </h3>
 
+      <div className="bg-red-900/20 border-l-4 border-red-400 p-4 my-4">
+        <p className="font-semibold mb-2">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</p>
+        
+        <p className="mb-2">
+          IN NO EVENT SHALL GREY HORIZON VENTURES PRIVATE LIMITED, ITS DIRECTORS, OFFICERS, 
+          EMPLOYEES, AFFILIATES, AGENTS, OR LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+          INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING BUT NOT LIMITED 
+          TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES) ARISING OUT 
+          OF OR IN CONNECTION WITH:
+        </p>
+
+        <ul className="list-disc pl-6 space-y-1">
+          <li>Your access to or use of (or inability to access or use) the Site;</li>
+          <li>Any conduct or content of any third party on the Site;</li>
+          <li>Any content obtained from the Site;</li>
+          <li>Unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, even if the Company has been advised of the possibility of such damages.</li>
+        </ul>
+      </div>
+
+      <p className="font-semibold">
+        OUR TOTAL CUMULATIVE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING 
+        TO THESE TERMS OR YOUR USE OF THE SITE SHALL NOT EXCEED INR 1,000 (ONE THOUSAND 
+        RUPEES).
+      </p>
+
       <p>
-        All matters, claims, and any other issues that may arise directly or
-        indirectly from or in connection with these Terms shall be governed by
-        and construed in accordance with the laws of India, without regard to
-        its conflict of law principles. The courts located in Noida, UP shall
-        have the sole and exclusive jurisdiction to hear all matters, claims, or
-        any such issues arising directly or indirectly from or in connection
-        with these Terms of Use.
+        Some jurisdictions do not allow the exclusion or limitation of certain warranties 
+        or liabilities. In such jurisdictions, the above limitations may not apply to you, 
+        and our liability will be limited to the greatest extent permitted by law.
       </p>
 
       <h3 className="text-md font-semibold mt-6 mb-2">
-        15. QUESTIONS AND GRIEVANCES
+        10. INDEMNIFICATION
       </h3>
 
       <p>
-        If you have any questions or grievances regarding these Terms of Use,
-        please contact us at: info@sniperthink.com.
+        You agree to indemnify, defend, and hold harmless Grey Horizon Ventures Private 
+        Limited, its affiliates, directors, officers, employees, agents, and licensors 
+        from and against any and all claims, liabilities, damages, losses, costs, expenses, 
+        or fees (including reasonable attorneys' fees) arising out of or relating to:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>Your use or misuse of the Site;</li>
+        <li>Your violation of these Terms;</li>
+        <li>Your infringement of any third-party rights, including intellectual property rights;</li>
+        <li>Any User Content you submit or transmit through the Site.</li>
+      </ul>
+
+      <p>
+        The Company reserves the right to assume the exclusive defense and control of any 
+        matter subject to indemnification by you, and you agree to cooperate fully with 
+        such defense.
+      </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        11. TERMINATION AND SUSPENSION
+      </h3>
+
+      <p>We reserve the right, in our sole discretion, to:</p>
+
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Suspend or terminate your access to the Site, with or without notice, for any reason, including but not limited to:
+          <ul className="list-circle pl-6 mt-1 space-y-1">
+            <li>Violation of these Terms;</li>
+            <li>Fraudulent, harmful, or unlawful conduct;</li>
+            <li>Prolonged inactivity;</li>
+            <li>Technical or security reasons.</li>
+          </ul>
+        </li>
+        <li>Modify, suspend, or discontinue any part of the Site at any time.</li>
+      </ul>
+
+      <p>Upon termination:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>Your license to use the Site immediately ceases;</li>
+        <li>All provisions of these Terms that by their nature should survive termination (including but not limited to ownership provisions, disclaimers, indemnities, and limitations of liability) shall survive.</li>
+      </ul>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        12. MODIFICATIONS TO TERMS
+      </h3>
+
+      <p>
+        We reserve the right to modify or update these Terms at any time, in our sole 
+        discretion. Any changes will be effective immediately upon posting the revised 
+        Terms on the Site.
+      </p>
+
+      <p>
+        Your continued use of the Site after the posting of revised Terms constitutes 
+        your acceptance of those changes. It is your responsibility to review these 
+        Terms periodically to stay informed of any updates.
+      </p>
+
+      <p>
+        If you do not agree to the modified Terms, you must stop using the Site immediately.
+      </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        13. GOVERNING LAW AND JURISDICTION
+      </h3>
+
+      <p>
+        These Terms of Use shall be governed by, construed, and enforced in accordance 
+        with the laws of India, without regard to its conflict of law principles.
+      </p>
+
+      <p>
+        Any disputes, claims, or controversies arising out of or relating to these Terms 
+        or your use of the Site shall be subject to the exclusive jurisdiction of the 
+        courts located in Noida, Uttar Pradesh, India. You hereby consent to the personal 
+        jurisdiction and venue of such courts.
+      </p>
+
+      <p>
+        If any provision of these Terms is found to be invalid or unenforceable by a 
+        court of competent jurisdiction, the remaining provisions shall continue in full 
+        force and effect.
+      </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        14. SEVERABILITY AND WAIVER
+      </h3>
+
+      <p>
+        <strong>Severability:</strong> If any provision of these Terms is held to be 
+        invalid, illegal, or unenforceable, the validity, legality, and enforceability 
+        of the remaining provisions shall not be affected or impaired in any way.
+      </p>
+
+      <p>
+        <strong>Waiver:</strong> No waiver of any term or condition of these Terms shall 
+        be deemed a further or continuing waiver of such term or any other term. Our 
+        failure to assert any right or provision under these Terms shall not constitute 
+        a waiver of such right or provision.
+      </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        15. USE OF GOOGLE USER DATA (GOOGLE OAUTH)
+      </h3>
+
+      <p>
+        Our Site may use Google OAuth to access certain Google services on your behalf, 
+        including but not limited to Google Calendar. This section explains how we use 
+        the data accessed via Google OAuth and your rights regarding such data.
+      </p>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.1. Permissions Requested</h4>
+
+      <p>When you authorize our Site to access your Google account, we may request the following permissions:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li><strong>Google Calendar (Read and Write Access):</strong> To view, create, update, and delete calendar events on your behalf.</li>
+        <li><strong>Profile Information:</strong> To access your basic profile information (name, email address, profile picture) to personalize your experience.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.2. How We Use Google User Data</h4>
+
+      <p>We use the data accessed via Google OAuth solely for the following purposes:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li><strong>Calendar Management:</strong> To enable you to schedule, view, modify, or delete appointments, meetings, and events directly through our Site.</li>
+        <li><strong>Service Integration:</strong> To synchronize calendar data with our platform to provide seamless scheduling and notification services.</li>
+        <li><strong>User Identification:</strong> To authenticate your identity and provide a personalized user experience.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.3. Data Storage and Retention</h4>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>We may temporarily store calendar event data in our servers solely to facilitate the requested service (e.g., displaying upcoming events or syncing your calendar).</li>
+        <li>We do not permanently store your Google Calendar data unless explicitly required for the functionality of the service.</li>
+        <li>Any stored data will be encrypted and secured using industry-standard practices.</li>
+        <li>We retain Google user data only for as long as necessary to provide the requested service or as required by law.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.4. Data Sharing</h4>
+
+      <p>We do not sell, rent, trade, or share your Google user data with third parties, except in the following limited circumstances:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li><strong>Service Providers:</strong> We may share data with trusted third-party service providers (e.g., cloud hosting, analytics) who assist us in operating the Site, subject to strict confidentiality agreements.</li>
+        <li><strong>Legal Requirements:</strong> We may disclose data if required to comply with applicable laws, regulations, legal processes, or governmental requests.</li>
+        <li><strong>Protection of Rights:</strong> We may disclose data to protect the rights, property, or safety of the Company, our users, or others.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.5. User Control and Revocation</h4>
+
+      <p>You have full control over the permissions granted to our Site via Google OAuth:</p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li><strong>Revoke Access:</strong> You may revoke our access to your Google account at any time by visiting your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Google Account Permissions page</a>.</li>
+        <li><strong>Delete Data:</strong> Upon revocation, we will delete any stored Google user data associated with your account within a reasonable time frame, unless retention is required by law.</li>
+        <li><strong>Request Data Deletion:</strong> You may also contact us at <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:text-blue-300">hello@sniperthink.com</a> to request deletion of your Google user data.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.6. Compliance with Google API Services User Data Policy</h4>
+
+      <p>
+        Our use of Google user data complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>We only use Google user data to provide or improve user-facing features that are prominent in our Site's user interface.</li>
+        <li>We do not transfer Google user data to third parties except as necessary to provide or improve user-facing features, comply with applicable law, or as part of a merger or acquisition (with user notice).</li>
+        <li>We do not use Google user data for serving advertisements, including retargeting, personalized or interest-based advertising.</li>
+        <li>We do not allow humans to read Google user data unless:
+          <ul className="list-circle pl-6 mt-1 space-y-1">
+            <li>We have obtained your affirmative agreement;</li>
+            <li>It is necessary for security purposes (e.g., investigating abuse);</li>
+            <li>It is required to comply with applicable law; or</li>
+            <li>The data has been aggregated and anonymized for internal operations in compliance with applicable privacy laws.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.7. Security Measures</h4>
+
+      <p>
+        We implement appropriate technical and organizational measures to protect your 
+        Google user data against unauthorized access, disclosure, alteration, or destruction. 
+        These measures include:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-1">
+        <li>Encryption of data in transit and at rest;</li>
+        <li>Regular security audits and vulnerability assessments;</li>
+        <li>Access controls limiting data access to authorized personnel only;</li>
+        <li>Compliance with industry best practices and applicable data protection laws.</li>
+      </ul>
+
+      <h4 className="text-sm font-semibold mt-4 mb-2">15.8. Changes to Google Data Usage</h4>
+
+      <p>
+        If we make any material changes to how we use Google user data, we will notify 
+        you by updating these Terms and, where required, obtaining your renewed consent.
+      </p>
+
+      <h3 className="text-md font-semibold mt-6 mb-2">
+        16. QUESTIONS AND GRIEVANCES
+      </h3>
+
+      <p>
+        If you have any questions, concerns, or grievances regarding these Terms of Use, 
+        our use of Google user data, or any other matter related to the Site, please 
+        contact us:
+      </p>
+
+      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 my-4">
+        <p className="mb-2">
+          <strong>Company Name:</strong> Grey Horizon Ventures Private Limited (trading as Sniperthink)
+        </p>
+        <p className="mb-2">
+          <strong>Email:</strong>{" "}
+          <a href="mailto:hello@sniperthink.com" className="text-blue-400 hover:text-blue-300">
+            hello@sniperthink.com
+          </a>
+        </p>
+        <p className="mb-2">
+          <strong>Website:</strong>{" "}
+          <a href="https://www.sniperthink.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">
+            www.sniperthink.com
+          </a>
+        </p>
+      </div>
+
+      <p>
+        We will make reasonable efforts to address your inquiry or concern in a timely manner.
+      </p>
+
+      <p className="mt-4 text-xs text-gray-400">
+        <strong>Last Updated:</strong> 20 January 2025
       </p>
     </div>
   );
