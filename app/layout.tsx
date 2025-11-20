@@ -7,13 +7,16 @@ export const metadata: Metadata = {
   description: "AI-Driven Automation for Teams",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/favicon-48.png",
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
   },
+  appleWebApp: {
+    title: "SniperThink",
+  },
+  manifest: "/site.webmanifest",
   metadataBase: new URL("https://www.sniperthink.com"),
 };
 
