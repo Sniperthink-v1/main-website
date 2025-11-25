@@ -435,7 +435,7 @@ export default function PrivacyPage() {
           <p className="mb-6">
             <strong>Scope Used:</strong>{" "}
             <code className="bg-gray-800 px-2 py-1 rounded">
-              https://www.googleapis.com/auth/calendar.events.owned
+              https://www.googleapis.com/auth/calendar.events
             </code>
           </p>
 
